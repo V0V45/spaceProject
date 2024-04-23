@@ -1,0 +1,226 @@
+/* Константы */
+:root {
+    /* ЦВЕТА */
+    --txt: #051B43;
+    --grey: #BFC8C9;
+    --blue: #303D8F;
+    --green2: #10C48D;
+    --white: #FFFFFF;
+    --green: #11FACA;
+    --backgroundBlue: #E5ECFC;
+    --backgroundGreen: #E9F5F4;
+    --contourBlue: #6579FC;
+    --green1: #D1EBEB;
+    --blue1: #CCDBFF;
+
+    /* ШРИФТЫ */
+    /* h1 */
+    --h1fontfamily: "Proxima Nova", sans-serif;
+    --h1fontsize: 62px;
+    --h1texttransform: uppercase;
+    --h1fontweight: bold;
+    /* h2 */
+    --h2fontfamily: "Proxima Nova", sans-serif;
+    --h2fontsize: 60px;
+    --h2texttransform: none;
+    --h2fontweight: regular;
+    /* h3 */
+    --h3fontfamily: "Proxima Nova", sans-serif;
+    --h3fontsize: 44px;
+    --h3texttransform: none;
+    --h3fontweight: bold;
+    /* h4 */
+    --h4fontfamily: "Proxima Nova", sans-serif;
+    --h4fontsize: 30px;
+    --h4texttransform: none;
+    --h4fontweight: bold;
+    /* text22 */
+    --text22fontfamily: "Manrope", sans-serif;
+    --text22fontsize: 22px;
+    --text22fontweight: medium;
+    --text22lineheight: 150%;
+    --text22texttransform: none;
+    /* text16 */
+    --text16fontfamily: "Manrope", sans-serif;
+    --text16fontsize: 16px;
+    --text16fontweight: medium;
+    --text16lineheight: 150%;
+    --text16texttransform: none;
+    /* text-tegs */
+    --texttegsfontfamily: "Manrope", sans-serif;
+    --texttegsfontsize: 16px;
+    --texttegsfontweight: regular;
+    --texttegslineheight: 100%;
+    --texttegstexttransform: none;
+    /* text14 */
+    --text14fontfamily: "Manrope", sans-serif;
+    --text14fontsize: 14px;
+    --text14fontweight: regular;
+    --text14lineheight: 150%;
+    --text14texttransform: none;
+    /* button */
+    --buttonfontfamily: "Manrope", sans-serif;
+    --buttonfontsize: 16px;
+    --buttonfontweight: medium;
+    --buttonlineheight: 150%;
+    --buttontexttransform: uppercase;
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Manrope";
+    font-weight: medium;
+    src: url(./src/fonts/manrope_medium.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: regular;
+    src: url(./src/fonts/manrope_regular.ttf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    src: url(./src/fonts/proximanova_bold.otf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: regular;
+    src: url(./src/fonts/proximanova_regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-image: linear-gradient(135deg, rgba(1,24,66,1) 24%, rgba(20,39,72,0.06) 60%),
+        url(./src/images/header_bg.png);
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header {
+    padding-left: 50px;
+    padding-top: 29px;
+    padding-bottom: 29px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header__logo,
+.header__link {
+    padding-right: 40px;
+}
+
+.header__link {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.25s;
+}
+
+.header__link:hover {
+    text-decoration: underline;
+    color: var(--green);
+}
+
+.tagline {
+    padding-left: 50px;
+    padding-top: 20px;
+    width: 775px;
+}
+
+.tagline__text1,
+.tagline__text2 {
+    font-family: var(--h1fontfamily);
+    font-size: var(--h1fontsize);
+    font-weight: var(--h1fontweight);
+    text-transform: var(--h1texttransform);
+    line-height: 100%;
+}
+
+.tagline__text1 {
+    color: var(--green);
+}
+
+.tagline__text2 {
+    color: var(--white);
+}
+
+.statisticsContainer {
+    align-self: flex-end;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #FFFFFF;
+    border-top-left-radius: 10px;
+}
+
+.statistics {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 63px;
+    padding-bottom: 63px;
+    border-radius: 10px;
+    width: 592px;
+    background: linear-gradient(180deg, rgba(20,39,72,1) 0%, rgba(17,250,202,1) 100%);
+}
+
+.statistics__text {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    margin-bottom: 30px;
+}
+
+.statistics__text-regular {
+    color: var(--white);
+}
+
+.statistics__text-bright {
+    color: var(--green);
+}
+
+.statistics__viewPortfolioButton {
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background: var(--white);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--blue);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+
+
