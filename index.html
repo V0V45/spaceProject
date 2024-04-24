@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="header">
-            <a href="./"><img src="./src/images/nav_logo.png" alt="Space logo" class="header__logo" /></a>
+            <a href="./"><img src="./src/images/nav_logo.svg" alt="Space logo" class="header__logo" /></a>
             <a href="./about.html" class="header__link">About us</a>
             <a href="./portfolio.html" class="header__link">Portfolio</a>
             <a href="./services.html" class="header__link">Services</a>
@@ -35,12 +35,42 @@
                     <span class="statistics__text-bright">20+</span>
                     <span class="statistics__text-regular"> million end users worldwide.</span>
                 </div>
-                <button class="statistics__viewPortfolioButton" onclick="goToPortfolio()">View portfolio <img class="statistics__viewPortfolioButton__ArrowIcon" src="./src/icons/arrow_up.png" /></button>
+                <button class="statistics__viewPortfolioButton" onclick="goToPortfolio()">View portfolio <img class="statistics__viewPortfolioButton__ArrowIcon" src="./src/icons/arrow_up.svg" /></button>
             </div>
         </div>
     </header>
     <main>
-
+        <div class="aboutUs">
+            <div class="aboutUs__text">
+                <h2 class="aboutUs__text__h2">About us</h2>
+                <p class="aboutUs__text__h3">We are a software development company headquartered in Tallinn, Estonia. Since 2020, we are building stable and scaleable mobile and web apps that serve our clients business goals.</p>
+            </div>
+            <div class="aboutUs__digitsContainer">
+                <div class="aboutUs__digits">
+                    <div class="aboutUs__digits__rating">
+                        <span class="aboutUs__digits__rating__span">4.8</span><img src="./src/icons/star.svg" alt="Star" class="aboutUs__digits__rating__starIcon" />
+                        <p class="aboutUs__digits__rating__text">Apps with in App Store and Google Play</p>
+                    </div>
+                    <div class="aboutUs__digits__satisfiedUsers">
+                        <span class="aboutUs__digits__satisfiedUsers__span">20+</span><span class="aboutUs__digits__satisfiedUsers__upperText">mln</span>
+                        <p class="aboutUs__digits__satisfiedUsers__text">in total satisfied end users globally</p>
+                    </div>
+                    <div class="aboutUs__digits__experience">
+                        <span class="aboutUs__digits__experience__span">90%</span>
+                        <p class="aboutUs__digits__experience__text">of staff with 5+ years of experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutUs__infoRight">
+                <p class="aboutUs__infoRight__text">We have a startup culture in our DNA. Agility, search for the best solution and focus on business impact are natural to us. We really aren't afraid to go the extra mile.</p>
+                <div class="aboutUs__infoRight__portraits">
+                    <img class="aboutUs__infoRight__portraits-1" src="./src/images/portrait1.png" />
+                    <img class="aboutUs__infoRight__portraits-2" src="./src/images/portrait2.png" />
+                    <img class="aboutUs__infoRight__portraits-3" src="./src/images/portrait3.png" />
+                </div>
+                <button class="aboutUs__infoRight__button" onclick="goToAboutUs()">About us <img class="aboutUs__infoRight__button__ArrowIcon" src="./src/icons/arrow_up.svg" /></button>
+            </div>
+        </div>
     </main>
     <script src="index.js"></script>
 </body>
