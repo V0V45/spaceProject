@@ -107,6 +107,9 @@ header {
     background-image: linear-gradient(135deg, rgba(1,24,66,1) 24%, rgba(20,39,72,0.06) 60%),
         url(./src/images/header_bg.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-y: 70%;
     padding-left: 50px;
     display: grid;
     grid-template-rows: 100px 300px 300px;
@@ -152,7 +155,7 @@ header {
     justify-self: start;
     align-self: start;
     padding-top: 96px;
-    width: 775px;
+    width: 700px;
 }
 
 .tagline__text1,
@@ -279,16 +282,13 @@ header {
 
 .aboutUs__digitsContainer {
     grid-area: digits;
-    align-self: center;
-    justify-self: center;
+    padding-left: 50px;
 }
 
 .aboutUs__digits {
     border-radius: 10px;
     width: 660px;
     height: 300px;
-    margin-left: 50px;
-    margin-right: 20px;
     background: linear-gradient(143deg, rgba(20, 39, 72, 0.9) 0%, rgba(25, 255, 208, 0.9) 100%);
     display: flex;
     flex-direction: row;
@@ -347,6 +347,41 @@ header {
 
 .aboutUs__infoRight {
     grid-area: infoRight;
-    align-self: start;
-    justify-self: stretch;
+    padding-right: 50px;
+    width: 660px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.aboutUs__infoRight__text {
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+.aboutUs__infoRight__portraits-2 {
+    padding: 0 38px 0 38px;
+}
+
+.aboutUs__infoRight__button {
+    align-self: stretch;
+    border: none;
+    background: var(--white);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--blue);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
