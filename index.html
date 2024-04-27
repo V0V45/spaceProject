@@ -20,13 +20,13 @@
             <a href="./how.html" class="header__link">How we work</a>
             <a href="./techstack.html" class="header__link">Tech Stack</a>
         </div>
-        <div class="tagline">
+        <div class="tagline hiddenFromDown">
             <h1 class="tagline__text1">Space development</h1>
             <h1 class="tagline__text2">turn your idea into a software product with impact</h1>
         </div>
         <div class="statisticsContainer">
             <div class="statistics">
-                <div class="statistics__text">
+                <div class="statistics__text hiddenFromDown delay1">
                     <span class="statistics__text-regular">Trusted by enterprises, SMB’s and startups from </span>
                     <span class="statistics__text-bright">15+</span>
                     <span class="statistics__text-regular"> countries across </span>
@@ -35,12 +35,12 @@
                     <span class="statistics__text-bright">20+</span>
                     <span class="statistics__text-regular"> million end users worldwide.</span>
                 </div>
-                <button class="statistics__viewPortfolioButton" onclick="goToPortfolio()">View portfolio <img class="statistics__viewPortfolioButton__ArrowIcon" src="./src/icons/arrow_up.svg" /></button>
+                <button class="statistics__viewPortfolioButton hiddenFromDown delay2" onclick="goToPortfolio()">View portfolio <img class="statistics__viewPortfolioButton__ArrowIcon" src="./src/icons/arrow_up.svg" /></button>
             </div>
         </div>
     </header>
     <main>
-        <section class="aboutUs">
+        <section class="aboutUs hiddenFromDown">
             <div class="aboutUs__text">
                 <h2 class="aboutUs__text__h2">About us</h2>
                 <p class="aboutUs__text__h3">We are a software development company headquartered in Tallinn, Estonia. Since 2020, we are building stable and scaleable mobile and web apps that serve our clients business goals.</p>
@@ -48,15 +48,15 @@
             <div class="aboutUs__digitsContainer">
                 <div class="aboutUs__digits">
                     <div class="aboutUs__digits__rating">
-                        <span class="aboutUs__digits__rating__span">4.8</span><img src="./src/icons/star.svg" alt="Star" class="aboutUs__digits__rating__starIcon" />
+                        <span class="aboutUs__digits__rating__span" data-num="4.8" data-decimals="1" id="num1">0</span><img src="./src/icons/star.svg" alt="Star" class="aboutUs__digits__rating__starIcon" />
                         <p class="aboutUs__digits__rating__text">Apps with in App Store and Google Play</p>
                     </div>
                     <div class="aboutUs__digits__satisfiedUsers">
-                        <span class="aboutUs__digits__satisfiedUsers__span">20+</span><span class="aboutUs__digits__satisfiedUsers__upperText">mln</span>
+                        <span class="aboutUs__digits__satisfiedUsers__span" data-num="20" data-suffix="+" id="num2">0</span><span class="aboutUs__digits__satisfiedUsers__upperText">mln</span>
                         <p class="aboutUs__digits__satisfiedUsers__text">in total satisfied end users globally</p>
                     </div>
                     <div class="aboutUs__digits__experience">
-                        <span class="aboutUs__digits__experience__span">90%</span>
+                        <span class="aboutUs__digits__experience__span" data-num="90" data-suffix="%" id="num3">0</span>
                         <p class="aboutUs__digits__experience__text">of staff with 5+ years of experience</p>
                     </div>
                 </div>
@@ -76,6 +76,8 @@
         </section>
     </main>
     <script src="index.js"></script>
+    <script defer src="countUp.js"></script>
+    <script defer src="scroll.js"></script>
 </body>
 
 </html>

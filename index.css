@@ -1,6 +1,6 @@
 /* Константы */
 :root {
-    /* ЦВЕТА */
+    /* Цвета */
     --txt: #051B43;
     --grey: #BFC8C9;
     --blue: #303D8F;
@@ -13,7 +13,7 @@
     --green1: #D1EBEB;
     --blue1: #CCDBFF;
 
-    /* ШРИФТЫ */
+    /* Шрифты */
     /* h1 */
     --h1fontfamily: "Proxima Nova", sans-serif;
     --h1fontsize: 62px;
@@ -97,12 +97,43 @@
     src: url(./src/fonts/proximanova_regular.ttf);
 }
 
+/* Удаление всех первоначальных отступов */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Анимация при скроллинге */
+/* появление сверху вниз */
+.hiddenFromDown {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(25%);
+    transition: all 0.7s;
+}
+
+.showFromDown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+}
+
+.delay1 {
+    transition-delay: 200ms;
+}
+
+.delay2 {
+    transition-delay: 300ms;
+}
+
+@media(prefers-reduced-motion) {
+    .hiddenFromDown {
+        transition: none;
+    }
+}
+
+/* Header включает в себя всю верхнюю часть: меню, тэглайн и статистику */
 header {
     background-image: linear-gradient(135deg, rgba(1,24,66,1) 24%, rgba(20,39,72,0.06) 60%),
         url(./src/images/header_bg.jpg);
@@ -120,6 +151,7 @@ header {
     justify-items: stretch;
 }
 
+/* Класс header включает в себя ТОЛЬКО верхнее меню */
 .header {
     grid-area: header;
     display: flex;
