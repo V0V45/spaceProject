@@ -417,3 +417,38 @@ header {
     align-items: center;
     flex-wrap: nowrap;
 }
+
+.ourPortfolioContainer {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.ourPortfolio__header {
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 660px 660px;
+    grid-template-areas: "h2 txt22";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.ourPortfolio__header__h2 {
+    grid-area: h2;
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    text-transform: var(--h2texttransform);
+    color: var(--txt);
+}
+
+.ourPortfolio__header__text {
+    grid-area: txt22;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    text-transform: var(--text22texttransform);
+    line-height: var(--text22lineheight);
+}
