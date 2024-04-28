@@ -452,3 +452,119 @@ header {
     text-transform: var(--text22texttransform);
     line-height: var(--text22lineheight);
 }
+
+.ourPortfolio__card1 {
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 20px;
+    background: rgb(235,245,245);
+    background: linear-gradient(-65deg, rgba(235,245,245,1) 0%, rgba(232,245,244,1) 100%);
+    padding: 50px;
+    display: grid;
+    grid-template-rows: 74px 54px 78px 172px 46px;
+    grid-template-columns: auto;
+    grid-template-areas: "tags preview"
+                        "header preview"
+                        "OS preview"
+                        "description preview"
+                        "viewButton preview";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.ourPortfolio__card1__tags {
+    grid-area: tags;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.ourPortfolio__card1__tags-1,
+.ourPortfolio__card1__tags-2,
+.ourPortfolio__card1__tags-3,
+.ourPortfolio__card1__tags-4,
+.ourPortfolio__card1__tags-5 {
+    margin-right: 20px;
+    background-color: var(--green1);
+    padding: 9px 25px 9px 25px;
+    border-radius: 5px;
+    color: var(--txt);
+    font-family: var(--texttegsfontfamily);
+    font-size: var(--texttegsfontsize);
+    font-weight: var(--texttegsfontweight);
+    line-height: var(--texttegslineheight);
+    text-transform: var(--texttegstexttransform);
+}
+
+.ourPortfolio__card1__header {
+    grid-area: header;
+    font-family: var(--h3fontfamily);
+    font-weight: var(--h3fontweight);
+    font-size: var(--h3fontsize);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.ourPortfolio__card1__operationSystems {
+    grid-area: OS;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--txt);
+    font-family: var(--texttegsfontfamily);
+    font-size: var(--texttegsfontsize);
+    font-weight: var(--texttegsfontweight);
+    line-height: var(--texttegslineheight);
+    text-transform: var(--texttegstexttransform);
+    padding-bottom: 50px;
+}
+
+.ourPortfolio__card1__operationSystems__tabletIcon,
+.ourPortfolio__card1__operationSystems__mobileIcon {
+    padding-right: 5px;
+}
+
+.ourPortfolio__card1__operationSystems__androidText {
+    padding-right: 30px;
+}
+
+
+.ourPortfolio__card1__description {
+    grid-area: description;
+    width: 590px;
+}
+
+.ourPortfolio__card1__description__text {
+    color: var(--txt);
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+}
+
+.ourPortfolio__card1__viewButton {
+    grid-area: viewButton;
+    justify-self: start;
+    border: none;
+    background: transparent;
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--blue);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Выравнить картинку */
+
+.ourPortfolio__card1__preview {
+    grid-area: preview;
+}
