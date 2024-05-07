@@ -453,7 +453,11 @@ header {
     line-height: var(--text22lineheight);
 }
 
-.ourPortfolio__card1 {
+.ourPortfolio__card1,
+.ourPortfolio__card2,
+.ourPortfolio__card3,
+.ourPortfolio__card4,
+.ourPortfolio__card5 {
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.02);
     border-radius: 20px;
     background: rgb(235,245,245);
@@ -471,7 +475,11 @@ header {
     align-items: stretch;
 }
 
-.ourPortfolio__card1__tags {
+.ourPortfolio__card1__tags,
+.ourPortfolio__card2__tags,
+.ourPortfolio__card3__tags,
+.ourPortfolio__card4__tags,
+.ourPortfolio__card5__tags {
     grid-area: tags;
     display: flex;
     flex-direction: row;
@@ -484,7 +492,22 @@ header {
 .ourPortfolio__card1__tags-2,
 .ourPortfolio__card1__tags-3,
 .ourPortfolio__card1__tags-4,
-.ourPortfolio__card1__tags-5 {
+.ourPortfolio__card1__tags-5,
+.ourPortfolio__card2__tags-1,
+.ourPortfolio__card2__tags-2,
+.ourPortfolio__card2__tags-3,
+.ourPortfolio__card3__tags-1,
+.ourPortfolio__card3__tags-2,
+.ourPortfolio__card3__tags-3,
+.ourPortfolio__card3__tags-4,
+.ourPortfolio__card4__tags-1,
+.ourPortfolio__card4__tags-2,
+.ourPortfolio__card4__tags-3,
+.ourPortfolio__card5__tags-1,
+.ourPortfolio__card5__tags-2,
+.ourPortfolio__card5__tags-3,
+.ourPortfolio__card5__tags-4,
+.ourPortfolio__card5__tags-5 {
     margin-right: 20px;
     background-color: var(--green1);
     padding: 9px 25px 9px 25px;
@@ -497,7 +520,11 @@ header {
     text-transform: var(--texttegstexttransform);
 }
 
-.ourPortfolio__card1__header {
+.ourPortfolio__card1__header,
+.ourPortfolio__card2__header,
+.ourPortfolio__card3__header,
+.ourPortfolio__card4__header,
+.ourPortfolio__card5__header {
     grid-area: header;
     font-family: var(--h3fontfamily);
     font-weight: var(--h3fontweight);
@@ -506,7 +533,11 @@ header {
     color: var(--txt);
 }
 
-.ourPortfolio__card1__operationSystems {
+.ourPortfolio__card1__operationSystems,
+.ourPortfolio__card2__operationSystems,
+.ourPortfolio__card3__operationSystems,
+.ourPortfolio__card4__operationSystems,
+.ourPortfolio__card5__operationSystems {
     grid-area: OS;
     display: flex;
     flex-direction: row;
@@ -522,21 +553,45 @@ header {
 }
 
 .ourPortfolio__card1__operationSystems__tabletIcon,
-.ourPortfolio__card1__operationSystems__mobileIcon {
+.ourPortfolio__card1__operationSystems__mobileIcon,
+.ourPortfolio__card2__operationSystems__tabletIcon,
+.ourPortfolio__card2__operationSystems__mobileIcon,
+.ourPortfolio__card3__operationSystems__tabletIcon,
+.ourPortfolio__card3__operationSystems__mobileIcon,
+.ourPortfolio__card5__operationSystems__tabletIcon,
+.ourPortfolio__card5__operationSystems__mobileIcon {
     padding-right: 5px;
 }
 
-.ourPortfolio__card1__operationSystems__androidText {
+.ourPortfolio__card4__operationSystems__laptopIcon,
+.ourPortfolio__card5__operationSystems__laptopIcon {
+    padding-right: 10px;
+}
+
+
+.ourPortfolio__card1__operationSystems__androidText,
+.ourPortfolio__card2__operationSystems__androidText,
+.ourPortfolio__card3__operationSystems__androidText,
+.ourPortfolio__card5__operationSystems__androidText,
+.ourPortfolio__card5__operationSystems__iOSText {
     padding-right: 30px;
 }
 
 
-.ourPortfolio__card1__description {
+.ourPortfolio__card1__description,
+.ourPortfolio__card2__description,
+.ourPortfolio__card3__description,
+.ourPortfolio__card4__description,
+.ourPortfolio__card5__description {
     grid-area: description;
     width: 590px;
 }
 
-.ourPortfolio__card1__description__text {
+.ourPortfolio__card1__description__text,
+.ourPortfolio__card2__description__text,
+.ourPortfolio__card3__description__text,
+.ourPortfolio__card4__description__text,
+.ourPortfolio__card5__description__text {
     color: var(--txt);
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
@@ -545,7 +600,11 @@ header {
     text-transform: var(--text22texttransform);
 }
 
-.ourPortfolio__card1__viewButton {
+.ourPortfolio__card1__viewButton,
+.ourPortfolio__card2__viewButton,
+.ourPortfolio__card3__viewButton,
+.ourPortfolio__card4__viewButton,
+.ourPortfolio__card5__viewButton {
     grid-area: viewButton;
     justify-self: start;
     border: none;
@@ -563,8 +622,17 @@ header {
     flex-wrap: nowrap;
 }
 
-/* Выравнить картинку */
-
-.ourPortfolio__card1__preview {
+.ourPortfolio__card1__preview,
+.ourPortfolio__card2__preview,
+.ourPortfolio__card3__preview,
+.ourPortfolio__card4__preview,
+.ourPortfolio__card5__preview {
     grid-area: preview;
+}
+
+.ourPortfolio__card2,
+.ourPortfolio__card3,
+.ourPortfolio__card4,
+.ourPortfolio__card5 {
+    margin-top: 80px;
 }
