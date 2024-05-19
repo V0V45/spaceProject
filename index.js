@@ -8,7 +8,11 @@ const viewProjecti24Button = document.getElementsByClassName('ourPortfolio__card
 const viewProjectBSBCButton = document.getElementsByClassName('ourPortfolio__card3__viewButton')[0];
 const viewProjectDeliveryBotButton = document.getElementsByClassName('ourPortfolio__card4__viewButton')[0];
 const viewProjectMyBedroomGuideButton = document.getElementsByClassName('ourPortfolio__card5__viewButton')[0];
-
+const portfolioCard1 = document.getElementsByClassName('ourPortfolio__card1')[0];
+const portfolioCard2 = document.getElementsByClassName('ourPortfolio__card2')[0];
+const portfolioCard3 = document.getElementsByClassName('ourPortfolio__card3')[0];
+const portfolioCard4 = document.getElementsByClassName('ourPortfolio__card4')[0];
+const portfolioCard5 = document.getElementsByClassName('ourPortfolio__card5')[0];
 
 // Функции
 // Переходы по ссылкам
@@ -61,6 +65,21 @@ function changeViewProjectArrowOnHoverToUp(event) {
     event.target.lastChild.src = './src/icons/arrow_up.svg';
 }
 
+// Изменение цвета и тегов карточек при наведении
+function cardHoverColor(event) {
+    event.target.classList.add("cardOnHover");
+    for (const child of event.target.firstElementChild.children) {
+        child.classList.add("tagOnHover");
+    }
+}
+
+function cardNormalColor(event) {
+    event.target.classList.remove("cardOnHover");
+    for (const child of event.target.firstElementChild.children) {
+        child.classList.remove("tagOnHover");
+    }
+}
+
 // Блок выполнения
 viewPortfolioButton.addEventListener('mouseenter', changePortfolioArrowOnHoverToStraight);
 viewPortfolioButton.addEventListener('mouseleave', changePortfolioArrowOnHoverToUp);
@@ -76,3 +95,13 @@ viewProjectDeliveryBotButton.addEventListener('mouseenter', changeViewProjectArr
 viewProjectDeliveryBotButton.addEventListener('mouseleave', changeViewProjectArrowOnHoverToUp);
 viewProjectMyBedroomGuideButton.addEventListener('mouseenter', changeViewProjectArrowOnHoverToStraight);
 viewProjectMyBedroomGuideButton.addEventListener('mouseleave', changeViewProjectArrowOnHoverToUp);
+portfolioCard1.addEventListener('mouseenter', cardHoverColor);
+portfolioCard1.addEventListener('mouseleave', cardNormalColor);
+portfolioCard2.addEventListener('mouseenter', cardHoverColor);
+portfolioCard2.addEventListener('mouseleave', cardNormalColor);
+portfolioCard3.addEventListener('mouseenter', cardHoverColor);
+portfolioCard3.addEventListener('mouseleave', cardNormalColor);
+portfolioCard4.addEventListener('mouseenter', cardHoverColor);
+portfolioCard4.addEventListener('mouseleave', cardNormalColor);
+portfolioCard5.addEventListener('mouseenter', cardHoverColor);
+portfolioCard5.addEventListener('mouseleave', cardNormalColor);
