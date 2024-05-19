@@ -13,6 +13,7 @@ const portfolioCard2 = document.getElementsByClassName('ourPortfolio__card2')[0]
 const portfolioCard3 = document.getElementsByClassName('ourPortfolio__card3')[0];
 const portfolioCard4 = document.getElementsByClassName('ourPortfolio__card4')[0];
 const portfolioCard5 = document.getElementsByClassName('ourPortfolio__card5')[0];
+const allProjectsButton = document.getElementsByClassName('ourPortfolio__allProjectsButton')[0];
 
 // Функции
 // Переходы по ссылкам
@@ -65,6 +66,14 @@ function changeViewProjectArrowOnHoverToUp(event) {
     event.target.lastChild.src = './src/icons/arrow_up.svg';
 }
 
+function changeWhiteArrowToStraight(event) {
+    event.target.lastChild.src = './src/icons/arrow_right_white.svg';
+}
+
+function changeWhiteArrowToUp(event) {
+    event.target.lastChild.src = './src/icons/arrow_up_white.svg';
+}
+
 // Изменение цвета и тегов карточек при наведении
 function cardHoverColor(event) {
     event.target.classList.add("cardOnHover");
@@ -105,3 +114,5 @@ portfolioCard4.addEventListener('mouseenter', cardHoverColor);
 portfolioCard4.addEventListener('mouseleave', cardNormalColor);
 portfolioCard5.addEventListener('mouseenter', cardHoverColor);
 portfolioCard5.addEventListener('mouseleave', cardNormalColor);
+allProjectsButton.addEventListener('mouseenter', changeWhiteArrowToStraight);
+allProjectsButton.addEventListener('mouseleave', changeWhiteArrowToUp);

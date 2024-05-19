@@ -431,7 +431,6 @@ header {
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 200px;
-    margin-bottom: 100px;
 }
 
 .ourPortfolio__header {
@@ -650,3 +649,26 @@ header {
 .ourPortfolio__card5 {
     margin-top: 80px;
 }
+
+.ourPortfolio__allProjectsButton {
+    margin: 80px auto 200px auto;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 10px;
+    background: var(--blue);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
