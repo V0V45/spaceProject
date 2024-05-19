@@ -459,6 +459,7 @@ header {
     font-weight: var(--text22fontweight);
     text-transform: var(--text22texttransform);
     line-height: var(--text22lineheight);
+    color: var(--txt);
 }
 
 .ourPortfolio__card1,
@@ -672,3 +673,156 @@ header {
     flex-wrap: nowrap;
 }
 
+.whatWeOffer {
+    padding: 100px 50px;
+    background-color: var(--backgroundBlue);
+    display: grid;
+    grid-template-rows: auto;
+    gap: 20px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+    "h2 txt22"
+    "card1 card2"
+    "card3 card4"
+    "card5 card6"
+    "card7 card8"
+    "button button";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.whatWeOffer__header__h2 {
+    grid-area: h2;
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    text-transform: var(--h2texttransform);
+    color: var(--txt);
+}
+
+.whatWeOffer__header__text {
+    grid-area: txt22;
+    padding-bottom: 80px;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    line-height: var(--text22lineheight);
+}
+
+.whatWeOffer__card1 {
+    grid-area: card1;
+}
+
+.whatWeOffer__card2 {
+    grid-area: card2;
+}
+
+.whatWeOffer__card3 {
+    grid-area: card3;
+}
+
+.whatWeOffer__card4 {
+    grid-area: card4;
+}
+
+.whatWeOffer__card5 {
+    grid-area: card5;
+}
+
+.whatWeOffer__card6 {
+    grid-area: card6;
+}
+
+.whatWeOffer__card7 {
+    grid-area: card7;
+}
+
+.whatWeOffer__card8 {
+    grid-area: card8;
+}
+
+.whatWeOffer__card1,
+.whatWeOffer__card2,
+.whatWeOffer__card3,
+.whatWeOffer__card4,
+.whatWeOffer__card5,
+.whatWeOffer__card6,
+.whatWeOffer__card7,
+.whatWeOffer__card8 {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 56px 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatWeOffer__card1__number,
+.whatWeOffer__card2__number,
+.whatWeOffer__card3__number,
+.whatWeOffer__card4__number,
+.whatWeOffer__card5__number,
+.whatWeOffer__card6__number,
+.whatWeOffer__card7__number,
+.whatWeOffer__card8__number {
+    padding-right: 40px;
+}
+
+.whatWeOffer__card1__text__h4,
+.whatWeOffer__card2__text__h4,
+.whatWeOffer__card3__text__h4,
+.whatWeOffer__card4__text__h4,
+.whatWeOffer__card5__text__h4,
+.whatWeOffer__card6__text__h4,
+.whatWeOffer__card7__text__h4,
+.whatWeOffer__card8__text__h4 {
+    font-family: var(--h4fontfamily);
+    font-size: var(--h4fontsize);
+    text-transform: var(--h4texttransform);
+    font-weight: var(--h4fontweight);
+    color: var(--txt);
+    padding-bottom: 10px;
+}
+
+.whatWeOffer__card1__text__p,
+.whatWeOffer__card2__text__p,
+.whatWeOffer__card3__text__p,
+.whatWeOffer__card4__text__p,
+.whatWeOffer__card5__text__p,
+.whatWeOffer__card6__text__p,
+.whatWeOffer__card7__text__p,
+.whatWeOffer__card8__text__p {
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.whatWeOffer__discussButton {
+    grid-area: button;
+    margin: 80px auto 0 auto;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 10px;
+    background: var(--blue);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}

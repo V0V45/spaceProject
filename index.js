@@ -14,6 +14,7 @@ const portfolioCard3 = document.getElementsByClassName('ourPortfolio__card3')[0]
 const portfolioCard4 = document.getElementsByClassName('ourPortfolio__card4')[0];
 const portfolioCard5 = document.getElementsByClassName('ourPortfolio__card5')[0];
 const allProjectsButton = document.getElementsByClassName('ourPortfolio__allProjectsButton')[0];
+const discussButton = document.getElementsByClassName('whatWeOffer__discussButton')[0];
 
 // Функции
 // Переходы по ссылкам
@@ -116,3 +117,5 @@ portfolioCard5.addEventListener('mouseenter', cardHoverColor);
 portfolioCard5.addEventListener('mouseleave', cardNormalColor);
 allProjectsButton.addEventListener('mouseenter', changeWhiteArrowToStraight);
 allProjectsButton.addEventListener('mouseleave', changeWhiteArrowToUp);
+discussButton.addEventListener('mouseenter', changeWhiteArrowToStraight);
+discussButton.addEventListener('mouseleave', changeWhiteArrowToUp);
