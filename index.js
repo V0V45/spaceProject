@@ -15,6 +15,18 @@ const portfolioCard4 = document.getElementsByClassName('ourPortfolio__card4')[0]
 const portfolioCard5 = document.getElementsByClassName('ourPortfolio__card5')[0];
 const allProjectsButton = document.getElementsByClassName('ourPortfolio__allProjectsButton')[0];
 const discussButton = document.getElementsByClassName('whatWeOffer__discussButton')[0];
+const spoilerArray = [
+    document.getElementsByClassName('expertise__slider__spoiler1')[0],
+    document.getElementsByClassName('expertise__slider__spoiler2')[0],
+    document.getElementsByClassName('expertise__slider__spoiler3')[0],
+    document.getElementsByClassName('expertise__slider__spoiler4')[0]
+];
+const imagesArray = [
+    document.getElementsByClassName('expertise__slider__image1')[0],
+    document.getElementsByClassName('expertise__slider__image2')[0],
+    document.getElementsByClassName('expertise__slider__image3')[0],
+    document.getElementsByClassName('expertise__slider__image4')[0],
+];
 
 // Функции
 // Переходы по ссылкам
@@ -90,6 +102,27 @@ function cardNormalColor(event) {
     }
 }
 
+// Работа активных спойлеров
+function changeActiveSpoilerIndex(event) {
+    event.preventDefault(); // убираем стандартное поведение открытия спойлера
+    let toggledSpoilerIndex = parseInt(event.target.dataset.spoilerid) - 1; // у элемента, над которым произошел клик, забираем ID спойлера
+    if (spoilerArray[toggledSpoilerIndex].hasAttribute('open')) {
+        return; // если нажатый спойлер уже открыт - не даем ему закрыться
+    } else { // если нажали на закрытый спойлер
+        for (let index = 0; index < spoilerArray.length; index++) { // перебираем все элементы массива, т.е. все спойлеры
+            if (index === toggledSpoilerIndex) { // если при переборке наткнулись на нажатый нами закрытый спойлер
+                spoilerArray[index].setAttribute('open', ''); // открываем его
+                spoilerArray[index].firstElementChild.firstElementChild.classList.add('spoilerActive'); // добавляем для элемента span (заголовка) класс spoilerActive (увеличиваем буквы)
+                imagesArray[index].style.display = 'block'; // показываем картинку, соответствующую нажатому спойлеру
+            } else { // // если при переборке наткнулись на ненажатый нами спойлер
+                spoilerArray[index].removeAttribute('open'); // закрываем его, чтобы исключить возможность открытия сразу нескольких спойлеров
+                spoilerArray[index].firstElementChild.firstElementChild.classList.remove('spoilerActive'); // убираем у элемента span (заголовка) класс spoilerActive
+                imagesArray[index].style.display = 'none'; // убираем неподходящую под спойлер картинку
+            }
+        }
+    }
+}
+
 // Блок выполнения
 viewPortfolioButton.addEventListener('mouseenter', changePortfolioArrowOnHoverToStraight);
 viewPortfolioButton.addEventListener('mouseleave', changePortfolioArrowOnHoverToUp);
@@ -119,3 +152,6 @@ allProjectsButton.addEventListener('mouseenter', changeWhiteArrowToStraight);
 allProjectsButton.addEventListener('mouseleave', changeWhiteArrowToUp);
 discussButton.addEventListener('mouseenter', changeWhiteArrowToStraight);
 discussButton.addEventListener('mouseleave', changeWhiteArrowToUp);
+spoilerArray.forEach(element => {
+    element.addEventListener('click', changeActiveSpoilerIndex);
+});

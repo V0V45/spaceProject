@@ -173,7 +173,7 @@
 
 /* Header включает в себя всю верхнюю часть: меню, тэглайн и статистику */
 header {
-    background-image: linear-gradient(135deg, rgba(1,24,66,1) 24%, rgba(20,39,72,0.06) 60%),
+    background-image: linear-gradient(135deg, rgba(1, 24, 66, 1) 24%, rgba(20, 39, 72, 0.06) 60%),
         url(./src/images/header_bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -184,8 +184,8 @@ header {
     grid-template-rows: 100px 300px 300px;
     grid-template-columns: auto;
     grid-template-areas: "header header"
-                    "tagline statisticsContainer"
-                    "tagline statisticsContainer";
+        "tagline statisticsContainer"
+        "tagline statisticsContainer";
     justify-items: stretch;
 }
 
@@ -265,7 +265,7 @@ header {
     padding-bottom: 63px;
     border-radius: 10px;
     width: 592px;
-    background: linear-gradient(180deg, rgba(20,39,72,1) 0%, rgba(17,250,202,1) 100%);
+    background: linear-gradient(180deg, rgba(20, 39, 72, 1) 0%, rgba(17, 250, 202, 1) 100%);
 }
 
 .statistics__text {
@@ -313,8 +313,8 @@ header {
     grid-template-rows: 247px 130px 300px;
     grid-template-columns: auto;
     grid-template-areas: "text text"
-                        ". ."
-                        "digits infoRight";
+        ". ."
+        "digits infoRight";
     justify-items: stretch;
     align-items: stretch;
 }
@@ -346,7 +346,7 @@ header {
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
 
@@ -504,10 +504,10 @@ header {
     grid-template-rows: 74px 54px 78px 172px 46px;
     grid-template-columns: auto;
     grid-template-areas: "tags preview"
-                        "header preview"
-                        "OS preview"
-                        "description preview"
-                        "viewButton preview";
+        "header preview"
+        "OS preview"
+        "description preview"
+        "viewButton preview";
     justify-items: stretch;
     align-items: stretch;
 }
@@ -709,13 +709,13 @@ header {
     grid-template-rows: auto;
     gap: 20px;
     grid-template-columns: repeat(2, auto);
-    grid-template-areas: 
-    "h2 txt22"
-    "card1 card2"
-    "card3 card4"
-    "card5 card6"
-    "card7 card8"
-    "button button";
+    grid-template-areas:
+        "h2 txt22"
+        "card1 card2"
+        "card3 card4"
+        "card5 card6"
+        "card7 card8"
+        "button button";
     justify-items: stretch;
     align-items: stretch;
 }
@@ -854,4 +854,134 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+.expertiseContainer {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.expertise__header {
+    display: grid;
+    grid-template-columns: 660px 660px;
+    gap: 20px;
+    grid-template-rows: auto;
+    grid-template-areas: "h2 txt22";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.expertise__header__h2 {
+    grid-area: h2;
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    text-transform: var(--h2texttransform);
+    color: var(--txt);
+}
+
+.expertise__header__text {
+    grid-area: txt22;
+    padding-bottom: 80px;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    line-height: var(--text22lineheight);
+}
+
+.expertise__slider {
+    display: grid;
+    grid-template-columns: 660px 20px 660px;
+    grid-template-rows: 485px 62px;
+    grid-template-areas:
+        "spoilerContainer . sliderImageContainer"
+        ". . sliderImageContainer";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.expertise__slider__spoilerContainer {
+    grid-area: spoilerContainer;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.expertise__slider__imageContainer {
+    grid-area: sliderImageContainer;
+}
+
+.expertise__slider__image1,
+.expertise__slider__image2,
+.expertise__slider__image3,
+.expertise__slider__image4 {
+    border-radius: 10px;
+}
+
+.expertise__slider__spoiler1,
+.expertise__slider__spoiler2,
+.expertise__slider__spoiler3,
+.expertise__slider__spoiler4 {
+    border-bottom: 1px solid var(--grey);
+    padding: 20px;
+}
+
+.expertise__slider__spoiler1[open],
+.expertise__slider__spoiler2[open],
+.expertise__slider__spoiler3[open],
+.expertise__slider__spoiler4[open] {
+    border-radius: 10px;
+    background: var(--backgroundGreen);
+    border-bottom: none;
+}
+
+.expertise__slider__spoiler1__description,
+.expertise__slider__spoiler2__description,
+.expertise__slider__spoiler3__description,
+.expertise__slider__spoiler4__description {
+    margin-top: 29px;
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.expertise__slider__spoiler1__header,
+.expertise__slider__spoiler2__header,
+.expertise__slider__spoiler3__header,
+.expertise__slider__spoiler4__header {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expertise__slider__spoiler1__header__text,
+.expertise__slider__spoiler2__header__text,
+.expertise__slider__spoiler3__header__text,
+.expertise__slider__spoiler4__header__text {
+    color: var(--txt);
+    list-style: none;
+    font-family: var(--h1fontfamily);
+    font-weight: var(--h1fontweight);
+    font-size: 30px;
+}
+
+.spoilerActive {
+    font-size: var(--h3fontsize);
+    font-family: var(--h3fontfamily);
+    text-transform: var(--h3texttransform);
+    font-weight: var(--h3fontweight);
 }
