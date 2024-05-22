@@ -932,6 +932,9 @@ header {
 .expertise__slider__spoiler4 {
     border-bottom: 1px solid var(--grey);
     padding: 20px;
+    max-height: 69px;
+    overflow: hidden;
+    transition: background-color 0.3s, max-height 0.3s;
 }
 
 .expertise__slider__spoiler1[open],
@@ -939,8 +942,9 @@ header {
 .expertise__slider__spoiler3[open],
 .expertise__slider__spoiler4[open] {
     border-radius: 10px;
-    background: var(--backgroundGreen);
+    background-color: var(--backgroundGreen);
     border-bottom: none;
+    max-height: 194px;
 }
 
 .expertise__slider__spoiler1__description,
@@ -977,8 +981,4 @@ header {
     font-family: var(--h1fontfamily);
     font-weight: var(--h1fontweight);
     font-size: 30px;
-}
-
-.spoilerActive {
-    font-size: var(--h3fontsize);
 }
