@@ -981,7 +981,4 @@ header {
 
 .spoilerActive {
     font-size: var(--h3fontsize);
-    font-family: var(--h3fontfamily);
-    text-transform: var(--h3texttransform);
-    font-weight: var(--h3fontweight);
 }
