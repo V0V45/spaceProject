@@ -917,6 +917,7 @@ header {
 
 .expertise__slider__imageContainer {
     grid-area: sliderImageContainer;
+    position: relative;
 }
 
 .expertise__slider__image1,
@@ -924,6 +925,7 @@ header {
 .expertise__slider__image3,
 .expertise__slider__image4 {
     border-radius: 10px;
+    position: absolute;
 }
 
 .expertise__slider__spoiler1,
@@ -981,4 +983,21 @@ header {
     font-family: var(--h1fontfamily);
     font-weight: var(--h1fontweight);
     font-size: 30px;
+}
+
+.imageAppearFromDown {
+    animation: slideFromDown 0.3s;
+}
+
+@keyframes slideFromDown {
+    from {
+        opacity: 0;
+        transform: translateY(25%);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+        filter: blur(0);
+    }
 }

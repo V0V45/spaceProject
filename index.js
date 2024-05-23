@@ -117,14 +117,40 @@ function changeActiveSpoilerIndex(event) { // функция задает лог
         resetAnimations(); // сбрасываем таймеры анимаций
         requestAnimationFrame(resizeToBig); // запускаем анимацию увеличения шрифта у нажатого спойлера
         requestAnimationFrame(resizeToSmall); // запускаем анимацию уменьшения шрифта у ранее активного спойлера
+        changeActiveImage(previousActiveSpoilerID, currentActiveSpoilerID); // запускаем смену изображений
         for (let index = 0; index < spoilerArray.length; index++) { // перебираем все элементы массива, т.е. все спойлеры
             if (index === currentActiveSpoilerID) { // если при переборке наткнулись на нажатый нами закрытый спойлер
                 spoilerArray[index].setAttribute('open', ''); // открываем его
-                imagesArray[index].style.display = 'block'; // показываем картинку, соответствующую нажатому спойлеру
             } else { // // если при переборке наткнулись на ненажатый нами спойлер
                 spoilerArray[index].removeAttribute('open'); // закрываем его, чтобы исключить возможность открытия сразу нескольких спойлеров
-                imagesArray[index].style.display = 'none'; // убираем неподходящую под спойлер картинку
             }
+        }
+    }
+}
+
+// Работа смены изображений
+// в функцию передаются индексы предыдущего активного спойлера и текущего
+// так как новое изображение будет появляться поверх старого
+function changeActiveImage(previousActiveSpoilerID, currentActiveSpoilerID) {
+    // для начала делаем очистку: у всех изображений удаляем класс появления снизу, чтобы избежать несрабатывания анимации
+    for (const image of imagesArray) {
+        image.classList.remove('imageAppearFromDown');
+    }
+    // предыдущее изображение оставляем видимым и даем ему z-index 1, чтобы оно осталось внизу
+    imagesArray[previousActiveSpoilerID].style.display = 'block';
+    imagesArray[previousActiveSpoilerID].style.zIndex = '1';
+    // текущее изображение также делаем видимым и даем ему z-index 2, чтобы оно легло поверх предыдущего
+    imagesArray[currentActiveSpoilerID].style.display = 'block';
+    imagesArray[currentActiveSpoilerID].style.zIndex = '2';
+    // запускаем у текущего изображения анимацию появления снизу
+    imagesArray[currentActiveSpoilerID].classList.add('imageAppearFromDown');
+    // все остальные (неактивные) изображения скрываем и убираем у них z-index
+    for (let index = 0; index < imagesArray.length; index++) {
+        if ((index === previousActiveSpoilerID) || (index === currentActiveSpoilerID)) {
+            continue;
+        } else {
+            imagesArray[index].style.display = 'none';
+            imagesArray[index].style.zIndex = '0';
         }
     }
 }
@@ -170,7 +196,7 @@ function resizeToBig(timestamp) {
 }
 
 // Анимация уменьшения шрифта ранее активного спойлера
-// принцип работы аналогичен вышеописанному,
+// принцип работы аналогичен вышеописанному
 let resizeToSmallStarted = null;
 function resizeToSmall(timestamp) {
     if (!resizeToSmallStarted) {
