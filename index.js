@@ -114,9 +114,7 @@ function changeActiveSpoilerIndex(event) { // функция задает лог
     } else { // если нажали на закрытый спойлер
         previousActiveSpoilerID = currentActiveSpoilerID; // индекс предыдущего активного спойлера есть текущий на данный момент
         currentActiveSpoilerID = toggledSpoilerIndex; // индекс текущего активного спойлера перезаписываем на нажатый
-        resetAnimations(); // сбрасываем таймеры анимаций
-        requestAnimationFrame(resizeToBig); // запускаем анимацию увеличения шрифта у нажатого спойлера
-        requestAnimationFrame(resizeToSmall); // запускаем анимацию уменьшения шрифта у ранее активного спойлера
+        changeFontSize(previousActiveSpoilerID, currentActiveSpoilerID); // запускаем смену шрифта
         changeActiveImage(previousActiveSpoilerID, currentActiveSpoilerID); // запускаем смену изображений
         for (let index = 0; index < spoilerArray.length; index++) { // перебираем все элементы массива, т.е. все спойлеры
             if (index === currentActiveSpoilerID) { // если при переборке наткнулись на нажатый нами закрытый спойлер
@@ -126,6 +124,14 @@ function changeActiveSpoilerIndex(event) { // функция задает лог
             }
         }
     }
+}
+
+// Работа смены шрифта
+// в функцию передаются индексы предыдущего активного спойлера и текущего
+// так как ранее активный заголовок нужно уменьшить, а новый активный - увеличить
+function changeFontSize(previousActiveSpoilerID, currentActiveSpoilerID) {
+    spoilerArray[previousActiveSpoilerID].firstElementChild.firstElementChild.classList.remove('fontGoesBig');
+    spoilerArray[currentActiveSpoilerID].firstElementChild.firstElementChild.classList.add('fontGoesBig');
 }
 
 // Работа смены изображений
@@ -152,65 +158,6 @@ function changeActiveImage(previousActiveSpoilerID, currentActiveSpoilerID) {
             imagesArray[index].style.display = 'none';
             imagesArray[index].style.zIndex = '0';
         }
-    }
-}
-
-// Сброс всех анимаций
-// возвращаем переменные времени запуска анимаций в их исходные значения
-function resetAnimations() {
-    resizeToBigStarted = null;
-    resizeToSmallStarted = null;
-}
-
-// Анимация увеличения шрифта нового активного спойлера
-let resizeToBigStarted = null;
-function resizeToBig(timestamp) {
-    // если значение переменной resizeToBigStarted равно null, то есть анимация только что запустилась, то записываем
-    // в нее значение текущего timestamp
-    // timestamp - это встроенная переменная, означающая время в миллисекундах с момента запуска страницы
-    if (!resizeToBigStarted) {
-        resizeToBigStarted = timestamp;
-    }
-    // прогресс - переменная, изменяющаяся во времени
-    // прогресс равен разнице между временем с момента запуска страницы и временем с момента запуска анимации,
-    // деленная на общее время анимации. Диапазон ее значений: от 0 до 1.
-    // 0 означает что разницы между прошедшем временем и моментом запуска анимации нет (анимация только началась),
-    // 1 означает что разница между прошедшем временем и моментом запуска анимации составила предельное значение,
-    // которое задается в знаменателе в миллисекундах.
-    let progress = (timestamp - resizeToBigStarted) / 300;
-    // конечное значение размера текста
-    // 30 - начинается с 30 пикселей (маленький неактивный заголовок спойлера)
-    // 14 - конечное значение есть 30 + 14 = 44 пикселя (большой активный заголовок спойлера)
-    // так как прогресс меняется плавно от 0 до 1, то размер шрифта будет плавно меняться от 30 до 44 пикселей
-    let endValue = 30 + (progress * 14);
-    // обращаемся к элементу span активного спойлера (details -> summary -> span) и прописываем изменение размера его шрифта
-    // через переменную endValue, преобразованную в строку и с добавлением постфикса px
-    spoilerArray[currentActiveSpoilerID].firstElementChild.firstElementChild.style.fontSize = endValue.toString() + 'px';
-    // если прогресс меньше 1, то есть анимация не дошла до конца
-    if (progress < 1) {
-        requestAnimationFrame(resizeToBig); // запускаем следующий кадр анимации
-    } else { // если же прогресс достиг 1, то есть анимация завершилась
-        // ставим конечное значение ровно в 44 пикселя во избежание "прыжков" при переключении спойлеров
-        spoilerArray[currentActiveSpoilerID].firstElementChild.firstElementChild.style.fontSize = '44px';
-    }
-}
-
-// Анимация уменьшения шрифта ранее активного спойлера
-// принцип работы аналогичен вышеописанному
-let resizeToSmallStarted = null;
-function resizeToSmall(timestamp) {
-    if (!resizeToSmallStarted) {
-        resizeToSmallStarted = timestamp;
-    }
-    let progress = (timestamp - resizeToSmallStarted) / 300;
-    // за исключением того, что прогресс управляет вычитанием от 44 до 30 пикселей
-    let endValue = 44 - (progress * 14);
-    // и того, что обращение идет к span-элементу ранее активного спойлера
-    spoilerArray[previousActiveSpoilerID].firstElementChild.firstElementChild.style.fontSize = endValue.toString() + 'px';
-    if (progress < 1) {
-        requestAnimationFrame(resizeToSmall);
-    } else {
-        spoilerArray[previousActiveSpoilerID].firstElementChild.firstElementChild.style.fontSize = '30px';
     }
 }
 

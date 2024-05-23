@@ -983,6 +983,11 @@ header {
     font-family: var(--h1fontfamily);
     font-weight: var(--h1fontweight);
     font-size: 30px;
+    transition: font-size 0.3s;
+}
+
+.fontGoesBig {
+    font-size: var(--h3fontsize);
 }
 
 .imageAppearFromDown {
