@@ -311,14 +311,14 @@
         </section>
         <section class="expertise">
             <div class="expertiseContainer">
-                <div class="expertise__header">
+                <div class="expertise__header hiddenFromDown">
                     <h2 class="expertise__header__h2">Our industry expertise</h2>
                     <p class="expertise__header__text">Our deep experience in specific market domains helps us to
                         accelerate development and minimize codebase size. Choose</br>an industry expert - not just an
                         IT
                         partner.</p>
                 </div>
-                <div class="expertise__slider">
+                <div class="expertise__slider hiddenFromDown">
                     <div class="expertise__slider__spoilerContainer">
                         <details class="expertise__slider__spoiler1" data-spoilerId="1" open>
                             <summary class="expertise__slider__spoiler1__header" data-spoilerId="1">
@@ -377,6 +377,46 @@
                         <img class="expertise__slider__image4" style="display: none;" src="./src/images/slider4.png" />
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="backCall">
+            <div class="backCallContainer">
+                <div class="backCall__header hiddenFromDown">
+                    <h2 class="backCall__header__h2">Have a project to build? We've got the skills</h2>
+                    <p class="backCall__header__text">Book a call and get verification of your idea, and a plan for
+                        product development</p>
+                </div>
+                <form class="backCall__inputForm hiddenFromDown delay1" method="post" action="/backcall">
+                    <input required id="nameInputField" name="nameInputField"
+                        class="backCall__inputForm__nameInputField" placeholder="Name" />
+                    <input required id="phoneOrEmailInputField" name="phoneOrEmailInputField"
+                        class="backCall__inputForm__phoneOrEmailInputField" placeholder="Phone or e-mail" />
+                    <div class="backCall__inputForm__communicationChoice">
+                        <p class="backCall__inputForm__communicationChoice__caption">Convenient way of communication</p>
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels">
+                            <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram">
+                                <input type="radio" id="backCallViaTelegram" name="backCall" value="telegram" class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton" />
+                                <label for="backCallViaTelegram" class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label">Telegram</label>
+                            </div>
+                            <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp">
+                                <input type="radio" id="backCallViaWhatsApp" name="backCall" value="whatsapp" class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton" />
+                            <label for="backCallViaWhatsApp" class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label">WhatsApp</label>
+                            </div>
+                            <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__email">
+                                <input type="radio" id="backCallViaEmail" name="backCall" value="email" class="backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton" />
+                                <label for="backCallViaEmail" class="backCall__inputForm__communicationChoice__buttonsAndLabels__email-label">E-mail</label>
+                            </div>
+                            <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone">
+                                <input type="radio" id="backCallViaPhone" name="backCall" value="phone" class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton" />
+                                <label for="backCallViaPhone" class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label">Phone</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="backCall__inputForm__scheduleCall">
+                        <button type="submit" class="backCall__inputForm__scheduleCall__button">Schedule a discovery call</button>
+                        <p class="backCall__inputForm__scheduleCall__caption">By clicking «Schedule a discovery call», I agree with Privacy Policy & Terms of Use.</p>
+                    </div>
+                </form>
             </div>
         </section>
     </main>

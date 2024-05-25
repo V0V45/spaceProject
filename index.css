@@ -164,6 +164,24 @@
     transform: translateX(0%);
 }
 
+/* появление картинок в слайдере */
+.imageAppearFromDown {
+    animation: slideFromDown 0.3s;
+}
+
+@keyframes slideFromDown {
+    from {
+        opacity: 0;
+        transform: translateY(25%);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+        filter: blur(0);
+    }
+}
+
 /* Для тех, у кого выключена анимация */
 @media(prefers-reduced-motion) {
     .hiddenFromDown {
@@ -559,7 +577,7 @@ header {
     font-weight: var(--texttegsfontweight);
     line-height: var(--texttegslineheight);
     text-transform: var(--texttegstexttransform);
-    transition: background-color 0.25s;
+    transition: background-color 0.3s;
 }
 
 .tagOnHover {
@@ -990,19 +1008,257 @@ header {
     font-size: var(--h3fontsize);
 }
 
-.imageAppearFromDown {
-    animation: slideFromDown 0.3s;
+.backCall {
+    margin-bottom: 57px;
 }
 
-@keyframes slideFromDown {
-    from {
-        opacity: 0;
-        transform: translateY(25%);
-        filter: blur(2px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0%);
-        filter: blur(0);
-    }
+.backCallContainer {
+    background-color: var(--backgroundGreen);
+    padding: 100px 50px 100px 50px;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "form";
+    justify-items: center;
+    align-items: stretch;
+}
+
+.backCall__header {
+    grid-area: header;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.backCall__header__h2 {
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    text-transform: var(--h2texttransform);
+    color: var(--txt);
+    padding-bottom: 24px;
+}
+
+.backCall__header__text {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+.backCall__inputForm {
+    grid-area: form;
+    display: grid;
+    grid-template-columns: auto 60px auto;
+    grid-template-rows: auto 80px auto;
+    grid-template-areas: 
+    "nameInput . contactInput"
+    ". . ."
+    "communicationChoice . scheduleCall";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.backCall__inputForm__nameInputField {
+    grid-area: nameInput;
+}
+
+.backCall__inputForm__phoneOrEmailInputField {
+    grid-area: contactInput;
+}
+
+.backCall__inputForm__nameInputField,
+.backCall__inputForm__phoneOrEmailInputField {
+    border: none;
+    border-radius: 8px;
+    width: 470px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: var(--white);
+    padding: 18px;
+    opacity: 1;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.backCall__inputForm__nameInputField:focus,
+.backCall__inputForm__phoneOrEmailInputField:focus {
+    border: 1px solid var(--blue);
+    outline: none;
+}
+
+.backCall__inputForm__nameInputField::placeholder,
+.backCall__inputForm__phoneOrEmailInputField::placeholder {
+    opacity: 1;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--grey);
+}
+
+.backCall__inputForm__communicationChoice {
+    grid-area: communicationChoice;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.backCall__inputForm__communicationChoice__caption {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    padding-bottom: 20px;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--grey);
+    border-radius: 50%;
+    transition: border 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton::before {
+    content: "";
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: inset 1em 1em var(--blue);
+    background-color: var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:hover {
+    border: 2px solid var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:checked {
+    border: 2px solid var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:checked::before {
+    opacity: 1;
+}
+
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-label {
+    padding-right: 20px;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label {
+    padding-left: 10px;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+    cursor: pointer;
+}
+
+.backCall__inputForm__scheduleCall {
+    grid-area: scheduleCall;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.backCall__inputForm__scheduleCall__button {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--blue);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    margin-bottom: 16px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.backCall__inputForm__scheduleCall__button:hover {
+    background-color: var(--green2);
+}
+
+.backCall__inputForm__scheduleCall__caption {
+    font-family: "Manrope", sans-serif;
+    font-weight: regular;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--txt);
 }
