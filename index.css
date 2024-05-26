@@ -148,7 +148,7 @@
 .hiddenFromLeft {
     opacity: 0;
     filter: blur(2px);
-    transform: translateX(-25%);
+    transform: translateX(-5%);
     transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
 }
 
@@ -162,7 +162,7 @@
 .hiddenFromRight {
     opacity: 0;
     filter: blur(2px);
-    transform: translateX(25%);
+    transform: translateX(5%);
     transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
 }
 
