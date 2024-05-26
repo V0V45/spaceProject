@@ -1,8 +1,6 @@
 // Константы - элементы DOM
 const viewPortfolioButton = document.getElementsByClassName('statistics__viewPortfolioButton')[0];
-const viewPortofolioArrow = document.getElementsByClassName('statistics__viewPortfolioButton__ArrowIcon')[0];
 const aboutUsButton = document.getElementsByClassName('aboutUs__infoRight__button')[0];
-const aboutUsArrow = document.getElementsByClassName('aboutUs__infoRight__button__ArrowIcon')[0];
 const viewProjectSkinCareButton = document.getElementsByClassName('ourPortfolio__card1__viewButton')[0];
 const viewProjecti24Button = document.getElementsByClassName('ourPortfolio__card2__viewButton')[0];
 const viewProjectBSBCButton = document.getElementsByClassName('ourPortfolio__card3__viewButton')[0];
@@ -60,36 +58,12 @@ function goToDeliveryBot() {
 }
 
 // Изменения стрелок при наведении
-function changePortfolioArrowOnHoverToStraight() {
-    viewPortofolioArrow.src = './src/icons/arrow_right.svg';
+function changeArrowToStraight(event) {
+    event.target.lastChild.classList.add('rotate');
 }
 
-function changePortfolioArrowOnHoverToUp() {
-    viewPortofolioArrow.src = './src/icons/arrow_up.svg';
-}
-
-function changeAboutUsArrowOnHoverToStraight() {
-    aboutUsArrow.src = './src/icons/arrow_right.svg';
-}
-
-function changeAboutUsArrowOnHoverToUp() {
-    aboutUsArrow.src = './src/icons/arrow_up.svg';
-}
-
-function changeViewProjectArrowOnHoverToStraight(event) {
-    event.target.lastChild.src = './src/icons/arrow_right.svg';
-}
-
-function changeViewProjectArrowOnHoverToUp(event) {
-    event.target.lastChild.src = './src/icons/arrow_up.svg';
-}
-
-function changeWhiteArrowToStraight(event) {
-    event.target.lastChild.src = './src/icons/arrow_right_white.svg';
-}
-
-function changeWhiteArrowToUp(event) {
-    event.target.lastChild.src = './src/icons/arrow_up_white.svg';
+function changeArrowToUp(event) {
+    event.target.lastChild.classList.remove('rotate');
 }
 
 // Изменение цвета и тегов карточек при наведении
@@ -207,20 +181,20 @@ function closePopUp() {
 }
 
 // Обработчики событий
-viewPortfolioButton.addEventListener('mouseenter', changePortfolioArrowOnHoverToStraight);
-viewPortfolioButton.addEventListener('mouseleave', changePortfolioArrowOnHoverToUp);
-aboutUsButton.addEventListener('mouseenter', changeAboutUsArrowOnHoverToStraight);
-aboutUsButton.addEventListener('mouseleave', changeAboutUsArrowOnHoverToUp);
-viewProjectSkinCareButton.addEventListener('mouseenter', changeViewProjectArrowOnHoverToStraight);
-viewProjectSkinCareButton.addEventListener('mouseleave', changeViewProjectArrowOnHoverToUp);
-viewProjecti24Button.addEventListener('mouseenter', changeViewProjectArrowOnHoverToStraight);
-viewProjecti24Button.addEventListener('mouseleave', changeViewProjectArrowOnHoverToUp);
-viewProjectBSBCButton.addEventListener('mouseenter', changeViewProjectArrowOnHoverToStraight);
-viewProjectBSBCButton.addEventListener('mouseleave', changeViewProjectArrowOnHoverToUp);
-viewProjectDeliveryBotButton.addEventListener('mouseenter', changeViewProjectArrowOnHoverToStraight);
-viewProjectDeliveryBotButton.addEventListener('mouseleave', changeViewProjectArrowOnHoverToUp);
-viewProjectMyBedroomGuideButton.addEventListener('mouseenter', changeViewProjectArrowOnHoverToStraight);
-viewProjectMyBedroomGuideButton.addEventListener('mouseleave', changeViewProjectArrowOnHoverToUp);
+viewPortfolioButton.addEventListener('mouseenter', changeArrowToStraight);
+viewPortfolioButton.addEventListener('mouseleave', changeArrowToUp);
+aboutUsButton.addEventListener('mouseenter', changeArrowToStraight);
+aboutUsButton.addEventListener('mouseleave', changeArrowToUp);
+viewProjectSkinCareButton.addEventListener('mouseenter', changeArrowToStraight);
+viewProjectSkinCareButton.addEventListener('mouseleave', changeArrowToUp);
+viewProjecti24Button.addEventListener('mouseenter', changeArrowToStraight);
+viewProjecti24Button.addEventListener('mouseleave', changeArrowToUp);
+viewProjectBSBCButton.addEventListener('mouseenter', changeArrowToStraight);
+viewProjectBSBCButton.addEventListener('mouseleave', changeArrowToUp);
+viewProjectDeliveryBotButton.addEventListener('mouseenter', changeArrowToStraight);
+viewProjectDeliveryBotButton.addEventListener('mouseleave', changeArrowToUp);
+viewProjectMyBedroomGuideButton.addEventListener('mouseenter', changeArrowToStraight);
+viewProjectMyBedroomGuideButton.addEventListener('mouseleave', changeArrowToUp);
 portfolioCard1.addEventListener('mouseenter', cardHoverColor);
 portfolioCard1.addEventListener('mouseleave', cardNormalColor);
 portfolioCard2.addEventListener('mouseenter', cardHoverColor);
@@ -231,10 +205,10 @@ portfolioCard4.addEventListener('mouseenter', cardHoverColor);
 portfolioCard4.addEventListener('mouseleave', cardNormalColor);
 portfolioCard5.addEventListener('mouseenter', cardHoverColor);
 portfolioCard5.addEventListener('mouseleave', cardNormalColor);
-allProjectsButton.addEventListener('mouseenter', changeWhiteArrowToStraight);
-allProjectsButton.addEventListener('mouseleave', changeWhiteArrowToUp);
-discussButton.addEventListener('mouseenter', changeWhiteArrowToStraight);
-discussButton.addEventListener('mouseleave', changeWhiteArrowToUp);
+allProjectsButton.addEventListener('mouseenter', changeArrowToStraight);
+allProjectsButton.addEventListener('mouseleave', changeArrowToUp);
+discussButton.addEventListener('mouseenter', changeArrowToStraight);
+discussButton.addEventListener('mouseleave', changeArrowToUp);
 spoilerArray.forEach(element => {
     element.addEventListener('click', changeActiveSpoilerIndex);
 });
