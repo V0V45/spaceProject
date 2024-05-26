@@ -182,6 +182,26 @@
     }
 }
 
+/* Затемнение фона при появлении Pop-Up окна */
+@keyframes popupDarkBackground {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    } to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Появление Pop-Up окна */
+@keyframes popUpContainerAppear {
+    from {
+        opacity: 0;
+        filter: blur(2px);
+    } to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
 /* Для тех, у кого выключена анимация */
 @media(prefers-reduced-motion) {
     .hiddenFromDown {
@@ -1261,4 +1281,58 @@ header {
     font-size: 12px;
     line-height: 150%;
     color: var(--txt);
+}
+
+.popUp {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: popupDarkBackground 0.3s;
+}
+
+.showPopUp {
+    display: block;
+}
+
+.popUpContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: filter 0.3s, opacity 0.3s;
+    background-color: var(--backgroundBlue);
+    width: 1000px;
+    height: 400px;
+    animation: popUpContainerAppear 0.3s;
+}
+
+.popUp__closeButton {
+    align-self: flex-end;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-right: 50px;
+    position: absolute;
+    top: 0%;
+}
+
+.popUp__text {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    width: 569px;
+    text-align: center;
 }

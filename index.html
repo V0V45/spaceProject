@@ -27,7 +27,7 @@
         <div class="statisticsContainer">
             <div class="statistics">
                 <div class="statistics__text hiddenFromDown delay1">
-                    <span class="statistics__text-regular">Trusted by enterprises, SMB’s and startups from </span>
+                    <span class="statistics__text-regular">Trusted by enterprises, SMB's and startups from </span>
                     <span class="statistics__text-bright">15+</span>
                     <span class="statistics__text-regular"> countries across </span>
                     <span class="statistics__text-bright">10+</span>
@@ -395,7 +395,7 @@
                         <p class="backCall__inputForm__communicationChoice__caption">Convenient way of communication</p>
                         <div class="backCall__inputForm__communicationChoice__buttonsAndLabels">
                             <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram">
-                                <input type="radio" id="backCallViaTelegram" name="backCall" value="telegram" class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton" />
+                                <input type="radio" id="backCallViaTelegram" name="backCall" value="telegram" class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton" checked />
                                 <label for="backCallViaTelegram" class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label">Telegram</label>
                             </div>
                             <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp">
@@ -417,6 +417,12 @@
                         <p class="backCall__inputForm__scheduleCall__caption">By clicking «Schedule a discovery call», I agree with Privacy Policy & Terms of Use.</p>
                     </div>
                 </form>
+            </div>
+        </section>
+        <section class="popUp">
+            <div class="popUpContainer">
+                <button class="popUp__closeButton" onclick="closePopUp()"><img class="popUp__closeButton__closeIcon" alt="close" src="./src/icons/close.svg"/></button>
+                <p class="popUp__text"></p>
             </div>
         </section>
     </main>
