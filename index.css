@@ -1482,3 +1482,119 @@ header {
 .howWeWork__table__row2__cell2__list__item3::marker {
     content: url(./src/icons/marker.svg);
 }
+
+.technologies {
+    margin-top: 150px;
+    margin-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.technologies__header {
+    color: var(--txt);
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    text-transform: var(--h2texttransform);
+    margin-bottom: 80px;
+}
+
+.technologies__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.technologies__list__mobile,
+.technologies__list__web,
+.technologies__list__backEnd,
+.technologies__list__analytics,
+.technologies__list__design,
+.technologies__list__marketing {
+    border-top: 1px solid var(--grey);
+    display: grid;
+    grid-template-columns: 454px 685px;
+    grid-template-rows: 73px;
+    grid-template-areas: "techTarget techLogos";
+    justify-items: stretch;
+    align-items: center;
+}
+
+.technologies__list__marketing {
+    border-bottom: 1px solid var(--grey);
+}
+
+.technologies__list__mobile__text,
+.technologies__list__web__text,
+.technologies__list__backEnd__text,
+.technologies__list__analytics__text,
+.technologies__list__design__text,
+.technologies__list__marketing__text {
+    grid-area: techTarget;
+    color: var(--txt);
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+}
+
+.technologies__list__mobile__logos,
+.technologies__list__web__logos,
+.technologies__list__backEnd__logos,
+.technologies__list__analytics__logos,
+.technologies__list__design__logos,
+.technologies__list__marketing__logos {
+    grid-area: techLogos;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.technologies__list__mobile__logos__flutter,
+.technologies__list__web__logos__flutter,
+.technologies__list__mobile__logos__kotlin,
+.technologies__list__mobile__logos__swift,
+.technologies__list__mobile__logos__arCore,
+.technologies__list__web__logos__python,
+.technologies__list__web__logos__html5,
+.technologies__list__web__logos__css3,
+.technologies__list__web__logos__javaScript,
+.technologies__list__backEnd__logos__python,
+.technologies__list__backEnd__logos__amazon,
+.technologies__list__backEnd__logos__django,
+.technologies__list__backEnd__logos__mySQL,
+.technologies__list__backEnd__logos__postgreSQL,
+.technologies__list__backEnd__logos__googleCloud,
+.technologies__list__analytics__logos__amplitude,
+.technologies__list__analytics__logos__firebase,
+.technologies__list__analytics__logos__apphud,
+.technologies__list__analytics__logos__googleAnalytics,
+.technologies__list__design__logos__miro,
+.technologies__list__design__logos__figma,
+.technologies__list__design__logos__illustrator,
+.technologies__list__design__logos__photoshop,
+.technologies__list__design__logos__proCreate,
+.technologies__list__marketing__logos__googleAds,
+.technologies__list__marketing__logos__meta,
+.technologies__list__marketing__logos__asodesk,
+.technologies__list__marketing__logos__similiarweb {
+    max-width: 98px;
+    max-height: 30px;
+    margin-right: 20px;
+}
+
+.technologies__list__mobile__logos__rive {
+    max-width: 118px;
+    max-height: 30px;
+    margin-right: 20px;
+}
+
+.technologies__list__marketing__logos__asomobile {
+    background-color: #025477;
+    max-width: 100px;
+    max-height: 30px;
+    margin-right: 20px;
+}
