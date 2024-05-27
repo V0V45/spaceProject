@@ -146,6 +146,9 @@ function submitBackCallForm(event) {
     let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
     // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
     getResponseFromServerAboutBackcall(formDataToBePosted); // передаем поля формы на сервер
+    // Код для front-end отладки:
+    // popUpSection.classList.add('showPopUp');
+    // popUpText.innerHTML = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
 }
 
 // Отправка формы на сервер
@@ -178,6 +181,7 @@ async function getResponseFromServerAboutBackcall(formDataToBePosted) {
 // Логика кнопки закрытия pop-up окна
 function closePopUp() {
     popUpSection.classList.remove('showPopUp');
+    popUpText.innerHTML = '';
 }
 
 // Обработчики событий

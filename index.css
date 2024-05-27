@@ -1339,7 +1339,6 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: filter 0.3s, opacity 0.3s;
     background-color: var(--backgroundBlue);
     width: 1000px;
     height: 400px;
