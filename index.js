@@ -29,6 +29,7 @@ const backCallForm = document.getElementsByClassName('backCall__inputForm')[0];
 const popUpSection = document.getElementsByClassName('popUp')[0];
 const popUpContainer = document.getElementsByClassName('popUpContainer')[0];
 const popUpText = document.getElementsByClassName('popUp__text')[0];
+const contactUsForm = document.getElementsByClassName('contactUs__form')[0];
 
 
 // Функции
@@ -151,10 +152,54 @@ function submitBackCallForm(event) {
     // popUpText.innerHTML = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
 }
 
-// Отправка формы на сервер
+// Отправка формы обратного звонка на сервер
 async function getResponseFromServerAboutBackcall(formDataToBePosted) {
+    // выводим в консоль то, что отправляем на сервер
+    console.log(JSON.stringify(formDataToBePosted));
     // обращаемся к backcall через POST и передаем туда JSON из заполненных в форме данных
     let response = await fetch('/backcall', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formDataToBePosted),
+    });
+    // ответ от сервера также приходит в формате json
+    let result = await response.json();
+    // нам приходит объект, который содержит ключ email: sent или email: notSent
+    // если сообщение успешно обработано сервером, т.е. мы получили ключ sent
+    if (result.email === 'sent') {
+        // выдаем сообщение что все хорошо
+        popUpText.innerHTML = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+        // активируем popUp окно
+        popUpSection.classList.add('showPopUp');
+    } else { // в других случаях
+        // выдаем сообщение что что-то пошло не так
+        popUpText.innerHTML = 'Something went wrong. Please, try again later';
+        // активируем popUp окно
+        popUpSection.classList.add('showPopUp');
+    }
+}
+
+
+// Работа отправки формы обратной связи
+function submitContactUsForm(event) {
+    event.preventDefault(); // отменяем действие при отправке формы по умолчанию
+    let formData = new FormData(contactUsForm); // создаем объект класса FormData, который черпает информацию из полей формы
+    let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
+    // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
+    getResponseFromServerAboutContactUs(formDataToBePosted); // передаем поля формы на сервер
+    // Код для front-end отладки:
+    // popUpSection.classList.add('showPopUp');
+    // popUpText.innerHTML = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+}
+
+// Отправка формы обратной связи на сервер
+async function getResponseFromServerAboutContactUs(formDataToBePosted) {
+    // выводим в консоль то, что отправляем на сервер
+    console.log(JSON.stringify(formDataToBePosted));
+    // обращаемся к contact через POST и передаем туда JSON из заполненных в форме данных
+    let response = await fetch('/contact', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -217,3 +262,4 @@ spoilerArray.forEach(element => {
     element.addEventListener('click', changeActiveSpoilerIndex);
 });
 backCallForm.addEventListener('submit', submitBackCallForm);
+contactUsForm.addEventListener('submit', submitContactUsForm);
