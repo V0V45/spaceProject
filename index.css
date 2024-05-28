@@ -1500,29 +1500,209 @@ header {
 }
 
 .technologies__list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-}
-
-.technologies__list__mobile,
-.technologies__list__web,
-.technologies__list__backEnd,
-.technologies__list__analytics,
-.technologies__list__design,
-.technologies__list__marketing {
-    border-top: 1px solid var(--grey);
     display: grid;
-    grid-template-columns: 454px 685px;
-    grid-template-rows: 73px;
-    grid-template-areas: "techTarget techLogos";
-    justify-items: stretch;
+    grid-template-columns: 434px 100px 100px 100px 100px 100px 100px auto;
+    column-gap: 20px;
+    grid-template-rows: 1px 71px 1px 71px 1px 71px 1px 71px 1px 71px 1px 71px 1px;
+    grid-template-areas:
+    "line1 line1 line1 line1 line1 line1 line1 line1"
+    "mobile mobileLogo1 mobileLogo2 mobileLogo3 mobileLogo4 mobileLogo5 . ."
+    "line2 line2 line2 line2 line2 line2 line2 line2"
+    "web webLogo1 webLogo2 webLogo3 webLogo4 webLogo5 . ."
+    "line3 line3 line3 line3 line3 line3 line3 line3"
+    "backEnd backEndLogo1 backEndLogo2 backEndLogo3 backEndLogo4 backEndLogo5 backEndLogo6 ."
+    "line4 line4 line4 line4 line4 line4 line4 line4"
+    "analytics analyticsLogo1 analyticsLogo2 analyticsLogo3 analyticsLogo4 . . ."
+    "line5 line5 line5 line5 line5 line5 line5 line5"
+    "design designLogo1 designLogo2 designLogo3 designLogo4 designLogo5 . ."
+    "line6 line6 line6 line6 line6 line6 line6 line6"
+    "marketing marketingLogo1 marketingLogo2 marketingLogo3 marketingLogo4 marketingLogo5 . ."
+    "line7 line7 line7 line7 line7 line7 line7 line7";
     align-items: center;
 }
 
-.technologies__list__marketing {
-    border-bottom: 1px solid var(--grey);
+.technologies__list__mobile__text {
+    grid-area: mobile;
+}
+
+.technologies__list__web__text {
+    grid-area: web;
+}
+
+.technologies__list__backEnd__text {
+    grid-area: backEnd;
+}
+
+.technologies__list__analytics__text {
+    grid-area: analytics;
+}
+
+.technologies__list__design__text {
+    grid-area: design;
+}
+
+.technologies__list__marketing__text {
+    grid-area: marketing;
+}
+
+.technologies__list__mobile__logos__flutter {
+    grid-area: mobileLogo1;
+}
+
+.technologies__list__mobile__logos__kotlin {
+    grid-area: mobileLogo2;
+}
+
+.technologies__list__mobile__logos__swift {
+    grid-area: mobileLogo3;
+}
+
+.technologies__list__mobile__logos__arCore {
+    grid-area: mobileLogo4;
+}
+
+.technologies__list__mobile__logos__rive {
+    grid-area: mobileLogo5;
+}
+
+.technologies__list__web__logos__python {
+    grid-area: webLogo1;
+}
+
+.technologies__list__web__logos__flutter {
+    grid-area: webLogo2;
+}
+
+.technologies__list__web__logos__html5 {
+    grid-area: webLogo3;
+}
+
+.technologies__list__web__logos__css3 {
+    grid-area: webLogo4;
+}
+
+.technologies__list__web__logos__javaScript {
+    grid-area: webLogo5;
+}
+
+.technologies__list__backEnd__logos__python {
+    grid-area: backEndLogo1;
+}
+
+.technologies__list__backEnd__logos__amazon {
+    grid-area: backEndLogo2;
+}
+
+.technologies__list__backEnd__logos__django {
+    grid-area: backEndLogo3;
+}
+
+.technologies__list__backEnd__logos__mySQL {
+    grid-area: backEndLogo4;
+}
+
+.technologies__list__backEnd__logos__postgreSQL {
+    grid-area: backEndLogo5;
+}
+
+.technologies__list__backEnd__logos__googleCloud {
+    grid-area: backEndLogo6;
+}
+
+.technologies__list__analytics__logos__amplitude {
+    grid-area: analyticsLogo1;
+}
+
+.technologies__list__analytics__logos__firebase {
+    grid-area: analyticsLogo2;
+}
+
+.technologies__list__analytics__logos__apphud {
+    grid-area: analyticsLogo3;
+}
+
+.technologies__list__analytics__logos__googleAnalytics {
+    grid-area: analyticsLogo4;
+}
+
+.technologies__list__design__logos__miro {
+    grid-area: designLogo1;
+}
+
+.technologies__list__design__logos__figma {
+    grid-area: designLogo2;
+}
+
+.technologies__list__design__logos__illustrator {
+    grid-area: designLogo3;
+}
+
+.technologies__list__design__logos__photoshop {
+    grid-area: designLogo4;
+}
+
+.technologies__list__design__logos__proCreate {
+    grid-area: designLogo5;
+}
+
+.technologies__list__marketing__logos__googleAds {
+    grid-area: marketingLogo1;
+}
+
+.technologies__list__marketing__logos__meta {
+    grid-area: marketingLogo2;
+}
+
+.technologies__list__marketing__logos__asodesk {
+    grid-area: marketingLogo3;
+}
+
+.technologies__list__marketing__logos__asomobile {
+    grid-area: marketingLogo4;
+}
+
+.technologies__list__marketing__logos__similiarweb {
+    grid-area: marketingLogo5;
+}
+
+.technologies__list__line1 {
+    grid-area: line1;
+}
+
+.technologies__list__line2 {
+    grid-area: line2;
+}
+
+.technologies__list__line3 {
+    grid-area: line3;
+}
+
+.technologies__list__line4 {
+    grid-area: line4;
+}
+
+.technologies__list__line5 {
+    grid-area: line5;
+}
+
+.technologies__list__line6 {
+    grid-area: line6;
+}
+
+.technologies__list__line7 {
+    grid-area: line7;
+}
+
+.technologies__list__line1,
+.technologies__list__line2,
+.technologies__list__line3,
+.technologies__list__line4,
+.technologies__list__line5,
+.technologies__list__line6,
+.technologies__list__line7 {
+    background-color: var(--grey);
+    align-self: stretch;
+    justify-self: stretch;
 }
 
 .technologies__list__mobile__text,
@@ -1531,7 +1711,6 @@ header {
 .technologies__list__analytics__text,
 .technologies__list__design__text,
 .technologies__list__marketing__text {
-    grid-area: techTarget;
     color: var(--txt);
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
@@ -1540,25 +1719,12 @@ header {
     text-transform: var(--text22texttransform);
 }
 
-.technologies__list__mobile__logos,
-.technologies__list__web__logos,
-.technologies__list__backEnd__logos,
-.technologies__list__analytics__logos,
-.technologies__list__design__logos,
-.technologies__list__marketing__logos {
-    grid-area: techLogos;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 .technologies__list__mobile__logos__flutter,
-.technologies__list__web__logos__flutter,
 .technologies__list__mobile__logos__kotlin,
 .technologies__list__mobile__logos__swift,
 .technologies__list__mobile__logos__arCore,
 .technologies__list__web__logos__python,
+.technologies__list__web__logos__flutter,
 .technologies__list__web__logos__html5,
 .technologies__list__web__logos__css3,
 .technologies__list__web__logos__javaScript,
@@ -1583,18 +1749,15 @@ header {
 .technologies__list__marketing__logos__similiarweb {
     max-width: 98px;
     max-height: 30px;
-    margin-right: 20px;
 }
 
 .technologies__list__mobile__logos__rive {
     max-width: 118px;
     max-height: 30px;
-    margin-right: 20px;
 }
 
 .technologies__list__marketing__logos__asomobile {
     background-color: #025477;
     max-width: 100px;
     max-height: 30px;
-    margin-right: 20px;
 }
