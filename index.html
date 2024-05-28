@@ -11,14 +11,14 @@
 
 <body>
     <header>
-        <div class="header">
-            <a href="./"><img src="./src/images/nav_logo.svg" alt="Space logo" class="header__logo" /></a>
-            <a href="./about.html" class="header__link">About us</a>
-            <a href="./portfolio.html" class="header__link">Portfolio</a>
-            <a href="./services.html" class="header__link">Services</a>
-            <a href="./industries.html" class="header__link">Industries</a>
-            <a href="./how.html" class="header__link">How we work</a>
-            <a href="./techstack.html" class="header__link">Tech Stack</a>
+        <div class="headerMenu">
+            <a href="./"><img src="./src/images/nav_logo.svg" alt="Space logo" class="headerMenu__logo" /></a>
+            <a href="./about.html" class="headerMenu__link">About us</a>
+            <a href="./portfolio.html" class="headerMenu__link">Portfolio</a>
+            <a href="./services.html" class="headerMenu__link">Services</a>
+            <a href="./industries.html" class="headerMenu__link">Industries</a>
+            <a href="./how.html" class="headerMenu__link">How we work</a>
+            <a href="./techstack.html" class="headerMenu__link">Tech Stack</a>
         </div>
         <div class="tagline hiddenFromDown">
             <h1 class="tagline__text1">Space development</h1>
@@ -73,9 +73,9 @@
                     solution and focus on business impact are natural to us. We really aren't afraid to go the extra
                     mile.</p>
                 <div class="aboutUs__infoRight__portraits">
-                    <img class="aboutUs__infoRight__portraits-1" src="./src/images/portrait1.png" />
-                    <img class="aboutUs__infoRight__portraits-2" src="./src/images/portrait2.png" />
-                    <img class="aboutUs__infoRight__portraits-3" src="./src/images/portrait3.png" />
+                    <img class="aboutUs__infoRight__portraits-1" src="./src/images/portrait1.svg" />
+                    <img class="aboutUs__infoRight__portraits-2" src="./src/images/portrait4.svg" />
+                    <img class="aboutUs__infoRight__portraits-3" src="./src/images/portrait3.svg" />
                 </div>
                 <button class="aboutUs__infoRight__button" onclick="goToAboutUs()">About us <img
                         class="aboutUs__infoRight__button__ArrowIcon" src="./src/icons/arrow_up.svg" /></button>
@@ -239,8 +239,8 @@
         <section class="whatWeOffer">
             <h2 class="whatWeOffer__header__h2 hiddenFromDown">What we offer</h2>
             <p class="whatWeOffer__header__text hiddenFromDown">Our team is always ready to maximize your competitive
-                edge.</br>Whether
-                you're designing, creating, or growing a product,</br>
+                edge.<br>Whether
+                you're designing, creating, or growing a product,<br>
                 we're here to offer support.</p>
             <div class="whatWeOffer__card1 hiddenFromLeft">
                 <img class="whatWeOffer__card1__number" src="./src/vectors/01.svg" alt="01" />
@@ -314,7 +314,7 @@
                 <div class="expertise__header hiddenFromDown">
                     <h2 class="expertise__header__h2">Our industry expertise</h2>
                     <p class="expertise__header__text">Our deep experience in specific market domains helps us to
-                        accelerate development and minimize codebase size. Choose</br>an industry expert - not just an
+                        accelerate development and minimize codebase size. Choose<br>an industry expert - not just an
                         IT
                         partner.</p>
                 </div>
@@ -490,8 +490,8 @@
             </table>
         </section>
         <section class="technologies">
-            <h2 class="technologies__header">Technologies we use</h2>
-            <div class="technologies__list">
+            <h2 class="technologies__header hiddenFromDown">Technologies we use</h2>
+            <div class="technologies__list hiddenFromDown delay1">
                 <div class="technologies__list__line1"></div>
                 <p class="technologies__list__mobile__text">Mobile - Android, iOS</p>
                 <img class="technologies__list__mobile__logos__flutter" src="./src/images/technologies/flutter.png"
@@ -566,7 +566,84 @@
                 <div class="technologies__list__line7"></div>
             </div>
         </section>
+        <section class="contactUs">
+            <h2 class="contactUs__header hiddenFromDown">Accelerate your business growth with a team who cares</h2>
+            <div class="contactUs__contacts hiddenFromDown delay1">
+                <p class="contactUs__contacts__caption">Book a call and get a project estimation for free</p>
+                <h4 class="contactUs__contacts__h4">Contact us</h4>
+                <div class="contactUs__contacts__email">
+                    <img class="contactUs__contacts__email__icon" src="./src/icons/email.svg" />
+                    <span class="contactUs__contacts__email__address">emil@appear.digital</span>
+                </div>
+                <div class="contactUs__contacts__linkedIn">
+                    <img class="contactUs__contacts__linkedIn__icon" src="./src/icons/linkedin.svg" />
+                    <span class="contactUs__contacts__linkedIn__address">Space Development Agency</span>
+                </div>
+                <div class="contactUs__contacts__ceo">
+                    <img class="contactUs__contacts__ceo__portrait" src="./src/images/portrait1.svg" />
+                    <h4 class="contactUs__contacts__ceo__name">Emil Ahayeu</h4>
+                    <p class="contactUs__contacts__ceo__title">Co-founder, CEO</p>
+                </div>
+                <div class="contactUs__contacts__cbdo">
+                    <img class="contactUs__contacts__cbdo__portrait" src="./src/images/portrait2.svg" />
+                    <h4 class="contactUs__contacts__cbdo__name">Aleksander Surynau</h4>
+                    <p class="contactUs__contacts__cbdo__title">Business Partner, CBDO</p>
+                </div>
+                <div class="contactUs__contacts__cto">
+                    <img class="contactUs__contacts__cto__portrait" src="./src/images/portrait3.svg" />
+                    <h4 class="contactUs__contacts__cto__name">Kiryl Tupikou</h4>
+                    <p class="contactUs__contacts__cto__title">Co-founder, CTO, CEO at forYou</p>
+                </div>
+            </div>
+            <form class="contactUs__form hiddenFromDown delay2" method="post" action="/contact">
+                <label for="firstName" class="contactUs__form__firstNameLabel">First name*</label>
+                <input required id="firstName" name="firstName"
+                class="contactUs__form__firstNameInput" placeholder="Name" />
+                <label for="companyName" class="contactUs__form__companyNameLabel">Company name<span class="contactUs__form__companyNameLabel__optional">(optional)</span></label>
+                <input id="companyName" name="companyName"
+                class="contactUs__form__companyNameInput" placeholder="Company name" />
+                <label for="eMail" class="contactUs__form__eMailLabel">Email*</label>
+                <input required id="eMail" name="eMail"
+                class="contactUs__form__eMailInput" placeholder="Email" />
+                <label for="phone" class="contactUs__form__phoneLabel">Phone<span class="contactUs__form__phoneLabel__optional">(optional)</span></label>
+                <input id="phone" name="phone"
+                class="contactUs__form__phoneInput" placeholder="Number" />
+                <label for="message" class="contactUs__form__messageLabel">Tell us more about your product or project idea</label>
+                <textarea id="message" name="message"
+                class="contactUs__form__messageInput"></textarea>
+                <p class="contactUs__form__caption">By clicking «Get in touch», I agree with Privacy Policy & Terms of Use.</p>
+                <button type="submit" class="contactUs__form__submitButton">Free consultation</button>
+            </form>
+        </section>
     </main>
+    <footer>
+        <div class="footerMenu">
+            <a href="./" class="footerMenu__linkWithImage"><img src="./src/images/nav_logo.svg" alt="Space logo" class="footerMenu__logo" /></a>
+            <a href="./about.html" class="footerMenu__link">About us</a>
+            <a href="./portfolio.html" class="footerMenu__link">Portfolio</a>
+            <a href="./services.html" class="footerMenu__link">Services</a>
+            <a href="./industries.html" class="footerMenu__link">Industries</a>
+            <a href="./how.html" class="footerMenu__link">How we work</a>
+            <a href="./techstack.html" class="footerMenu__link">Tech Stack</a>
+        </div>
+        <div class="footerInfo">
+            <p class="footerInfo__addressHeader">Address</p>
+            <p class="footerInfo__addressOfOffice1">
+                Estonian Office:<br>
+                forYou OÜ<br>
+                Harju maakond, Tallinn, Kesklinna<br>
+                linnaosa, Tornimäe tn 3 // 5 // 7, 10145
+            </p>
+            <p class="footerInfo__addressOfOffice2">
+                UK Office:<br>
+                Appear Digital Ltd.<br>
+                39 Fairfax Road, London, United<br>
+                Kingdom, NW6 4EL
+            </p>
+            <a href="./termsOfUse.html" class="footerInfo__link">Privacy Policy & Terms of Use</a>
+            <a href="https://www.instagram.com/spirydon.a/" class="footerInfo__websiteDeveloper">Website Development Alena Spirydon</a>
+        </div>
+    </footer>
     <script src="index.js"></script>
     <script defer src="countUp.js"></script>
     <script defer src="scroll.js"></script>

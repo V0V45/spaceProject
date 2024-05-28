@@ -86,6 +86,12 @@
 }
 
 @font-face {
+    font-family: "Manrope";
+    font-weight: 600;
+    src: url(./src/fonts/manrope_semibold.ttf);
+}
+
+@font-face {
     font-family: "Proxima Nova";
     font-weight: bold;
     src: url(./src/fonts/proximanova_bold.otf);
@@ -253,8 +259,8 @@ header {
     justify-items: stretch;
 }
 
-/* Класс header включает в себя ТОЛЬКО верхнее меню */
-.header {
+/* Класс headerMenu включает в себя ТОЛЬКО верхнее меню */
+.headerMenu {
     grid-area: header;
     display: flex;
     flex-direction: row;
@@ -265,12 +271,12 @@ header {
     border-bottom-right-radius: 10px;
 }
 
-.header__logo,
-.header__link {
-    padding-right: 40px;
+.headerMenu__logo,
+.headerMenu__link {
+    margin-right: 40px;
 }
 
-.header__link {
+.headerMenu__link {
     font-family: var(--text16fontfamily);
     font-weight: var(--text16fontweight);
     font-size: var(--text16fontsize);
@@ -279,7 +285,7 @@ header {
     transition: color 0.25s;
 }
 
-.header__link:hover {
+.headerMenu__link:hover {
     text-decoration: underline;
     color: var(--green);
 }
@@ -1760,4 +1766,414 @@ header {
     background-color: #025477;
     max-width: 100px;
     max-height: 30px;
+}
+
+.contactUs {
+    background-color: var(--backgroundBlue);
+    padding: 100px 50px 100px 50px;
+    display: grid;
+    grid-template-columns: 567px auto;
+    grid-template-rows: 120px 80px auto;
+    grid-template-areas: 
+    "h2 h2"
+    ". ."
+    "contacts form";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.contactUs__header {
+    grid-area: h2;
+    justify-self: center;
+    text-align: center;
+    width: 885px;
+    color: var(--txt);
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    text-transform: var(--h2texttransform);
+}
+
+.contactUs__contacts {
+    grid-area: contacts;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.contactUs__contacts__caption {
+    color: var(--txt);
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    padding-bottom: 70px;
+}
+
+.contactUs__contacts__h4 {
+    color: var(--txt);
+    font-family: var(--h4fontfamily);
+    font-size: var(--h4fontsize);
+    font-weight: var(--h4fontweight);
+    text-transform: var(--h4texttransform);
+    padding-bottom: 20px;
+}
+
+.contactUs__contacts__email,
+.contactUs__contacts__linkedIn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.contactUs__contacts__email {
+    padding-top: 8px;
+    padding-bottom: 18px;
+}
+
+.contactUs__contacts__email__icon,
+.contactUs__contacts__linkedIn__icon {
+    padding-right: 17px;
+}
+
+.contactUs__contacts__email__address,
+.contactUs__contacts__linkedIn__address {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+.contactUs__contacts__ceo {
+    margin-top: 70px;
+}
+
+.contactUs__contacts__cbdo,
+.contactUs__contacts__cto {
+    margin-top: 40px;
+}
+
+.contactUs__contacts__ceo,
+.contactUs__contacts__cbdo,
+.contactUs__contacts__cto {
+    display: grid;
+    grid-template-columns: 100px 20px auto;
+    grid-template-rows: 13px 33px 10px 32px 13px;
+    grid-template-areas:
+    "portrait . ."
+    "portrait . nameAndSurname"
+    "portrait . ."
+    "portrait . jobTitle"
+    "portrait . .";
+    justify-items: start;
+    align-items: center;
+}
+
+.contactUs__contacts__ceo__portrait,
+.contactUs__contacts__cbdo__portrait,
+.contactUs__contacts__cto__portrait {
+    grid-area: portrait;
+}
+
+.contactUs__contacts__ceo__name,
+.contactUs__contacts__cbdo__name,
+.contactUs__contacts__cto__name {
+    grid-area: nameAndSurname;
+    color: var(--txt);
+    font-family: var(--h4fontfamily);
+    font-size: var(--h4fontsize);
+    font-weight: var(--h4fontweight);
+    text-transform: var(--h4texttransform);
+}
+
+.contactUs__contacts__ceo__title,
+.contactUs__contacts__cbdo__title,
+.contactUs__contacts__cto__title {
+    grid-area: jobTitle;
+    font-family: var(--text22fontfamily);
+    font-weight: var(--text22fontweight);
+    font-size: 20px;
+    line-height: 160%;
+    color: var(--txt);
+}
+
+.contactUs__form {
+    grid-area: form;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 50px 45px 50px 45px;
+    display: grid;
+    grid-template-columns: 302px 80px 302px;
+    grid-template-rows: 24px 10px 60px 40px 24px 10px 60px 40px 24px 10px 120px 40px 18px 40px 60px;
+    grid-template-areas: 
+    "firstNameLabel . companyNameLabel"
+    ". . ."
+    "firstNameInput . companyNameInput"
+    ". . ."
+    "eMailLabel . phoneLabel"
+    ". . ."
+    "eMailInput . phoneInput"
+    ". . ."
+    "messageLabel messageLabel messageLabel"
+    ". . ."
+    "messageInput messageInput messageInput"
+    ". . ."
+    "caption caption caption"
+    ". . ."
+    "consultationButton consultationButton consultationButton";
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.contactUs__form__firstNameLabel {
+    grid-area: firstNameLabel;
+}
+
+.contactUs__form__firstNameInput {
+    grid-area: firstNameInput;
+}
+
+.contactUs__form__companyNameLabel {
+    grid-area: companyNameLabel;
+}
+
+.contactUs__form__companyNameInput {
+    grid-area: companyNameInput;
+}
+
+.contactUs__form__eMailLabel {
+    grid-area: eMailLabel;
+}
+
+.contactUs__form__eMailInput {
+    grid-area: eMailInput;
+}
+
+.contactUs__form__phoneLabel {
+    grid-area: phoneLabel;
+}
+
+.contactUs__form__phoneInput {
+    grid-area: phoneInput;
+}
+
+.contactUs__form__messageLabel {
+    grid-area: messageLabel;
+}
+
+.contactUs__form__messageInput {
+    grid-area: messageInput;
+}
+
+.contactUs__form__caption {
+    grid-area: caption;
+}
+
+.contactUs__form__submitButton {
+    grid-area: consultationButton;
+}
+
+.contactUs__form__firstNameLabel,
+.contactUs__form__companyNameLabel,
+.contactUs__form__eMailLabel,
+.contactUs__form__phoneLabel,
+.contactUs__form__messageLabel {
+    color: var(--txt);
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.contactUs__form__companyNameLabel__optional,
+.contactUs__form__phoneLabel__optional {
+    margin-left: 10px;
+    color: var(--grey);
+    font-family: var(--texttegsfontfamily);
+    font-size: var(--texttegsfontsize);
+    font-weight: var(--texttegsfontweight);
+    line-height: var(--texttegslineheight);
+    text-transform: var(--texttegstexttransform);
+}
+
+
+.contactUs__form__firstNameInput,
+.contactUs__form__companyNameInput,
+.contactUs__form__eMailInput,
+.contactUs__form__phoneInput,
+.contactUs__form__messageInput {
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    background-color: var(--white);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+    padding: 18px;
+}
+
+.contactUs__form__messageInput {
+    resize: none;
+}
+
+.contactUs__form__firstNameInput:focus,
+.contactUs__form__companyNameInput:focus,
+.contactUs__form__eMailInput:focus,
+.contactUs__form__phoneInput:focus,
+.contactUs__form__messageInput:focus {
+    border: 1px solid var(--blue);
+    outline: none;
+}
+
+.contactUs__form__firstNameInput::placeholder,
+.contactUs__form__companyNameInput::placeholder,
+.contactUs__form__eMailInput::placeholder,
+.contactUs__form__phoneInput::placeholder,
+.contactUs__form__messageInput::placeholder {
+    opacity: 1;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--grey);
+}
+
+.contactUs__form__caption {
+    font-family: "Manrope", sans-serif;
+    font-weight: regular;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--txt);
+}
+
+.contactUs__form__submitButton {
+    justify-self: center;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--blue);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    padding: 19px 143px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.contactUs__form__submitButton:hover {
+    background-color: var(--green2);
+}
+
+footer {
+    background-color: var(--blue);
+    padding: 60px 67px 60px 50px;
+}
+
+.footerMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footerMenu__linkWithImage {
+    margin-right: 30px;
+}
+
+.footerMenu__link {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.25s;
+    margin-right: 20px;
+}
+
+.footerMenu__link:hover {
+    text-decoration: underline;
+    color: var(--green);
+}
+
+.footerInfo {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 308px 50px 305px 52px 256px 52px 300px;
+    grid-template-rows: 33px 20px 42px 54px;
+    grid-template-areas: 
+    "addressHeader . . . . . ."
+    ". . . . . . ."
+    "office1 . office2 . . . ."
+    "office1 . office2 . termsOfUse . websiteDevelopment";
+    /* justify-content: ;
+    justify-items: ;
+    align-items: ; */
+}
+
+.footerInfo__addressHeader {
+    grid-area: addressHeader;
+    color: var(--white);
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    text-transform: var(--text22texttransform);
+    line-height: var(--text22lineheight);
+}
+
+.footerInfo__addressOfOffice1 {
+    grid-area: office1;
+}
+
+.footerInfo__addressOfOffice2 {
+    grid-area: office2;
+}
+
+.footerInfo__addressOfOffice1,
+.footerInfo__addressOfOffice2,
+.footerInfo__link {
+    color: var(--white);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
+}
+
+.footerInfo__link {
+    grid-area: termsOfUse;
+    text-decoration: none;
+    align-self: end;
+}
+
+.footerInfo__link:hover {
+    text-decoration: underline;
+}
+
+.footerInfo__websiteDeveloper {
+    grid-area: websiteDevelopment;
+    text-decoration: none;
+    align-self: end;
+    color: var(--grey);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
 }
