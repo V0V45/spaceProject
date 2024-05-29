@@ -141,65 +141,39 @@ function changeActiveImage(previousActiveSpoilerID, currentActiveSpoilerID) {
 }
 
 // Работа отправки формы обратного звонка
+// форма отправляется на /backcall и передает JSON-объект с тремя ключами:
+// { "nameInputField": "...", "phoneOrEmailInputField": "...", "backCall": "..." }
 function submitBackCallForm(event) {
     event.preventDefault(); // отменяем действие при отправке формы по умолчанию
     let formData = new FormData(backCallForm); // создаем объект класса FormData, который черпает информацию из полей формы
     let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
     // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
-    getResponseFromServerAboutBackcall(formDataToBePosted); // передаем поля формы на сервер
+    sendFormToServer(formDataToBePosted, '/backcall'); // передаем поля формы на сервер
     // Код для front-end отладки:
     // popUpSection.classList.add('showPopUp');
     // popUpText.innerHTML = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
 }
 
-// Отправка формы обратного звонка на сервер
-async function getResponseFromServerAboutBackcall(formDataToBePosted) {
-    // выводим в консоль то, что отправляем на сервер
-    console.log(JSON.stringify(formDataToBePosted));
-    // обращаемся к backcall через POST и передаем туда JSON из заполненных в форме данных
-    let response = await fetch('/backcall', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formDataToBePosted),
-    });
-    // ответ от сервера также приходит в формате json
-    let result = await response.json();
-    // нам приходит объект, который содержит ключ email: sent или email: notSent
-    // если сообщение успешно обработано сервером, т.е. мы получили ключ sent
-    if (result.email === 'sent') {
-        // выдаем сообщение что все хорошо
-        popUpText.innerHTML = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
-        // активируем popUp окно
-        popUpSection.classList.add('showPopUp');
-    } else { // в других случаях
-        // выдаем сообщение что что-то пошло не так
-        popUpText.innerHTML = 'Something went wrong. Please, try again later';
-        // активируем popUp окно
-        popUpSection.classList.add('showPopUp');
-    }
-}
-
-
 // Работа отправки формы обратной связи
+// форма отправляется на /contact и передает JSON-объект с тремя ключами:
+// { "firstName": "...", "companyName": "...", "eMail": "...", "phone": "...", "message": "..." }
 function submitContactUsForm(event) {
     event.preventDefault(); // отменяем действие при отправке формы по умолчанию
     let formData = new FormData(contactUsForm); // создаем объект класса FormData, который черпает информацию из полей формы
     let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
     // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
-    getResponseFromServerAboutContactUs(formDataToBePosted); // передаем поля формы на сервер
+    sendFormToServer(formDataToBePosted, '/contact'); // передаем поля формы на сервер
     // Код для front-end отладки:
     // popUpSection.classList.add('showPopUp');
     // popUpText.innerHTML = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
 }
 
-// Отправка формы обратной связи на сервер
-async function getResponseFromServerAboutContactUs(formDataToBePosted) {
+// Отправка формы на сервер
+async function sendFormToServer(formDataToBePosted, formURL) {
     // выводим в консоль то, что отправляем на сервер
     console.log(JSON.stringify(formDataToBePosted));
-    // обращаемся к contact через POST и передаем туда JSON из заполненных в форме данных
-    let response = await fetch('/contact', {
+    // обращаемся к backcall через POST и передаем туда JSON из заполненных в форме данных
+    let response = await fetch(formURL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
