@@ -1116,9 +1116,11 @@ header {
     grid-area: form;
     display: grid;
     grid-template-columns: auto 60px auto;
-    grid-template-rows: auto 80px auto;
+    grid-template-rows: auto 10px auto 20px auto;
     grid-template-areas: 
     "nameInput . contactInput"
+    ". . ."
+    "nameValidation . contactValidation"
     ". . ."
     "communicationChoice . scheduleCall";
     justify-items: stretch;
@@ -1131,6 +1133,24 @@ header {
 
 .backCall__inputForm__phoneOrEmailInputField {
     grid-area: contactInput;
+}
+
+.backCall__inputForm__nameValidationInfo {
+    grid-area: nameValidation;
+}
+
+.backCall__inputForm__phoneOrEmailValidationInfo {
+    grid-area: contactValidation;
+}
+
+.backCall__inputForm__nameValidationInfo,
+.backCall__inputForm__phoneOrEmailValidationInfo {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: #dd1414;
 }
 
 .backCall__inputForm__nameInputField,
@@ -1915,15 +1935,19 @@ header {
     padding: 50px 45px 50px 45px;
     display: grid;
     grid-template-columns: 302px 80px 302px;
-    grid-template-rows: 24px 10px 60px 40px 24px 10px 60px 40px 24px 10px 120px 40px 18px 40px 60px;
+    grid-template-rows: 24px 10px 60px 10px 24px 10px 24px 10px 60px 10px 24px 10px 24px 10px 120px 40px 18px 40px 60px;
     grid-template-areas: 
     "firstNameLabel . companyNameLabel"
     ". . ."
     "firstNameInput . companyNameInput"
     ". . ."
+    "firstNameValidation . ."
+    ". . ."
     "eMailLabel . phoneLabel"
     ". . ."
     "eMailInput . phoneInput"
+    ". . ."
+    "eMailValidation . ."
     ". . ."
     "messageLabel messageLabel messageLabel"
     ". . ."
@@ -1932,6 +1956,7 @@ header {
     "caption caption caption"
     ". . ."
     "consultationButton consultationButton consultationButton";
+    justify-content: center;
     justify-items: stretch;
     align-items: stretch;
 }
@@ -1942,6 +1967,14 @@ header {
 
 .contactUs__form__firstNameInput {
     grid-area: firstNameInput;
+}
+
+.contactUs__form__firstNameValidation {
+    grid-area: firstNameValidation;
+}
+
+.contactUs__form__eMailValidation {
+    grid-area: eMailValidation;
 }
 
 .contactUs__form__companyNameLabel {
@@ -2084,6 +2117,16 @@ header {
     background-color: var(--green2);
 }
 
+.contactUs__form__eMailValidation,
+.contactUs__form__firstNameValidation {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: #dd1414;
+}
+
 footer {
     background-color: var(--blue);
     padding: 60px 67px 60px 50px;
@@ -2180,4 +2223,9 @@ footer {
     font-weight: var(--text16fontweight);
     text-transform: var(--text16texttransform);
     line-height: var(--text16lineheight);
+}
+
+/* Валидация */
+button:disabled:hover {
+    background-color: var(--grey);
 }
