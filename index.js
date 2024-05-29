@@ -60,11 +60,33 @@ function goToDeliveryBot() {
 
 // Изменения стрелок при наведении
 function changeArrowToStraight(event) {
-    event.target.lastChild.classList.add('rotate');
+    event.target.lastElementChild.classList.add('rotate');
 }
 
 function changeArrowToUp(event) {
-    event.target.lastChild.classList.remove('rotate');
+    event.target.lastElementChild.classList.remove('rotate');
+}
+
+// Изменение стрелок и размера шрифта при наведении
+function changeArrowToStraightAndChangeFont(event) {
+    event.target.style.fontSize = '18px';
+    event.target.lastElementChild.classList.add('rotate');
+}
+
+function changeArrowToUpAndChangeFont(event) {
+    event.target.style.removeProperty('font-size');
+    event.target.lastElementChild.classList.remove('rotate');
+}
+
+// Изменение стрелок и фона при наведении
+function changeArrowToStraightAndChangeBackground(event) {
+    event.target.style.backgroundColor = 'var(--green2)';
+    event.target.lastElementChild.classList.add('rotate');
+}
+
+function changeArrowToUpAndChangeBackground(event) {
+    event.target.style.removeProperty('background-color');
+    event.target.lastElementChild.classList.remove('rotate');
 }
 
 // Изменение цвета и тегов карточек при наведении
@@ -206,18 +228,18 @@ function closePopUp() {
 // Обработчики событий
 viewPortfolioButton.addEventListener('mouseenter', changeArrowToStraight);
 viewPortfolioButton.addEventListener('mouseleave', changeArrowToUp);
-aboutUsButton.addEventListener('mouseenter', changeArrowToStraight);
-aboutUsButton.addEventListener('mouseleave', changeArrowToUp);
-viewProjectSkinCareButton.addEventListener('mouseenter', changeArrowToStraight);
-viewProjectSkinCareButton.addEventListener('mouseleave', changeArrowToUp);
-viewProjecti24Button.addEventListener('mouseenter', changeArrowToStraight);
-viewProjecti24Button.addEventListener('mouseleave', changeArrowToUp);
-viewProjectBSBCButton.addEventListener('mouseenter', changeArrowToStraight);
-viewProjectBSBCButton.addEventListener('mouseleave', changeArrowToUp);
-viewProjectDeliveryBotButton.addEventListener('mouseenter', changeArrowToStraight);
-viewProjectDeliveryBotButton.addEventListener('mouseleave', changeArrowToUp);
-viewProjectMyBedroomGuideButton.addEventListener('mouseenter', changeArrowToStraight);
-viewProjectMyBedroomGuideButton.addEventListener('mouseleave', changeArrowToUp);
+aboutUsButton.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
+aboutUsButton.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
+viewProjectSkinCareButton.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
+viewProjectSkinCareButton.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
+viewProjecti24Button.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
+viewProjecti24Button.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
+viewProjectBSBCButton.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
+viewProjectBSBCButton.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
+viewProjectDeliveryBotButton.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
+viewProjectDeliveryBotButton.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
+viewProjectMyBedroomGuideButton.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
+viewProjectMyBedroomGuideButton.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
 portfolioCard1.addEventListener('mouseenter', cardHoverColor);
 portfolioCard1.addEventListener('mouseleave', cardNormalColor);
 portfolioCard2.addEventListener('mouseenter', cardHoverColor);
@@ -228,10 +250,10 @@ portfolioCard4.addEventListener('mouseenter', cardHoverColor);
 portfolioCard4.addEventListener('mouseleave', cardNormalColor);
 portfolioCard5.addEventListener('mouseenter', cardHoverColor);
 portfolioCard5.addEventListener('mouseleave', cardNormalColor);
-allProjectsButton.addEventListener('mouseenter', changeArrowToStraight);
-allProjectsButton.addEventListener('mouseleave', changeArrowToUp);
-discussButton.addEventListener('mouseenter', changeArrowToStraight);
-discussButton.addEventListener('mouseleave', changeArrowToUp);
+allProjectsButton.addEventListener('mouseenter', changeArrowToStraightAndChangeBackground);
+allProjectsButton.addEventListener('mouseleave', changeArrowToUpAndChangeBackground);
+discussButton.addEventListener('mouseenter', changeArrowToStraightAndChangeBackground);
+discussButton.addEventListener('mouseleave', changeArrowToUpAndChangeBackground);
 spoilerArray.forEach(element => {
     element.addEventListener('click', changeActiveSpoilerIndex);
 });

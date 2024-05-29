@@ -526,6 +526,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+    transition: font-size 0.3s;
 }
 
 .ourPortfolioContainer {
@@ -736,6 +737,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+    transition: font-size 0.3s;
 }
 
 .ourPortfolio__card1__preview,
@@ -762,7 +764,7 @@ header {
     padding-top: 12px;
     padding-bottom: 12px;
     border-radius: 10px;
-    background: var(--blue);
+    background-color: var(--blue);
     font-family: var(--buttonfontfamily);
     font-size: var(--buttonfontsize);
     font-weight: bold;
@@ -774,6 +776,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+    transition: background-color 0.3s;
 }
 
 .whatWeOffer {
@@ -917,7 +920,7 @@ header {
     padding-top: 12px;
     padding-bottom: 12px;
     border-radius: 10px;
-    background: var(--blue);
+    background-color: var(--blue);
     font-family: var(--buttonfontfamily);
     font-size: var(--buttonfontsize);
     font-weight: bold;
@@ -929,6 +932,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+    transition: background-color 0.3s;
 }
 
 .expertiseContainer {
