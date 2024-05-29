@@ -175,33 +175,81 @@ function changeActiveImage(previousActiveSpoilerID, currentActiveSpoilerID) {
 }
 
 // Работа отправки формы обратного звонка
-// форма отправляется на /backcall и передает JSON-объект с тремя ключами:
-// { "nameInputField": "...", "phoneOrEmailInputField": "...", "backCall": "..." }
 function submitBackCallForm(event) {
     event.preventDefault(); // отменяем действие при отправке формы по умолчанию
-    let formData = new FormData(backCallForm); // создаем объект класса FormData, который черпает информацию из полей формы
-    let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
-    // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
-    // Код для связи с backend:
-    // sendFormToServer(formDataToBePosted, '/backcall'); // передаем поля формы на сервер
-    // Код для front-end отладки:
-    popUpSection.classList.add('showPopUp');
-    popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+    // проверяем, пройдена ли валидация
+    // это нужно на случай, если пользователь нажал кнопку сразу,
+    // не заполнив ни одного поля:
+    if (scheduleCallButton.classList.contains('disabledButton')) { // если кнопка содержит класс "заблокирован"
+        // смотрим, какое поле заполнено неверно
+        if (nameInputField.dataset.valid == 'false') { // если неверно заполнено поле имени
+            // элемент <p>, идущий за полем, наполняем текстом
+            nameInputField.nextElementSibling.textContent = 'The name entered is empty';
+            // добавляем красное обрамление
+            nameInputField.style.border = '1px solid #DD1414';
+        }
+        if (phoneOrEmailInputField.dataset.valid == 'false') { // если неверно заполнено поле телефона или почты
+            // добавляем красное обрамление
+            phoneOrEmailInputField.style.border = '1px solid #DD1414';
+            // смотрим, какое значение радиокнопки сейчас активно
+            let currentRadioButtonValue = document.querySelector('input[name="backCall"]:checked').value;
+            // если значение telegram, whatsapp или phone
+            // то мы понимаем, что речь идет о телефоне
+            if (currentRadioButtonValue == 'telegram' || currentRadioButtonValue == 'whatsapp' || currentRadioButtonValue == 'phone') {
+                // элемент <p>, идущий за полем, наполняем текстом про неверный телефон
+                phoneOrEmailInputField.nextElementSibling.textContent = 'The phone entered is invalid';
+            // если значение email, то мы понимаем, что речь идет о почте
+            } else if (currentRadioButtonValue == 'email') {
+                // элемент <p>, идущий за полем, наполняем текстом про неверную почту
+                phoneOrEmailInputField.nextElementSibling.textContent = 'The e-mail address entered is invalid';
+            }
+        }
+    } else { // если же валидация пройдена
+        let formData = new FormData(backCallForm); // создаем объект класса FormData, который черпает информацию из полей формы
+        let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
+        // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
+        // форма отправляется на /backcall и передает JSON-объект с тремя ключами:
+        // { "nameInputField": "...", "phoneOrEmailInputField": "...", "backCall": "..." }
+        // Код для связи с backend:
+        // sendFormToServer(formDataToBePosted, '/backcall'); // передаем поля формы на сервер
+        // Код для front-end отладки:
+        popUpSection.classList.add('showPopUp');
+        popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+    }
 }
 
 // Работа отправки формы обратной связи
-// форма отправляется на /contact и передает JSON-объект с тремя ключами:
-// { "firstName": "...", "companyName": "...", "eMail": "...", "phone": "...", "message": "..." }
 function submitContactUsForm(event) {
     event.preventDefault(); // отменяем действие при отправке формы по умолчанию
-    let formData = new FormData(contactUsForm); // создаем объект класса FormData, который черпает информацию из полей формы
-    let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
-    // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
-    // Код для связи с backend:
-    // sendFormToServer(formDataToBePosted, '/contact'); // передаем поля формы на сервер
-    // Код для front-end отладки:
-    popUpSection.classList.add('showPopUp');
-    popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+    // проверяем, пройдена ли валидация
+    // это нужно на случай, если пользователь нажал кнопку сразу,
+    // не заполнив ни одного поля
+    if (freeConsultationButton.classList.contains('disabledButton')) { // если кнопка содержит класс "заблокирован"
+        // смотрим, какое поле заполнено неверно
+        if (firstNameInput.dataset.valid == 'false') { // если неверно заполнено поле имени
+            // элемент <p>, идущий за полем, наполняем текстом
+            firstNameInput.nextElementSibling.textContent = 'The name entered is empty';
+            // добавляем красное обрамление
+            firstNameInput.style.border = '1px solid #DD1414';
+        }
+        if (eMailInput.dataset.valid == 'false') { // если неверно заполнено поле почты
+            // элемент <p>, идущий за полем, наполняем текстом
+            eMailInput.nextElementSibling.textContent = 'The e-mail address entered is invalid';
+            // добавляем красное обрамление
+            eMailInput.style.border = '1px solid #DD1414';
+        }
+    } else { // если же валидация пройдена
+        let formData = new FormData(contactUsForm); // создаем объект класса FormData, который черпает информацию из полей формы
+        let formDataToBePosted = Object.fromEntries(formData); // преобразуем вышеописанный объект в объект "ключ-значение"
+        // тем самым вышеописанная переменная хранит в себе все заполненные поля в форме
+        // форма отправляется на /contact и передает JSON-объект с тремя ключами:
+        // { "firstName": "...", "companyName": "...", "eMail": "...", "phone": "...", "message": "..." }
+        // Код для связи с backend:
+        // sendFormToServer(formDataToBePosted, '/contact'); // передаем поля формы на сервер
+        // Код для front-end отладки:
+        popUpSection.classList.add('showPopUp');
+        popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+    }
 }
 
 // Отправка формы на сервер
@@ -257,7 +305,7 @@ function changePlaceholderAndLaunchValidation() {
         phoneOrEmailInputField.removeEventListener('input', emailValidation);
         // включаем наблюдение за вводом пользователя и при вводе проводим валидацию телефона
         phoneOrEmailInputField.addEventListener('input', phoneValidation);
-    // если же значение нажатой радиокнопки есть email
+        // если же значение нажатой радиокнопки есть email
     } else if (currentRadioButtonValue == 'email') {
         // меняем плейсхолдер на Email
         phoneOrEmailInputField.placeholder = 'Email';
@@ -267,8 +315,8 @@ function changePlaceholderAndLaunchValidation() {
         phoneOrEmailInputField.removeEventListener('input', phoneValidation);
         // включаем наблюдение за вводом пользователя и при вводе проводим валидацию email
         phoneOrEmailInputField.addEventListener('input', emailValidation);
-    // если же значение нажатой радиокнопки есть ни email, ни telegram, ни whatsapp и не phone
-    // (на случай чего)
+        // если же значение нажатой радиокнопки есть ни email, ни telegram, ни whatsapp и не phone
+        // (на случай чего)
     } else {
         // меняем плейсхолдер на Phone or Email
         phoneOrEmailInputField.placeholder = 'Phone or email';
@@ -298,8 +346,8 @@ function resetValidationData(inputElement) { // на вход функция п�
 function resetFormsOnLoad() {
     backCallForm.reset(); // удаляем значения в форме обратного звонка
     contactUsForm.reset(); // удаляем значения в форме обратной связи
-    scheduleCallButton.disabled = 'true'; // кнопки в обоих формах по умолчанию делаем заблокированными
-    freeConsultationButton.disabled = 'true';
+    scheduleCallButton.classList.add('disabledButton'); // кнопки в обоих формах по умолчанию делаем заблокированными
+    freeConsultationButton.classList.add('disabledButton');
 }
 
 // Валидация email
@@ -371,27 +419,28 @@ function activateOrDisableButton(formElement) { // на вход принима�
         // проверяем, если оба поля прошли валидацию,
         // то есть в поле name и в поле phoneOrEmail теги data-valid="true",
         if (nameInputField.dataset.valid == 'true' && phoneOrEmailInputField.dataset.valid == 'true') {
-            // то активируем кнопку (то есть выключаем disabled аттрибут)
-            scheduleCallButton.disabled = false;
-        // в другом случае (т.е. хотя бы один из тегов data-valid не равен true)
+            // то активируем кнопку (то есть удаляем класс disabledButton)
+            scheduleCallButton.classList.remove('disabledButton');
+            // в другом случае (т.е. хотя бы один из тегов data-valid не равен true)
         } else {
-            // выключаем кнопку (то есть включаем disabled аттрибут)
-            scheduleCallButton.disabled = true;
+            // выключаем кнопку (то есть включаем класс disabledButton)
+            scheduleCallButton.classList.add('disabledButton');
         }
     } else if (formElement.classList[0] == 'contactUs__form') { // если форма содержит класс contactUs__form
         // то мы понимаем, что речь идет о форме обратной связи
         // проверяем, если оба поля со звездочкой прошли валидацию,
         // то есть в поле firstName и в поле eMail теги data-valid="true",
         if (firstNameInput.dataset.valid == 'true' && eMailInput.dataset.valid == 'true') {
-            // то активируем кнопку (то есть выключаем disabled аттрибут)
-            freeConsultationButton.disabled = false;
-        // в другом случае (т.е. хотя бы один из тегов data-valid не равен true)
+            // то активируем кнопку (то есть удаляем класс disabledButton)
+            freeConsultationButton.classList.remove('disabledButton');
+            // в другом случае (т.е. хотя бы один из тегов data-valid не равен true)
         } else {
-            // выключаем кнопку (то есть включаем disabled аттрибут)
-            freeConsultationButton.disabled = true;
+            // выключаем кнопку (то есть включаем класс disabledButton)
+            freeConsultationButton.classList.add('disabledButton');
         }
     }
 }
+
 
 // Обработчики событий и начальные значения
 viewPortfolioButton.addEventListener('mouseenter', changeArrowToStraight);

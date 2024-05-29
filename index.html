@@ -387,10 +387,10 @@
                         product development</p>
                 </div>
                 <form class="backCall__inputForm hiddenFromDown delay1" method="post" action="/backcall">
-                    <input required id="nameInputField" name="nameInputField"
+                    <input id="nameInputField" name="nameInputField"
                         class="backCall__inputForm__nameInputField" placeholder="Name" data-valid="false" />
                     <p class="backCall__inputForm__nameValidationInfo"></p>
-                    <input required id="phoneOrEmailInputField" name="phoneOrEmailInputField"
+                    <input id="phoneOrEmailInputField" name="phoneOrEmailInputField"
                         class="backCall__inputForm__phoneOrEmailInputField" placeholder="Phone" data-valid="false" />
                     <p class="backCall__inputForm__phoneOrEmailValidationInfo"></p>
                     <div class="backCall__inputForm__communicationChoice">
@@ -424,7 +424,7 @@
                         </div>
                     </div>
                     <div class="backCall__inputForm__scheduleCall">
-                        <button type="submit" class="backCall__inputForm__scheduleCall__button" disabled>Schedule a discovery
+                        <button type="submit" class="backCall__inputForm__scheduleCall__button disabledButton">Schedule a discovery
                             call</button>
                         <p class="backCall__inputForm__scheduleCall__caption">By clicking «Schedule a discovery call», I
                             agree with Privacy Policy & Terms of Use.</p>
@@ -592,14 +592,14 @@
             </div>
             <form class="contactUs__form hiddenFromDown delay2" method="post" action="/contact">
                 <label for="firstName" class="contactUs__form__firstNameLabel">First name*</label>
-                <input required id="firstName" name="firstName"
+                <input id="firstName" name="firstName"
                 class="contactUs__form__firstNameInput" placeholder="Name" data-valid="false" />
                 <p class="contactUs__form__firstNameValidation"></p>
                 <label for="companyName" class="contactUs__form__companyNameLabel">Company name<span class="contactUs__form__companyNameLabel__optional">(optional)</span></label>
                 <input id="companyName" name="companyName"
                 class="contactUs__form__companyNameInput" placeholder="Company name" />
                 <label for="eMail" class="contactUs__form__eMailLabel">Email*</label>
-                <input required id="eMail" name="eMail"
+                <input id="eMail" name="eMail"
                 class="contactUs__form__eMailInput" placeholder="Email" data-valid="false" />
                 <p class="contactUs__form__eMailValidation"></p>
                 <label for="phone" class="contactUs__form__phoneLabel">Phone<span class="contactUs__form__phoneLabel__optional">(optional)</span></label>
@@ -609,7 +609,7 @@
                 <textarea id="message" name="message"
                 class="contactUs__form__messageInput"></textarea>
                 <p class="contactUs__form__caption">By clicking «Free consultation», I agree with Privacy Policy & Terms of Use.</p>
-                <button type="submit" class="contactUs__form__submitButton" disabled>Free consultation</button>
+                <button type="submit" class="contactUs__form__submitButton disabledButton">Free consultation</button>
             </form>
         </section>
     </main>

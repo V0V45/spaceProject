@@ -2226,6 +2226,6 @@ footer {
 }
 
 /* Валидация */
-button:disabled:hover {
+.disabledButton:hover {
     background-color: var(--grey);
 }
