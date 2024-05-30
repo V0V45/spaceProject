@@ -111,6 +111,11 @@
 }
 
 /* Анимации */
+/* Плавный скроллинг */
+html {
+    scroll-behavior: smooth;
+}
+
 /* появление сверху вниз */
 .hiddenFromDown {
     opacity: 0;
@@ -141,46 +146,40 @@
     transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
 }
 
+.delay5 {
+    transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
+}
+
+.delay6 {
+    transition: opacity 0.5s ease-out 600ms, filter 0.5s ease-out 600ms, transform 0.5s ease-out 600ms;
+}
+
+.delay7 {
+    transition: opacity 0.5s ease-out 700ms, filter 0.5s ease-out 700ms, transform 0.5s ease-out 700ms;
+}
+
+.delay8 {
+    transition: opacity 0.5s ease-out 800ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
+}
+
 /* для правильной работы карточек */
 .ourPortfolio__card1.hiddenFromDown,
 .ourPortfolio__card2.hiddenFromDown,
 .ourPortfolio__card3.hiddenFromDown,
 .ourPortfolio__card4.hiddenFromDown,
 .ourPortfolio__card5.hiddenFromDown {
-    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out, background 0.25s ease-out;
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out, background 0.3s ease-out;
 }
 
-/* появление слева */
-.hiddenFromLeft {
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateX(-5%);
-    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.showFromLeft {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0%);
-}
-
-/* появление справа */
-.hiddenFromRight {
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateX(5%);
-    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.showFromRight {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0%);
+/* для правильной работы кнопок */
+.ourPortfolio__allProjectsButton.hiddenFromDown,
+.whatWeOffer__discussButton.hiddenFromDown {
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out, background-color 0.3s ease-out;
 }
 
 /* появление картинок в слайдере */
 .imageAppearFromDown {
-    animation: slideFromDown 0.3s;
+    animation: slideFromDown 0.5s;
 }
 
 @keyframes slideFromDown {
@@ -575,14 +574,16 @@ header {
     padding: 50px;
     display: grid;
     grid-template-rows: 74px 54px 78px 172px 46px;
-    grid-template-columns: auto;
-    grid-template-areas: "tags preview"
-        "header preview"
-        "OS preview"
-        "description preview"
-        "viewButton preview";
+    grid-template-columns: 610px 20px 610px;
+    grid-template-areas: 
+    "tags . preview"
+    "header . preview"
+    "OS . preview"
+    "description . preview"
+    "viewButton . preview";
     justify-items: stretch;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 .cardOnHover {
@@ -622,7 +623,6 @@ header {
 .ourPortfolio__card5__tags-3,
 .ourPortfolio__card5__tags-4,
 .ourPortfolio__card5__tags-5 {
-    margin-right: 20px;
     background-color: var(--green1);
     padding: 9px 25px 9px 25px;
     border-radius: 5px;
@@ -633,6 +633,24 @@ header {
     line-height: var(--texttegslineheight);
     text-transform: var(--texttegstexttransform);
     transition: background-color 0.3s;
+}
+
+.ourPortfolio__card1__tags-1,
+.ourPortfolio__card1__tags-2,
+.ourPortfolio__card1__tags-3,
+.ourPortfolio__card1__tags-4,
+.ourPortfolio__card2__tags-1,
+.ourPortfolio__card2__tags-2,
+.ourPortfolio__card3__tags-1,
+.ourPortfolio__card3__tags-2,
+.ourPortfolio__card3__tags-3,
+.ourPortfolio__card4__tags-1,
+.ourPortfolio__card4__tags-2,
+.ourPortfolio__card5__tags-1,
+.ourPortfolio__card5__tags-2,
+.ourPortfolio__card5__tags-3,
+.ourPortfolio__card5__tags-4 {
+    margin-right: 20px;
 }
 
 .tagOnHover {
@@ -746,6 +764,7 @@ header {
 .ourPortfolio__card4__preview,
 .ourPortfolio__card5__preview {
     grid-area: preview;
+    object-fit: contain;
 }
 
 .ourPortfolio__card2,
@@ -1015,7 +1034,7 @@ header {
     padding: 20px;
     max-height: 69px;
     overflow: hidden;
-    transition: background-color 0.3s, max-height 0.3s;
+    transition: background-color 0.5s, max-height 0.5s;
 }
 
 .expertise__slider__spoiler1[open],
@@ -1399,9 +1418,9 @@ header {
 
 .howWeWork {
     background: url(/src/images/back.png), linear-gradient(143deg, #303d8f 0%, #303d8f 55%, #8a90bb 100%);
-    background-size: cover;
+    background-position-y: 100%;
+    background-size: contain;
     background-repeat: no-repeat;
-    mix-blend-mode: overlay;
 }
 
 .howWeWork__header {
@@ -1823,7 +1842,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    align-items: stretch;
+    align-items: flex-start;
     flex-wrap: nowrap;
 }
 
@@ -1848,16 +1867,22 @@ header {
 
 .contactUs__contacts__email,
 .contactUs__contacts__linkedIn {
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: stretch;
+    justify-content: flex-start;
     align-items: center;
 }
 
+.contactUs__contacts__email:hover,
+.contactUs__contacts__linkedIn:hover {
+    text-decoration: underline solid var(--txt);
+}
+
 .contactUs__contacts__email {
-    padding-top: 8px;
-    padding-bottom: 18px;
+    margin-top: 8px;
+    margin-bottom: 18px;
 }
 
 .contactUs__contacts__email__icon,
@@ -1887,6 +1912,7 @@ header {
 .contactUs__contacts__ceo,
 .contactUs__contacts__cbdo,
 .contactUs__contacts__cto {
+    text-decoration: none;
     display: grid;
     grid-template-columns: 100px 20px auto;
     grid-template-rows: 13px 33px 10px 32px 13px;
@@ -1898,6 +1924,12 @@ header {
     "portrait . .";
     justify-items: start;
     align-items: center;
+}
+
+.contactUs__contacts__ceo:hover,
+.contactUs__contacts__cbdo:hover,
+.contactUs__contacts__cto:hover {
+    text-decoration: underline solid var(--txt);
 }
 
 .contactUs__contacts__ceo__portrait,

@@ -10,15 +10,15 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="headerMenu">
-            <a href="./"><img src="./src/images/nav_logo.svg" alt="Space logo" class="headerMenu__logo" /></a>
-            <a href="./about.html" class="headerMenu__link">About us</a>
-            <a href="./portfolio.html" class="headerMenu__link">Portfolio</a>
-            <a href="./services.html" class="headerMenu__link">Services</a>
-            <a href="./industries.html" class="headerMenu__link">Industries</a>
-            <a href="./how.html" class="headerMenu__link">How we work</a>
-            <a href="./techstack.html" class="headerMenu__link">Tech Stack</a>
+            <a href="#header"><img src="./src/images/nav_logo.svg" alt="Space logo" class="headerMenu__logo" /></a>
+            <a href="#about" class="headerMenu__link">About us</a>
+            <a href="#portfolio" class="headerMenu__link">Portfolio</a>
+            <a href="#services" class="headerMenu__link">Services</a>
+            <a href="#industries" class="headerMenu__link">Industries</a>
+            <a href="#how" class="headerMenu__link">How we work</a>
+            <a href="#techstack" class="headerMenu__link">Tech Stack</a>
         </div>
         <div class="tagline hiddenFromDown">
             <h1 class="tagline__text1">Space development</h1>
@@ -42,14 +42,14 @@
         </div>
     </header>
     <main>
-        <section class="aboutUs hiddenFromDown">
-            <div class="aboutUs__text">
+        <section class="aboutUs" id="about">
+            <div class="aboutUs__text hiddenFromDown">
                 <h2 class="aboutUs__text__h2">About us</h2>
                 <p class="aboutUs__text__h3">We are a software development company headquartered in Tallinn, Estonia.
                     Since 2020, we are building stable and scaleable mobile and web apps that serve our clients business
                     goals.</p>
             </div>
-            <div class="aboutUs__digitsContainer">
+            <div class="aboutUs__digitsContainer hiddenFromDown delay1">
                 <div class="aboutUs__digits">
                     <div class="aboutUs__digits__rating">
                         <span class="aboutUs__digits__rating__span" data-num="4.8" data-decimals="1"
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="aboutUs__infoRight">
+            <div class="aboutUs__infoRight hiddenFromDown delay2">
                 <p class="aboutUs__infoRight__text">We have a startup culture in our DNA. Agility, search for the best
                     solution and focus on business impact are natural to us. We really aren't afraid to go the extra
                     mile.</p>
@@ -81,7 +81,7 @@
                         class="aboutUs__infoRight__button__ArrowIcon" src="./src/icons/arrow_up.svg" /></button>
             </div>
         </section>
-        <section class="ourPortfolio">
+        <section class="ourPortfolio" id="portfolio">
             <div class="ourPortfolioContainer">
                 <div class="ourPortfolio__header hiddenFromDown">
                     <h2 class="ourPortfolio__header__h2">Our Portfolio</h2>
@@ -236,13 +236,13 @@
                         src="./src/icons/arrow_up_white.svg" /></button>
             </div>
         </section>
-        <section class="whatWeOffer">
+        <section class="whatWeOffer" id="services">
             <h2 class="whatWeOffer__header__h2 hiddenFromDown">What we offer</h2>
             <p class="whatWeOffer__header__text hiddenFromDown">Our team is always ready to maximize your competitive
                 edge.<br>Whether
                 you're designing, creating, or growing a product,<br>
                 we're here to offer support.</p>
-            <div class="whatWeOffer__card1 hiddenFromLeft">
+            <div class="whatWeOffer__card1 hiddenFromDown delay1">
                 <img class="whatWeOffer__card1__number" src="./src/vectors/01.svg" alt="01" />
                 <div class="whatWeOffer__card1__text">
                     <h4 class="whatWeOffer__card1__text__h4">UX/UI Design</h4>
@@ -250,7 +250,7 @@
                         out from the crowd.</p>
                 </div>
             </div>
-            <div class="whatWeOffer__card2 hiddenFromRight">
+            <div class="whatWeOffer__card2 hiddenFromDown delay2">
                 <img class="whatWeOffer__card2__number" src="./src/vectors/02.svg" alt="02" />
                 <div class="whatWeOffer__card2__text">
                     <h4 class="whatWeOffer__card2__text__h4">Mobile App Development</h4>
@@ -258,7 +258,7 @@
                         revenue in any market.</p>
                 </div>
             </div>
-            <div class="whatWeOffer__card3 hiddenFromLeft">
+            <div class="whatWeOffer__card3 hiddenFromDown delay3">
                 <img class="whatWeOffer__card3__number" src="./src/vectors/03.svg" alt="03" />
                 <div class="whatWeOffer__card3__text">
                     <h4 class="whatWeOffer__card3__text__h4">Web Development</h4>
@@ -266,7 +266,7 @@
                         to full-scale web app.</p>
                 </div>
             </div>
-            <div class="whatWeOffer__card4 hiddenFromRight">
+            <div class="whatWeOffer__card4 hiddenFromDown delay4">
                 <img class="whatWeOffer__card4__number" src="./src/vectors/04.svg" alt="04" />
                 <div class="whatWeOffer__card4__text">
                     <h4 class="whatWeOffer__card4__text__h4">Chatbot development for Messengers</h4>
@@ -274,7 +274,7 @@
                         spend most of their time.</p>
                 </div>
             </div>
-            <div class="whatWeOffer__card5 hiddenFromLeft">
+            <div class="whatWeOffer__card5 hiddenFromDown delay5">
                 <img class="whatWeOffer__card5__number" src="./src/vectors/05.svg" alt="05" />
                 <div class="whatWeOffer__card5__text">
                     <h4 class="whatWeOffer__card5__text__h4">MVP's creation</h4>
@@ -282,7 +282,7 @@
                         succeed, repeat.</p>
                 </div>
             </div>
-            <div class="whatWeOffer__card6 hiddenFromRight">
+            <div class="whatWeOffer__card6 hiddenFromDown delay6">
                 <img class="whatWeOffer__card6__number" src="./src/vectors/06.svg" alt="06" />
                 <div class="whatWeOffer__card6__text">
                     <h4 class="whatWeOffer__card6__text__h4">Marketing</h4>
@@ -290,7 +290,7 @@
                         out, get more users and sales.</p>
                 </div>
             </div>
-            <div class="whatWeOffer__card7 hiddenFromLeft">
+            <div class="whatWeOffer__card7 hiddenFromDown delay7">
                 <img class="whatWeOffer__card7__number" src="./src/vectors/07.svg" alt="07" />
                 <div class="whatWeOffer__card7__text">
                     <h4 class="whatWeOffer__card7__text__h4">Delivery & Support</h4>
@@ -298,7 +298,7 @@
                         ahead of the game.</p>
                 </div>
             </div>
-            <div class="whatWeOffer__card8 hiddenFromRight">
+            <div class="whatWeOffer__card8 hiddenFromDown delay8">
                 <img class="whatWeOffer__card8__number" src="./src/vectors/08.svg" alt="08" />
                 <div class="whatWeOffer__card8__text">
                     <h4 class="whatWeOffer__card8__text__h4">Staff Augmentation</h4>
@@ -309,7 +309,7 @@
             <button class="whatWeOffer__discussButton hiddenFromDown">Let's discuss your project <img
                     class="whatWeOffer__discussButton__ArrowIcon" src="./src/icons/arrow_up_white.svg" /></button>
         </section>
-        <section class="expertise">
+        <section class="expertise" id="industries">
             <div class="expertiseContainer">
                 <div class="expertise__header hiddenFromDown">
                     <h2 class="expertise__header__h2">Our industry expertise</h2>
@@ -387,8 +387,8 @@
                         product development</p>
                 </div>
                 <form class="backCall__inputForm hiddenFromDown delay1" method="post" action="/backcall">
-                    <input id="nameInputField" name="nameInputField"
-                        class="backCall__inputForm__nameInputField" placeholder="Name" data-valid="false" />
+                    <input id="nameInputField" name="nameInputField" class="backCall__inputForm__nameInputField"
+                        placeholder="Name" data-valid="false" />
                     <p class="backCall__inputForm__nameValidationInfo"></p>
                     <input id="phoneOrEmailInputField" name="phoneOrEmailInputField"
                         class="backCall__inputForm__phoneOrEmailInputField" placeholder="Phone" data-valid="false" />
@@ -424,7 +424,8 @@
                         </div>
                     </div>
                     <div class="backCall__inputForm__scheduleCall">
-                        <button type="submit" class="backCall__inputForm__scheduleCall__button disabledButton">Schedule a discovery
+                        <button type="submit" class="backCall__inputForm__scheduleCall__button disabledButton">Schedule
+                            a discovery
                             call</button>
                         <p class="backCall__inputForm__scheduleCall__caption">By clicking «Schedule a discovery call», I
                             agree with Privacy Policy & Terms of Use.</p>
@@ -432,7 +433,7 @@
                 </form>
             </div>
         </section>
-        <section class="howWeWork">
+        <section class="howWeWork" id="how">
             <h1 class="howWeWork__header hiddenFromDown">How we work</h1>
             <table class="howWeWork__table">
                 <tr class="howWeWork__table__row1">
@@ -484,7 +485,7 @@
                 </tr>
             </table>
         </section>
-        <section class="technologies">
+        <section class="technologies" id="techstack">
             <h2 class="technologies__header hiddenFromDown">Technologies we use</h2>
             <div class="technologies__list hiddenFromDown delay1">
                 <div class="technologies__list__line1"></div>
@@ -566,62 +567,65 @@
             <div class="contactUs__contacts hiddenFromDown delay1">
                 <p class="contactUs__contacts__caption">Book a call and get a project estimation for free</p>
                 <h4 class="contactUs__contacts__h4">Contact us</h4>
-                <div class="contactUs__contacts__email">
+                <a class="contactUs__contacts__email" href="mailto:emil@appear.digital">
                     <img class="contactUs__contacts__email__icon" src="./src/icons/email.svg" />
                     <span class="contactUs__contacts__email__address">emil@appear.digital</span>
-                </div>
-                <div class="contactUs__contacts__linkedIn">
+                </a>
+                <a class="contactUs__contacts__linkedIn" href="https://www.linkedin.com/company/space-ltd">
                     <img class="contactUs__contacts__linkedIn__icon" src="./src/icons/linkedin.svg" />
                     <span class="contactUs__contacts__linkedIn__address">Space Development Agency</span>
-                </div>
-                <div class="contactUs__contacts__ceo">
+                </a>
+                <a class="contactUs__contacts__ceo" href="https://www.linkedin.com/in/emil-ahayeu/">
                     <img class="contactUs__contacts__ceo__portrait" src="./src/images/portrait1.svg" />
                     <h4 class="contactUs__contacts__ceo__name">Emil Ahayeu</h4>
                     <p class="contactUs__contacts__ceo__title">Co-founder, CEO</p>
-                </div>
-                <div class="contactUs__contacts__cbdo">
+                </a>
+                <a class="contactUs__contacts__cbdo" href="https://www.linkedin.com/in/asurynau">
                     <img class="contactUs__contacts__cbdo__portrait" src="./src/images/portrait2.svg" />
                     <h4 class="contactUs__contacts__cbdo__name">Aleksander Surynau</h4>
                     <p class="contactUs__contacts__cbdo__title">Business Partner, CBDO</p>
-                </div>
-                <div class="contactUs__contacts__cto">
+                </a>
+                <a class="contactUs__contacts__cto" href="https://www.linkedin.com/in/kirill-tupikov-6b810a57/">
                     <img class="contactUs__contacts__cto__portrait" src="./src/images/portrait3.svg" />
                     <h4 class="contactUs__contacts__cto__name">Kiryl Tupikou</h4>
                     <p class="contactUs__contacts__cto__title">Co-founder, CTO, CEO at forYou</p>
-                </div>
+                </a>
             </div>
             <form class="contactUs__form hiddenFromDown delay2" method="post" action="/contact">
                 <label for="firstName" class="contactUs__form__firstNameLabel">First name*</label>
-                <input id="firstName" name="firstName"
-                class="contactUs__form__firstNameInput" placeholder="Name" data-valid="false" />
+                <input id="firstName" name="firstName" class="contactUs__form__firstNameInput" placeholder="Name"
+                    data-valid="false" />
                 <p class="contactUs__form__firstNameValidation"></p>
-                <label for="companyName" class="contactUs__form__companyNameLabel">Company name<span class="contactUs__form__companyNameLabel__optional">(optional)</span></label>
-                <input id="companyName" name="companyName"
-                class="contactUs__form__companyNameInput" placeholder="Company name" />
+                <label for="companyName" class="contactUs__form__companyNameLabel">Company name<span
+                        class="contactUs__form__companyNameLabel__optional">(optional)</span></label>
+                <input id="companyName" name="companyName" class="contactUs__form__companyNameInput"
+                    placeholder="Company name" />
                 <label for="eMail" class="contactUs__form__eMailLabel">Email*</label>
-                <input id="eMail" name="eMail"
-                class="contactUs__form__eMailInput" placeholder="Email" data-valid="false" />
+                <input id="eMail" name="eMail" class="contactUs__form__eMailInput" placeholder="Email"
+                    data-valid="false" />
                 <p class="contactUs__form__eMailValidation"></p>
-                <label for="phone" class="contactUs__form__phoneLabel">Phone<span class="contactUs__form__phoneLabel__optional">(optional)</span></label>
-                <input id="phone" name="phone"
-                class="contactUs__form__phoneInput" placeholder="Number" />
-                <label for="message" class="contactUs__form__messageLabel">Tell us more about your product or project idea</label>
-                <textarea id="message" name="message"
-                class="contactUs__form__messageInput"></textarea>
-                <p class="contactUs__form__caption">By clicking «Free consultation», I agree with Privacy Policy & Terms of Use.</p>
+                <label for="phone" class="contactUs__form__phoneLabel">Phone<span
+                        class="contactUs__form__phoneLabel__optional">(optional)</span></label>
+                <input id="phone" name="phone" class="contactUs__form__phoneInput" placeholder="Number" />
+                <label for="message" class="contactUs__form__messageLabel">Tell us more about your product or project
+                    idea</label>
+                <textarea id="message" name="message" class="contactUs__form__messageInput"></textarea>
+                <p class="contactUs__form__caption">By clicking «Free consultation», I agree with Privacy Policy & Terms
+                    of Use.</p>
                 <button type="submit" class="contactUs__form__submitButton disabledButton">Free consultation</button>
             </form>
         </section>
     </main>
     <footer>
         <div class="footerMenu">
-            <a href="./" class="footerMenu__linkWithImage"><img src="./src/images/nav_logo.svg" alt="Space logo" class="footerMenu__logo" /></a>
-            <a href="./about.html" class="footerMenu__link">About us</a>
-            <a href="./portfolio.html" class="footerMenu__link">Portfolio</a>
-            <a href="./services.html" class="footerMenu__link">Services</a>
-            <a href="./industries.html" class="footerMenu__link">Industries</a>
-            <a href="./how.html" class="footerMenu__link">How we work</a>
-            <a href="./techstack.html" class="footerMenu__link">Tech Stack</a>
+            <a href="#header" class="footerMenu__linkWithImage"><img src="./src/images/nav_logo.svg" alt="Space logo"
+                    class="footerMenu__logo" /></a>
+            <a href="#about" class="footerMenu__link">About us</a>
+            <a href="#portfolio" class="footerMenu__link">Portfolio</a>
+            <a href="#services" class="footerMenu__link">Services</a>
+            <a href="#industries" class="footerMenu__link">Industries</a>
+            <a href="#how" class="footerMenu__link">How we work</a>
+            <a href="#techstack" class="footerMenu__link">Tech Stack</a>
         </div>
         <div class="footerInfo">
             <p class="footerInfo__addressHeader">Address</p>
@@ -638,7 +642,8 @@
                 Kingdom, NW6 4EL
             </p>
             <a href="./termsOfUse.html" class="footerInfo__link">Privacy Policy & Terms of Use</a>
-            <a href="https://www.instagram.com/spirydon.a/" class="footerInfo__websiteDeveloper">Website Development Alena Spirydon</a>
+            <a href="https://www.instagram.com/spirydon.a/" class="footerInfo__websiteDeveloper">Website Development
+                Alena Spirydon</a>
         </div>
     </footer>
     <section class="popUp">
@@ -648,9 +653,8 @@
             <p class="popUp__text"></p>
         </div>
     </section>
+    </script>
     <script src="./scripts/index.js"></script>
-    <script defer src="./scripts/countUp.js"></script>
-    <script defer src="./scripts/scroll.js"></script>
 </body>
 
 </html>

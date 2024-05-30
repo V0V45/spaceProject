@@ -44,27 +44,3 @@ observerDigits.observe(rating); // наблюдаем за появлением 
 observerDigits.observe(satisfiedUsers); // наблюдаем за появлением элемента удовлетворенных пользователей на экране
 observerDigits.observe(experience); // наблюдаем за появлением элемента опытных сотрудников на экране
 
-// 3) Появление слева
-// для каждого входного элемента если элемент пересекает viewport добавляем ему класс show, и если не пересекает то удаляем
-const observerFromLeft = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('showFromLeft');
-        }
-    })
-});
-const hiddenFromLeftElements = document.querySelectorAll('.hiddenFromLeft'); // все элементы с классом hiddenFromLeft в HTML записываем в массив
-hiddenFromLeftElements.forEach((element) => observerFromLeft.observe(element)); // для каждого из них запускаем наблюдение
-
-// 4) Появление справа
-// для каждого входного элемента если элемент пересекает viewport добавляем ему класс show, и если не пересекает то удаляем
-const observerFromRight = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('showFromRight');
-        }
-    })
-});
-const hiddenFromRightElements = document.querySelectorAll('.hiddenFromRight'); // все элементы с классом hiddenFromRight в HTML записываем в массив
-hiddenFromRightElements.forEach((element) => observerFromRight.observe(element)); // для каждого из них запускаем наблюдение
-
