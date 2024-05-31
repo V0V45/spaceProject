@@ -1,0 +1,87 @@
+:root {
+    /* цвета */
+    --blue: #303D8F;
+    /* text22 */
+    --text22fontfamily: "Manrope", sans-serif;
+    --text22fontsize: 22px;
+    --text22fontweight: 500;
+    --text22lineheight: 150%;
+    --text22texttransform: none;
+    /* button */
+    --buttonfontfamily: "Manrope", sans-serif;
+    --buttonfontsize: 16px;
+    --buttonfontweight: bold;
+    --buttontexttransform: uppercase;
+    --buttonletterspacing: 0.01em;
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 500;
+    src: url(/src/fonts/manrope_medium.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: bold;
+    src: url(/src/fonts/manrope_bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: linear-gradient(180deg, #051b43 0%, #0d44a9 100%);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 22vh;
+    padding-bottom: 29vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.text404 {
+    margin-top: 58px;
+    margin-bottom: 51px;
+    text-align: center;
+    color: white;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+}
+
+.goBackButton {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: var(--buttonfontweight);
+    text-transform: var(--buttontexttransform);
+    color: var(--blue);
+    letter-spacing: var(--buttonletterspacing);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.goBackButton_arrow {
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.rotate {
+    transform: rotate(45deg);
+}
