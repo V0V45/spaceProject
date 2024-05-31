@@ -34,7 +34,10 @@
 }
 
 .container {
-    background: linear-gradient(180deg, #051b43 0%, #0d44a9 100%);
+    background: url(/src/images/back404.png), linear-gradient(180deg, #051b43 0%, #0d44a9 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -50%;
     width: 100vw;
     height: 100vh;
     padding-top: 22vh;
