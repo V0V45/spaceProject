@@ -23,7 +23,7 @@
     --h2fontfamily: "Proxima Nova", sans-serif;
     --h2fontsize: 60px;
     --h2texttransform: none;
-    --h2fontweight: regular;
+    --h2fontweight: normal;
     /* h3 */
     --h3fontfamily: "Proxima Nova", sans-serif;
     --h3fontsize: 44px;
@@ -37,31 +37,31 @@
     /* text22 */
     --text22fontfamily: "Manrope", sans-serif;
     --text22fontsize: 22px;
-    --text22fontweight: medium;
+    --text22fontweight: 500;
     --text22lineheight: 150%;
     --text22texttransform: none;
     /* text16 */
     --text16fontfamily: "Manrope", sans-serif;
     --text16fontsize: 16px;
-    --text16fontweight: medium;
+    --text16fontweight: 500;
     --text16lineheight: 150%;
     --text16texttransform: none;
     /* text-tegs */
     --texttegsfontfamily: "Manrope", sans-serif;
     --texttegsfontsize: 16px;
-    --texttegsfontweight: regular;
+    --texttegsfontweight: normal;
     --texttegslineheight: 100%;
     --texttegstexttransform: none;
     /* text14 */
     --text14fontfamily: "Manrope", sans-serif;
     --text14fontsize: 14px;
-    --text14fontweight: regular;
+    --text14fontweight: normal;
     --text14lineheight: 150%;
     --text14texttransform: none;
     /* button */
     --buttonfontfamily: "Manrope", sans-serif;
     --buttonfontsize: 16px;
-    --buttonfontweight: medium;
+    --buttonfontweight: 500;
     --buttonlineheight: 150%;
     --buttontexttransform: uppercase;
 }
@@ -69,13 +69,13 @@
 /* Подключение шрифтов */
 @font-face {
     font-family: "Manrope";
-    font-weight: medium;
+    font-weight: 500;
     src: url(/src/fonts/manrope_medium.ttf);
 }
 
 @font-face {
     font-family: "Manrope";
-    font-weight: regular;
+    font-weight: normal;
     src: url(/src/fonts/manrope_regular.ttf);
 }
 
@@ -99,7 +99,7 @@
 
 @font-face {
     font-family: "Proxima Nova";
-    font-weight: regular;
+    font-weight: normal;
     src: url(/src/fonts/proximanova_regular.ttf);
 }
 
@@ -412,7 +412,7 @@ header {
 .aboutUs__text__h3 {
     font-family: "Proxima Nova", sans-serif;
     font-size: 40px;
-    font-weight: regular;
+    font-weight: normal;
     text-align: center;
     background: linear-gradient(169deg, #041a43 0%, #0dac9b 100%);
     background-clip: text;
@@ -1363,7 +1363,7 @@ header {
 
 .backCall__inputForm__scheduleCall__caption {
     font-family: "Manrope", sans-serif;
-    font-weight: regular;
+    font-weight: normal;
     font-size: 12px;
     line-height: 150%;
     color: var(--txt);
@@ -2129,7 +2129,7 @@ header {
 
 .contactUs__form__caption {
     font-family: "Manrope", sans-serif;
-    font-weight: regular;
+    font-weight: normal;
     font-size: 12px;
     line-height: 150%;
     color: var(--txt);
