@@ -1,0 +1,325 @@
+/** ОБЩЕЕ **/
+/* Константы */
+:root {
+    /* Цвета */
+    --txt: #051B43;
+    --white: #FFFFFF;
+    --green: #11FACA;
+    --backgroundBlue: #E5ECFC;
+    /* h1 */
+    --h1fontfamily: "Proxima Nova", sans-serif;
+    --h1fontsize: 62px;
+    --h1texttransform: uppercase;
+    --h1fontweight: bold;
+    --h1lineheight: 100%;
+    /* h3 */
+    --h3fontfamily: "Proxima Nova", sans-serif;
+    --h3fontsize: 44px;
+    --h3texttransform: none;
+    --h3fontweight: bold;
+    --h3lineheight: 100%;
+    /* text 16 */
+    --text16fontfamily: "Manrope", sans-serif;
+    --text16fontsize: 16px;
+    --text16fontweight: 500;
+    --text16lineheight: 150%;
+    --text16texttransform: none;
+    /* text 22 */
+    --text22fontfamily: "Manrope", sans-serif;
+    --text22fontsize: 22px;
+    --text22fontweight: 500;
+    --text22lineheight: 150%;
+    --text22texttransform: none;
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Manrope";
+    font-weight: 500;
+    src: url(/src/fonts/manrope_medium.ttf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    src: url(/src/fonts/proximanova_bold.otf);
+}
+
+/* Удаление стандартных отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/** АНИМАЦИИ **/
+/* Появление снизу */
+.hiddenFromDown {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(25%);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.showFromDown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+}
+
+.delay1 {
+    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
+}
+
+.delay2 {
+    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
+
+
+/* Для тех, у кого выключена анимация */
+@media(prefers-reduced-motion) {
+    .hiddenFromDown {
+        transition: none;
+    }
+}
+
+/** HEADER **/
+/* Контейнер хедера */
+header {
+    padding-left: 50px;
+    background-color: var(--txt);
+}
+
+/* Расположение элементов в хедере */
+.headerMenu {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Отступы между элементами в хедере (от всех, кроме последней ссылки) */
+.header__logoLink,
+.header__aboutLink,
+.header__portfolioLink,
+.header__servicesLink,
+.header__industriesLink,
+.header__howWeWorkLink {
+    margin-right: 40px;
+}
+
+/* Стилизация ссылок хедера */
+.header__aboutLink,
+.header__portfolioLink,
+.header__servicesLink,
+.header__industriesLink,
+.header__howWeWorkLink,
+.header__techStackLink {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Стилизация ссылок хедера при наведении на них */
+.header__aboutLink:hover,
+.header__portfolioLink:hover,
+.header__servicesLink:hover,
+.header__industriesLink:hover,
+.header__howWeWorkLink:hover,
+.header__techStackLink:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+/** FOR YOU SECTION **/
+/* Контейнер и сетка */
+.forYou {
+    background: linear-gradient(180deg, #e5efff 0%, #c8b2be 100%);
+    padding-left: 50px;
+    padding-right: 50px;
+    display: grid;
+    grid-template-columns: 676px 100px 564px;
+    grid-template-rows: 190px 124px 30px 66px 190px;
+    grid-template-areas: 
+    ". . img"
+    "h1 . img"
+    ". . img"
+    "caption . img"
+    ". . img";
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* Заголовок h1 */
+.forYou__h1 {
+    grid-area: h1;
+    font-family: var(--h1fontfamily);
+    font-size: var(--h1fontsize);
+    font-weight: var(--h1fontweight);
+    text-transform: var(--h1texttransform);
+    line-height: var(--h1lineheight);
+    color: var(--txt);
+}
+
+/* Подпись txt22 */
+.forYou__caption {
+    grid-area: caption;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+/* Картинка справа */
+.forYou__img {
+    grid-area: img;
+}
+
+/** IMPACT SECTION **/
+.impact {
+    padding: 200px 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.impact__text {
+    padding: 11px 62px;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.impact__digits {
+    padding: 0px 119px;
+    display: grid;
+    grid-template-columns: 118px 80px 215px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "numberDownloads . numberActiveUsers"
+    "captionDownloads . captionActiveUsers";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.impact__digits__number-downloads {
+    grid-area: numberDownloads;
+}
+
+.impact__digits__caption-downloads {
+    grid-area: captionDownloads;
+}
+
+.impact__digits__number-activeUsers {
+    grid-area: numberActiveUsers;
+}
+
+.impact__digits__caption-activeUsers {
+    grid-area: captionActiveUsers;
+}
+
+.impact__digits__number-downloads,
+.impact__digits__number-activeUsers {
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: var(--txt);
+}
+
+.impact__digits__caption-downloads,
+.impact__digits__caption-activeUsers {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+/** CLIENT SECTION **/
+.client {
+    padding: 72px 50px;
+    background-color: var(--backgroundBlue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.client__h3 {
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 20px;
+}
+
+.client__description {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+/** MISSION SECTION **/
+.mission {
+    padding: 100px 50px 200px 50px;
+    display: grid;
+    grid-template-columns: 660px 20px 660px;
+    grid-template-rows: 126px 44px 20px 164px 126px;
+    grid-template-areas: 
+    ". . img"
+    "h3 . img"
+    ". . img"
+    "info . img"
+    ". . img";
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.mission__h3 {
+    grid-area: h3;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.mission__description {
+    grid-area: info;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.mission__preview {
+    grid-area: img;
+    border-radius: 10px;
+    object-fit: cover;
+}
