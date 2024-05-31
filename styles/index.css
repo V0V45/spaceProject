@@ -388,7 +388,7 @@ header {
         "digits . infoRight";
     justify-items: stretch;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .aboutUs__text {
