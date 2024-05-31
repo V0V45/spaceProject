@@ -85,3 +85,24 @@
 .rotate {
     transform: rotate(45deg);
 }
+
+.hiddenFromDown {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(25%);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.showFromDown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+}
+
+.delay1 {
+    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
+}
+
+.delay2 {
+    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
