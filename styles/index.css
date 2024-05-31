@@ -381,12 +381,14 @@ header {
     display: grid;
     margin-top: 130px;
     grid-template-rows: 247px 130px 300px;
-    grid-template-columns: auto;
-    grid-template-areas: "text text"
-        ". ."
-        "digits infoRight";
+    grid-template-columns: 660px 20px 660px;
+    grid-template-areas:
+        "text text text"
+        ". . ."
+        "digits . infoRight";
     justify-items: stretch;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 .aboutUs__text {
