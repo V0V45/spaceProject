@@ -340,7 +340,7 @@ header {
 .statistics__text {
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
+    font-weight: normal;
     line-height: var(--text22lineheight);
     text-transform: var(--text22texttransform);
     margin-bottom: 30px;
