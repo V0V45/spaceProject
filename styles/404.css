@@ -109,3 +109,10 @@
 .delay2 {
     transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
 }
+
+/* Для тех, у кого выключена анимация */
+@media(prefers-reduced-motion) {
+    .hiddenFromDown {
+        transition: none;
+    }
+}
