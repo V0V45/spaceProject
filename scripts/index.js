@@ -443,17 +443,6 @@ function activateOrDisableButton(formElement) { // на вход принима�
 
 
 // Обработчики событий и начальные значения
-// добавление скриптов countUp и scroll ТОЛЬКО после загрузки страницы
-window.onload = function() {
-    let countUp = document.createElement('script');
-    countUp.src = "/scripts/countUp.js";
-    countUp.defer = true;
-    document.getElementsByTagName('body')[0].appendChild(countUp);
-    let scroll = document.createElement('script');
-    scroll.src = "/scripts/scroll.js";
-    scroll.defer = true;
-    document.getElementsByTagName('body')[0].appendChild(scroll);
-};
 viewPortfolioButton.addEventListener('mouseenter', changeArrowToStraight);
 viewPortfolioButton.addEventListener('mouseleave', changeArrowToUp);
 aboutUsButton.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
