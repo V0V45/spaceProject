@@ -538,10 +538,11 @@ header {
     margin-bottom: 80px;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 660px 660px;
-    grid-template-areas: "h2 txt22";
+    grid-template-columns: 660px 20px 660px;
+    grid-template-areas: "h2 . txt22";
     justify-items: stretch;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 .ourPortfolio__header__h2 {
@@ -814,6 +815,7 @@ header {
         "button button";
     justify-items: stretch;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 .whatWeOffer__header__h2 {
@@ -969,6 +971,7 @@ header {
     grid-template-areas: "h2 txt22";
     justify-items: stretch;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 .expertise__header__h2 {
@@ -1000,6 +1003,7 @@ header {
         ". . sliderImageContainer";
     justify-items: stretch;
     align-items: stretch;
+    justify-content: space-between;
 }
 
 .expertise__slider__spoilerContainer {
