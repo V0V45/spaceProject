@@ -55,7 +55,7 @@ function goToAboutUs() {
 }
 
 function goToSkinCareApp() {
-    window.location.href = 'foryouskincareapp.html';
+    window.location.href = 'foryou.html';
 }
 
 function goToi24News() {
