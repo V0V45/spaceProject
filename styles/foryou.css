@@ -6,6 +6,7 @@
     --white: #FFFFFF;
     --green: #11FACA;
     --backgroundBlue: #E5ECFC;
+    --violet: #EAE0F4;
     /* h1 */
     --h1fontfamily: "Proxima Nova", sans-serif;
     --h1fontsize: 62px;
@@ -18,6 +19,12 @@
     --h3texttransform: none;
     --h3fontweight: bold;
     --h3lineheight: 100%;
+    /* text-tegs */
+    --texttegsfontfamily: "Manrope", sans-serif;
+    --texttegsfontsize: 16px;
+    --texttegsfontweight: normal;
+    --texttegslineheight: 100%;
+    --texttegstexttransform: none;
     /* text 16 */
     --text16fontfamily: "Manrope", sans-serif;
     --text16fontsize: 16px;
@@ -33,6 +40,12 @@
 }
 
 /* Подключение шрифтов */
+@font-face {
+    font-family: "Manrope";
+    font-weight: normal;
+    src: url(/src/fonts/manrope_regular.ttf);
+}
+
 @font-face {
     font-family: "Manrope";
     font-weight: 500;
@@ -73,6 +86,50 @@
 
 .delay2 {
     transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
+
+.delay3 {
+    transition: opacity 0.5s ease-out 300ms, filter 0.5s ease-out 300ms, transform 0.5s ease-out 300ms;
+}
+
+.delay4 {
+    transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
+}
+
+.smalldelay1 {
+    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
+}
+
+.smalldelay2 {
+    transition: opacity 0.5s ease-out 120ms, filter 0.5s ease-out 120ms, transform 0.5s ease-out 120ms;
+}
+
+.smalldelay3 {
+    transition: opacity 0.5s ease-out 140ms, filter 0.5s ease-out 140ms, transform 0.5s ease-out 140ms;
+}
+
+.smalldelay4 {
+    transition: opacity 0.5s ease-out 160ms, filter 0.5s ease-out 160ms, transform 0.5s ease-out 160ms;
+}
+
+.smalldelay5 {
+    transition: opacity 0.5s ease-out 180ms, filter 0.5s ease-out 180ms, transform 0.5s ease-out 180ms;
+}
+
+.smalldelay6 {
+    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
+
+.smalldelay7 {
+    transition: opacity 0.5s ease-out 220ms, filter 0.5s ease-out 220ms, transform 0.5s ease-out 220ms;
+}
+
+.smalldelay8 {
+    transition: opacity 0.5s ease-out 240ms, filter 0.5s ease-out 240ms, transform 0.5s ease-out 240ms;
+}
+
+.smalldelay9 {
+    transition: opacity 0.5s ease-out 260ms, filter 0.5s ease-out 260ms, transform 0.5s ease-out 260ms;
 }
 
 
@@ -145,12 +202,12 @@ header {
     display: grid;
     grid-template-columns: 676px 100px 564px;
     grid-template-rows: 190px 124px 30px 66px 190px;
-    grid-template-areas: 
-    ". . img"
-    "h1 . img"
-    ". . img"
-    "caption . img"
-    ". . img";
+    grid-template-areas:
+        ". . img"
+        "h1 . img"
+        ". . img"
+        "caption . img"
+        ". . img";
     justify-content: space-between;
     justify-items: stretch;
     align-items: stretch;
@@ -208,9 +265,9 @@ header {
     display: grid;
     grid-template-columns: 118px 80px 215px;
     grid-template-rows: auto;
-    grid-template-areas: 
-    "numberDownloads . numberActiveUsers"
-    "captionDownloads . captionActiveUsers";
+    grid-template-areas:
+        "numberDownloads . numberActiveUsers"
+        "captionDownloads . captionActiveUsers";
     justify-content: center;
     justify-items: stretch;
     align-items: stretch;
@@ -287,12 +344,12 @@ header {
     display: grid;
     grid-template-columns: 660px 20px 660px;
     grid-template-rows: 126px 44px 20px 164px 126px;
-    grid-template-areas: 
-    ". . img"
-    "h3 . img"
-    ". . img"
-    "info . img"
-    ". . img";
+    grid-template-areas:
+        ". . img"
+        "h3 . img"
+        ". . img"
+        "info . img"
+        ". . img";
     justify-content: space-between;
     justify-items: stretch;
     align-items: stretch;
@@ -322,4 +379,441 @@ header {
     grid-area: img;
     border-radius: 10px;
     object-fit: cover;
+}
+
+
+/** CHALLENGES SECTION **/
+.challenges {
+    background-color: var(--backgroundBlue);
+    padding-top: 85px;
+    padding-left: 274px;
+    padding-right: 274px;
+    display: grid;
+    grid-template-columns: 348px 100px 444px;
+    grid-template-rows: 44px 20px 66px 80px 659px;
+    grid-template-areas:
+        "h3 h3 h3"
+        ". . ."
+        "cap cap cap"
+        ". . ."
+        "img1 . img2";
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.challenges__h3 {
+    grid-area: h3;
+    color: var(--txt);
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+}
+
+.challenges__description {
+    grid-area: cap;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+.challenges__img1 {
+    grid-area: img1;
+    width: auto;
+    height: auto;
+    max-width: 348px;
+}
+
+.challenges__img2 {
+    grid-area: img2;
+    width: auto;
+    height: auto;
+    max-width: 444px;
+}
+
+/** SOLUTION SECTION **/
+.solution {
+    padding: 200px 50px;
+    display: grid;
+    grid-template-columns: 630px 50px 670px;
+    grid-template-rows: 74px 44px 20px 208px 74px;
+    grid-template-areas:
+        ". . imgContainer"
+        "h3 . imgContainer"
+        ". . imgContainer"
+        "description . imgContainer"
+        ". . imgContainer";
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.solution__h3 {
+    grid-area: h3;
+    color: var(--txt);
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+}
+
+.solution__description {
+    grid-area: description;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.solution__imgContainer {
+    grid-area: imgContainer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.solution__imgContainer__img-1,
+.solution__imgContainer__img-2 {
+    margin-right: 15px;
+}
+
+.solution__imgContainer__img-1,
+.solution__imgContainer__img-2,
+.solution__imgContainer__img-3 {
+    width: auto;
+    height: auto;
+    max-width: 208px;
+}
+
+/** ADDITIONAL FEATURES SECTION **/
+.additionalFeatures {
+    padding-top: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--violet);
+}
+
+.additionalFeatures__h3 {
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 20px;
+}
+
+.additionalFeatures__description {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    margin-bottom: 80px;
+}
+
+.additionalFeatures__img {
+    width: auto;
+    height: auto;
+    max-width: 1040px;
+}
+
+/** RESPONSIBILITY SECTION **/
+.responsibility {
+    padding: 200px 50px;
+    display: grid;
+    grid-template-columns: 373px 100px 363px 100px 406px;
+    grid-template-rows: 44px 80px 50px 59px 50px;
+    grid-template-areas:
+        "h3 h3 h3 h3 h3"
+        ". . . . ."
+        "uxui . frontend . backend"
+        ". . . . ."
+        "aso . acquisition . integration";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.responsibility__h3 {
+    grid-area: h3;
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.responsibility__uxui {
+    grid-area: uxui;
+}
+
+.responsibility__frontend {
+    grid-area: frontend;
+}
+
+.responsibility__backend {
+    grid-area: backend;
+}
+
+.responsibility__aso {
+    grid-area: aso;
+}
+
+.responsibility__acquisition {
+    grid-area: acquisition;
+}
+
+.responsibility__integration {
+    grid-area: integration;
+}
+
+.responsibility__uxui,
+.responsibility__frontend,
+.responsibility__backend,
+.responsibility__aso,
+.responsibility__acquisition,
+.responsibility__integration {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.responsibility__uxui__text,
+.responsibility__frontend__text,
+.responsibility__backend__text,
+.responsibility__aso__text,
+.responsibility__acquisition__text,
+.responsibility__integration__text {
+    margin-left: 20px;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+/** KEY FEATURES SECTION **/
+.keyFeatures {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 200px;
+}
+
+.keyFeatures__h3 {
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 80px;
+}
+
+.keyFeatures__grid {
+    display: grid;
+    grid-template-columns: 433px 20px 433px 20px 433px;
+    grid-template-rows: 559px 20px 559px;
+    grid-template-areas:
+        "element1 . element2 . element3"
+        ". . . . ."
+        "element4 . element5 . element6";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.keyFeatures__grid__element1 {
+    grid-area: element1;
+}
+
+.keyFeatures__grid__element2 {
+    grid-area: element2;
+}
+
+.keyFeatures__grid__element3 {
+    grid-area: element3;
+}
+
+.keyFeatures__grid__element4 {
+    grid-area: element4;
+}
+
+.keyFeatures__grid__element5 {
+    grid-area: element5;
+}
+
+.keyFeatures__grid__element6 {
+    grid-area: element6;
+}
+
+.keyFeatures__grid__element1,
+.keyFeatures__grid__element3,
+.keyFeatures__grid__element5 {
+    background-color: var(--violet);
+}
+
+.keyFeatures__grid__element2,
+.keyFeatures__grid__element4,
+.keyFeatures__grid__element6 {
+    background-color: var(--backgroundBlue);
+}
+
+.keyFeatures__grid__element1,
+.keyFeatures__grid__element2,
+.keyFeatures__grid__element3,
+.keyFeatures__grid__element4,
+.keyFeatures__grid__element5,
+.keyFeatures__grid__element6 {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.keyFeatures__grid__element1__caption,
+.keyFeatures__grid__element2__caption,
+.keyFeatures__grid__element3__caption,
+.keyFeatures__grid__element4__caption,
+.keyFeatures__grid__element5__caption,
+.keyFeatures__grid__element6__caption {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    text-align: center;
+    margin: 40px 20px 20px 20px;
+}
+
+.keyFeatures__grid__element1__img,
+.keyFeatures__grid__element2__img,
+.keyFeatures__grid__element3__img,
+.keyFeatures__grid__element4__img,
+.keyFeatures__grid__element5__img {
+    width: 200px;
+    height: 410px;
+}
+
+.keyFeatures__grid__element6__img {
+    width: 393px;
+    height: 410px;
+}
+
+/** TECHNOLOGY STACK SECTION **/
+.technologyStack {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.technologyStack__h3 {
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 80px;
+}
+
+.technologyStack__tagsContainer {
+    margin-left: 44px;
+}
+
+.technologyStack__tags__row1,
+.technologyStack__tags__row2,
+.technologyStack__tags__row3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.technologyStack__tags__row1,
+.technologyStack__tags__row2 {
+    margin-bottom: 30px;
+}
+
+.technologyStack__tags__tag1,
+.technologyStack__tags__tag2,
+.technologyStack__tags__tag3,
+.technologyStack__tags__tag4,
+.technologyStack__tags__tag5,
+.technologyStack__tags__tag6,
+.technologyStack__tags__tag7,
+.technologyStack__tags__tag8,
+.technologyStack__tags__tag9,
+.technologyStack__tags__tag10,
+.technologyStack__tags__tag11,
+.technologyStack__tags__tag12,
+.technologyStack__tags__tag13,
+.technologyStack__tags__tag14,
+.technologyStack__tags__tag15,
+.technologyStack__tags__tag16,
+.technologyStack__tags__tag17,
+.technologyStack__tags__tag18,
+.technologyStack__tags__tag19 {
+    border-radius: 5px;
+    padding: 9px 25px;
+    background-color: var(--backgroundBlue);
+    color: var(--txt);
+    font-family: var(--texttegsfontfamily);
+    font-size: var(--texttegsfontsize);
+    font-weight: var(--texttegsfontweight);
+    line-height: var(--texttegslineheight);
+    text-transform: var(--texttegstexttransform);
+}
+
+.technologyStack__tags__tag1,
+.technologyStack__tags__tag2,
+.technologyStack__tags__tag3,
+.technologyStack__tags__tag4,
+.technologyStack__tags__tag5,
+.technologyStack__tags__tag6,
+.technologyStack__tags__tag7,
+.technologyStack__tags__tag8,
+.technologyStack__tags__tag10,
+.technologyStack__tags__tag11,
+.technologyStack__tags__tag12,
+.technologyStack__tags__tag13,
+.technologyStack__tags__tag14,
+.technologyStack__tags__tag15,
+.technologyStack__tags__tag16,
+.technologyStack__tags__tag17 {
+    margin-right: 30px;
 }
