@@ -84,54 +84,38 @@
     transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
 }
 
+
+.delay1-5 {
+    transition: opacity 0.5s ease-out 150ms, filter 0.5s ease-out 150ms, transform 0.5s ease-out 150ms;
+}
+
 .delay2 {
     transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
+
+.delay2-5 {
+    transition: opacity 0.5s ease-out 250ms, filter 0.5s ease-out 250ms, transform 0.5s ease-out 250ms;
 }
 
 .delay3 {
     transition: opacity 0.5s ease-out 300ms, filter 0.5s ease-out 300ms, transform 0.5s ease-out 300ms;
 }
 
+.delay3-5 {
+    transition: opacity 0.5s ease-out 350ms, filter 0.5s ease-out 350ms, transform 0.5s ease-out 350ms;
+}
+
 .delay4 {
     transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
 }
 
-.smalldelay1 {
-    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
+.delay4-5 {
+    transition: opacity 0.5s ease-out 450ms, filter 0.5s ease-out 450ms, transform 0.5s ease-out 450ms;
 }
 
-.smalldelay2 {
-    transition: opacity 0.5s ease-out 120ms, filter 0.5s ease-out 120ms, transform 0.5s ease-out 120ms;
+.delay5 {
+    transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
 }
-
-.smalldelay3 {
-    transition: opacity 0.5s ease-out 140ms, filter 0.5s ease-out 140ms, transform 0.5s ease-out 140ms;
-}
-
-.smalldelay4 {
-    transition: opacity 0.5s ease-out 160ms, filter 0.5s ease-out 160ms, transform 0.5s ease-out 160ms;
-}
-
-.smalldelay5 {
-    transition: opacity 0.5s ease-out 180ms, filter 0.5s ease-out 180ms, transform 0.5s ease-out 180ms;
-}
-
-.smalldelay6 {
-    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
-}
-
-.smalldelay7 {
-    transition: opacity 0.5s ease-out 220ms, filter 0.5s ease-out 220ms, transform 0.5s ease-out 220ms;
-}
-
-.smalldelay8 {
-    transition: opacity 0.5s ease-out 240ms, filter 0.5s ease-out 240ms, transform 0.5s ease-out 240ms;
-}
-
-.smalldelay9 {
-    transition: opacity 0.5s ease-out 260ms, filter 0.5s ease-out 260ms, transform 0.5s ease-out 260ms;
-}
-
 
 /* Для тех, у кого выключена анимация */
 @media(prefers-reduced-motion) {
