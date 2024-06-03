@@ -7,6 +7,9 @@
     --green: #11FACA;
     --backgroundBlue: #E5ECFC;
     --violet: #EAE0F4;
+    --grey: #BFC8C9;
+    --blue: #303D8F;
+    --green2: #10C48D;
     /* h1 */
     --h1fontfamily: "Proxima Nova", sans-serif;
     --h1fontsize: 62px;
@@ -42,6 +45,12 @@
     --text22fontweight: 500;
     --text22lineheight: 150%;
     --text22texttransform: none;
+    /* button */
+    --buttonfontfamily: "Manrope", sans-serif;
+    --buttonfontsize: 16px;
+    --buttonfontweight: 500;
+    --buttonlineheight: 150%;
+    --buttontexttransform: uppercase;
 }
 
 /* Подключение шрифтов */
@@ -120,6 +129,11 @@
 
 .delay5 {
     transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
+}
+
+/* Валидация */
+.disabledButton:hover {
+    background-color: var(--grey);
 }
 
 /* Для тех, у кого выключена анимация */
@@ -927,4 +941,497 @@ header {
     font-weight: var(--text16fontweight);
     line-height: var(--text16lineheight);
     text-transform: var(--text16texttransform);
+}
+
+/** BACKCALL SECTION **/
+.backCall {
+    padding: 200px 220px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.backCall__header {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.backCall__header__h3 {
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 24px;
+}
+
+.backCall__header__text {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+.backCall__inputForm {
+    display: grid;
+    grid-template-columns: auto 60px auto;
+    grid-template-rows: auto 30px auto 20px auto;
+    grid-template-areas: 
+    "nameInput . contactInput"
+    ". . ."
+    "nameValidation . contactValidation"
+    ". . ."
+    "communicationChoice . scheduleCall";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.backCall__inputForm__nameInputField {
+    grid-area: nameInput;
+}
+
+.backCall__inputForm__phoneOrEmailInputField {
+    grid-area: contactInput;
+}
+
+.backCall__inputForm__nameValidationInfo {
+    grid-area: nameValidation;
+}
+
+.backCall__inputForm__phoneOrEmailValidationInfo {
+    grid-area: contactValidation;
+}
+
+.backCall__inputForm__nameValidationInfo,
+.backCall__inputForm__phoneOrEmailValidationInfo {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: #dd1414;
+}
+
+.backCall__inputForm__nameInputField,
+.backCall__inputForm__phoneOrEmailInputField {
+    border: 1px solid var(--grey);
+    width: 470px;
+    height: 60px;
+    border-radius: 8px;
+    padding: 18px;
+    opacity: 1;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.backCall__inputForm__nameInputField:focus,
+.backCall__inputForm__phoneOrEmailInputField:focus {
+    border: 1px solid var(--blue);
+    outline: none;
+}
+
+.backCall__inputForm__nameInputField::placeholder,
+.backCall__inputForm__phoneOrEmailInputField::placeholder {
+    opacity: 1;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--grey);
+}
+
+.backCall__inputForm__communicationChoice {
+    grid-area: communicationChoice;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.backCall__inputForm__communicationChoice__caption {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    padding-bottom: 20px;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels {
+    margin-bottom: 21px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--grey);
+    border-radius: 50%;
+    transition: border 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton::before {
+    content: "";
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: inset 1em 1em var(--blue);
+    background-color: var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:hover {
+    border: 2px solid var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:checked {
+    border: 2px solid var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:checked::before {
+    opacity: 1;
+}
+
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-label {
+    padding-right: 20px;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label {
+    padding-left: 10px;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+    cursor: pointer;
+}
+
+.backCall__inputForm__scheduleCall {
+    grid-area: scheduleCall;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.backCall__inputForm__scheduleCall__button {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--blue);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    margin-bottom: 16px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.backCall__inputForm__scheduleCall__button:hover {
+    background-color: var(--green2);
+}
+
+.backCall__inputForm__scheduleCall__caption {
+    font-family: "Manrope", sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--txt);
+}
+
+/** POPUP SECTION **/
+.popUp {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: popupDarkBackground 0.3s;
+}
+
+.showPopUp {
+    display: block;
+}
+
+.popUpContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--backgroundBlue);
+    width: 1000px;
+    height: 400px;
+    animation: popUpContainerAppear 0.3s;
+}
+
+.popUp__closeButton {
+    align-self: flex-end;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-right: 50px;
+    position: absolute;
+    top: 0%;
+}
+
+.popUp__text {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    width: 569px;
+    text-align: center;
+}
+
+/** NEXT PROJECTS SECTION **/
+.nextProjects {
+    padding-bottom: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextProjects__h3 {
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 90px;
+}
+
+.nextProjects__slider {
+    display: grid;
+    grid-template-columns: auto 20px auto 20px auto;
+    grid-template-rows: 511px;
+    grid-template-areas:
+    "slide1 . slide2 . slide3";
+    justify-content: center;
+    justify-items: center;
+    align-items: stretch;
+}
+
+.nextProjects__slider__deliveryBot {
+    grid-area: slide1;
+}
+
+.nextProjects__slider__myBedroomGuide {
+    grid-area: slide2;
+}
+
+.nextProjects__slider__beinSportBeinConnect {
+    grid-area: slide3;
+}
+
+.nextProjects__slider__deliveryBot,
+.nextProjects__slider__myBedroomGuide,
+.nextProjects__slider__beinSportBeinConnect {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.nextProjects__slider__deliveryBot__preview,
+.nextProjects__slider__myBedroomGuide__preview,
+.nextProjects__slider__beinSportBeinConnect__preview {
+    align-self: center;
+    width: auto;
+    height: auto;
+    max-width: 414px;
+    max-height: 318px;
+    margin-bottom: 20px;
+}
+
+/** FOOTER **/
+footer {
+    background-color: var(--blue);
+    padding: 60px 67px 60px 50px;
+}
+
+.footerMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footerMenu__linkWithImage {
+    margin-right: 30px;
+}
+
+.footerMenu__aboutlink,
+.footerMenu__portfoliolink,
+.footerMenu__serviceslink,
+.footerMenu__industrieslink,
+.footerMenu__howWeWorklink,
+.footerMenu__techStacklink {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.25s;
+    margin-right: 20px;
+}
+
+.footerMenu__aboutlink:hover,
+.footerMenu__portfoliolink:hover,
+.footerMenu__serviceslink:hover,
+.footerMenu__industrieslink:hover,
+.footerMenu__howWeWorklink:hover,
+.footerMenu__techStacklink:hover {
+    text-decoration: underline;
+    color: var(--green);
+}
+
+.footerInfo {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 308px 50px 305px 52px 256px 52px 300px;
+    grid-template-rows: 33px 20px 42px 54px;
+    grid-template-areas: 
+    "addressHeader . . . . . ."
+    ". . . . . . ."
+    "office1 . office2 . . . ."
+    "office1 . office2 . termsOfUse . websiteDevelopment";
+}
+
+.footerInfo__addressHeader {
+    grid-area: addressHeader;
+    color: var(--white);
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    text-transform: var(--text22texttransform);
+    line-height: var(--text22lineheight);
+}
+
+.footerInfo__addressOfOffice1 {
+    grid-area: office1;
+}
+
+.footerInfo__addressOfOffice2 {
+    grid-area: office2;
+}
+
+.footerInfo__addressOfOffice1,
+.footerInfo__addressOfOffice2,
+.footerInfo__link {
+    color: var(--white);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
+}
+
+.footerInfo__link {
+    grid-area: termsOfUse;
+    text-decoration: none;
+    align-self: end;
+}
+
+.footerInfo__link:hover {
+    text-decoration: underline;
+}
+
+.footerInfo__websiteDeveloper {
+    grid-area: websiteDevelopment;
+    text-decoration: none;
+    align-self: end;
+    color: var(--grey);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
 }

@@ -220,10 +220,123 @@
                 <p class="team__middleFlutterDeveloper__jobTitle">Middle Flutter Developer</p>
             </div>
         </section>
+        <section class="backCall">
+            <div class="backCall__header hiddenFromDown">
+                <h3 class="backCall__header__h3">Have a project to build? We've got the skills</h3>
+                <p class="backCall__header__text">Book a call and get verification of your idea, and a plan for
+                    product development</p>
+            </div>
+            <form class="backCall__inputForm hiddenFromDown delay1" method="post" action="/backcall">
+                <input id="nameInputField" name="nameInputField" class="backCall__inputForm__nameInputField"
+                    placeholder="Name" data-valid="false" />
+                <p class="backCall__inputForm__nameValidationInfo"></p>
+                <input id="phoneOrEmailInputField" name="phoneOrEmailInputField"
+                    class="backCall__inputForm__phoneOrEmailInputField" placeholder="Phone" data-valid="false" />
+                <p class="backCall__inputForm__phoneOrEmailValidationInfo"></p>
+                <div class="backCall__inputForm__communicationChoice">
+                    <p class="backCall__inputForm__communicationChoice__caption">Convenient way of communication</p>
+                    <div class="backCall__inputForm__communicationChoice__buttonsAndLabels">
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram">
+                            <input type="radio" id="backCallViaTelegram" name="backCall" value="telegram"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton"
+                                checked />
+                            <label for="backCallViaTelegram"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label">Telegram</label>
+                        </div>
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp">
+                            <input type="radio" id="backCallViaWhatsApp" name="backCall" value="whatsapp"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton" />
+                            <label for="backCallViaWhatsApp"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label">WhatsApp</label>
+                        </div>
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__email">
+                            <input type="radio" id="backCallViaEmail" name="backCall" value="email"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton" />
+                            <label for="backCallViaEmail"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__email-label">E-mail</label>
+                        </div>
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone">
+                            <input type="radio" id="backCallViaPhone" name="backCall" value="phone"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton" />
+                            <label for="backCallViaPhone"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label">Phone</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="backCall__inputForm__scheduleCall">
+                    <button type="submit" class="backCall__inputForm__scheduleCall__button disabledButton">Schedule
+                        a discovery
+                        call</button>
+                    <p class="backCall__inputForm__scheduleCall__caption">By clicking «Schedule a discovery call», I
+                        agree with Privacy Policy & Terms of Use.</p>
+                </div>
+            </form>
+        </section>
+        <section class="nextProjects">
+            <h3 class="nextProjects__h3">Next Projects</h3>
+            <div class="nextProjects__slider">
+                <div class="nextProjects__slider__deliveryBot">
+                    <img class="nextProjects__slider__deliveryBot__preview" src="./src/images/deliverybotpreview.png" />
+                    <h4 class="nextProjects__slider__deliveryBot__h4">DeliveryBot</h4>
+                    <p class="nextProjects__slider__deliveryBot__caption">Set of chatbots, CMS and CRM system, which
+                        helped to launch a restaurant delivery service from scratch in record time.</p>
+                </div>
+                <div class="nextProjects__slider__myBedroomGuide">
+                    <img class="nextProjects__slider__myBedroomGuide__preview"
+                        src="./src/images/mybedroomguidepreview.png" />
+                    <h4 class="nextProjects__slider__myBedroomGuide__h4">My Bedroom Guide</h4>
+                    <p class="nextProjects__slider__myBedroomGuide__caption">The mobile app aims to enhance the
+                        customer's experience in managing business, facilitate new and improved communication methods,
+                        and automate internal processes for project delivery.</p>
+                </div>
+                <div class="nextProjects__slider__beinSportBeinConnect">
+                    <img class="nextProjects__slider__beinSportBeinConnect__preview"
+                        src="./src/images/bsbcpreview.png" />
+                    <h4 class="nextProjects__slider__beinSportBeinConnect__h4">Bein Sport & Bein Connect</h4>
+                    <p class="nextProjects__slider__beinSportBeinConnect__caption">A news app and streaming platform,
+                        downloaded over 10 million times, that brought all the BeIN’s news, match stats, tournament
+                        updates in one convenient place. Protected by a three-layer anti-piracy security system.</p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <div class="footerMenu">
+            <a href="/" class="footerMenu__linkWithImage"><img src="./src/vectors/logo.svg" alt="Space logo"
+                    class="footerMenu__logo" /></a>
+            <a href="/" class="footerMenu__aboutlink">About us</a>
+            <a href="/" class="footerMenu__portfoliolink">Portfolio</a>
+            <a href="/" class="footerMenu__serviceslink">Services</a>
+            <a href="/" class="footerMenu__industrieslink">Industries</a>
+            <a href="/" class="footerMenu__howWeWorklink">How we work</a>
+            <a href="/" class="footerMenu__techStacklink">Tech Stack</a>
+        </div>
+        <div class="footerInfo">
+            <p class="footerInfo__addressHeader">Address</p>
+            <p class="footerInfo__addressOfOffice1">
+                Estonian Office:<br>
+                forYou OÜ<br>
+                Harju maakond, Tallinn, Kesklinna<br>
+                linnaosa, Tornimäe tn 3 // 5 // 7, 10145
+            </p>
+            <p class="footerInfo__addressOfOffice2">
+                UK Office:<br>
+                Appear Digital Ltd.<br>
+                39 Fairfax Road, London, United<br>
+                Kingdom, NW6 4EL
+            </p>
+            <a href="./termsOfUse.html" class="footerInfo__link">Privacy Policy & Terms of Use</a>
+            <a href="https://www.instagram.com/spirydon.a/" class="footerInfo__websiteDeveloper">Website Development
+                Alena Spirydon</a>
+        </div>
     </footer>
+    <section class="popUp">
+        <div class="popUpContainer">
+            <button class="popUp__closeButton" onclick="closePopUp()"><img class="popUp__closeButton__closeIcon"
+                    alt="close" src="./src/icons/close.svg" /></button>
+            <p class="popUp__text"></p>
+        </div>
+    </section>
     <script defer src="./scripts/countUp.js"></script>
     <script defer src="./scripts/foryou.js"></script>
 </body>
