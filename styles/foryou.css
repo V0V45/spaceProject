@@ -19,6 +19,11 @@
     --h3texttransform: none;
     --h3fontweight: bold;
     --h3lineheight: 100%;
+    /* h4 */
+    --h4fontfamily: "Proxima Nova", sans-serif;
+    --h4fontsize: 30px;
+    --h4texttransform: none;
+    --h4fontweight: bold;
     /* text-tegs */
     --texttegsfontfamily: "Manrope", sans-serif;
     --texttegsfontsize: 16px;
@@ -800,4 +805,126 @@ header {
 .technologyStack__tags__tag16,
 .technologyStack__tags__tag17 {
     margin-right: 30px;
+}
+
+/** TEAM SECTION **/
+.team {
+    padding: 100px 50px;
+    background: linear-gradient(139deg, #e4ecfd 0%, #f6f9ff 100%);
+    display: grid;
+    grid-template-columns: 32px 304px 20px 304px 20px 304px 20px 304px 32px;
+    grid-template-rows: 64px 80px 291px 80px 291px;
+    grid-template-areas: 
+    "h3 h3 h3 h3 h3 h3 h3 h3 h3"
+    ". . . . . . . . ."
+    ". fullstack . asoua . qa . analyst ."
+    ". . . . . . . . ."
+    ". content . uxui . illustrator . flutter .";
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.team__h3 {
+    grid-area: h3;
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.team__seniorFullstackDeveloper {
+    grid-area: fullstack;
+}
+
+.team__asoUaManager {
+    grid-area: asoua;
+}
+
+.team__qaEngineer {
+    grid-area: qa;
+}
+
+.team__leadProductManager {
+    grid-area: analyst;
+}
+
+.team__contentManager {
+    grid-area: content;
+}
+
+.team__uxuiDesigner {
+    grid-area: uxui;
+}
+
+.team__illustratorDesigner {
+    grid-area: illustrator;
+}
+
+.team__middleFlutterDeveloper {
+    grid-area: flutter;
+}
+
+.team__seniorFullstackDeveloper,
+.team__asoUaManager,
+.team__qaEngineer,
+.team__leadProductManager,
+.team__contentManager,
+.team__uxuiDesigner,
+.team__illustratorDesigner,
+.team__middleFlutterDeveloper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.team__seniorFullstackDeveloper__portrait,
+.team__asoUaManager__portrait,
+.team__qaEngineer__portrait,
+.team__leadProductManager__portrait,
+.team__contentManager__portrait,
+.team__uxuiDesigner__portrait,
+.team__illustratorDesigner__portrait,
+.team__middleFlutterDeveloper__portrait {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+
+.team__seniorFullstackDeveloper__name,
+.team__asoUaManager__name,
+.team__qaEngineer__name,
+.team__leadProductManager__name,
+.team__contentManager__name,
+.team__uxuiDesigner__name,
+.team__illustratorDesigner__name,
+.team__middleFlutterDeveloper__name {
+    font-family: var(--h4fontfamily);
+    font-size: var(--h4fontsize);
+    font-weight: var(--h4fontweight);
+    text-transform: var(--h4texttransform);
+    color: var(--txt);
+}
+
+.team__seniorFullstackDeveloper__jobTitle,
+.team__asoUaManager__jobTitle,
+.team__qaEngineer__jobTitle,
+.team__leadProductManager__jobTitle,
+.team__contentManager__jobTitle,
+.team__uxuiDesigner__jobTitle,
+.team__illustratorDesigner__jobTitle,
+.team__middleFlutterDeveloper__jobTitle {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
 }
