@@ -982,7 +982,7 @@ header {
 .backCall__inputForm {
     display: grid;
     grid-template-columns: auto 60px auto;
-    grid-template-rows: auto 30px auto 20px auto;
+    grid-template-rows: auto 0px auto 30px auto;
     grid-template-areas: 
     "nameInput . contactInput"
     ". . ."
@@ -1261,6 +1261,26 @@ header {
     color: var(--txt);
     width: 569px;
     text-align: center;
+}
+
+/* Затемнение фона при появлении Pop-Up окна */
+@keyframes popupDarkBackground {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    } to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Появление Pop-Up окна */
+@keyframes popUpContainerAppear {
+    from {
+        opacity: 0;
+        filter: blur(2px);
+    } to {
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 
 /** NEXT PROJECTS SECTION **/

@@ -27,7 +27,6 @@ const imagesArray = [
 ];
 const backCallForm = document.getElementsByClassName('backCall__inputForm')[0];
 const popUpSection = document.getElementsByClassName('popUp')[0];
-const popUpContainer = document.getElementsByClassName('popUpContainer')[0];
 const popUpText = document.getElementsByClassName('popUp__text')[0];
 const contactUsForm = document.getElementsByClassName('contactUs__form')[0];
 const radioButtonsArray = [
