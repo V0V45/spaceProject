@@ -40,6 +40,41 @@ const observerFromDown = new IntersectionObserver((entries) => {
 const hiddenFromDownElements = document.querySelectorAll('.hiddenFromDown'); // все элементы с классом hiddenFromDown в HTML записываем в массив
 hiddenFromDownElements.forEach((element) => observerFromDown.observe(element)); // для каждого из них запускаем наблюдение
 
+// 3) Плавное появление
+// аналогично появлению снизу, только без transform translateY
+const observerAppear = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+        }
+    });
+});
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((element) => observerAppear.observe(element));
+
+/* КНОПКА FREE CONSULTATION */
+// 1) Изменение стрелок и размера шрифта при наведении
+const freeConsultationHeaderButton = document.getElementsByClassName('header__freeConsultationButton')[0];
+
+function changeArrowToStraightAndChangeFont(event) {
+    event.target.style.fontSize = '18px';
+    event.target.lastElementChild.classList.add('rotate');
+}
+
+function changeArrowToUpAndChangeFont(event) {
+    event.target.style.removeProperty('font-size');
+    event.target.lastElementChild.classList.remove('rotate');
+}
+
+freeConsultationHeaderButton.addEventListener('mouseenter', changeArrowToStraightAndChangeFont);
+freeConsultationHeaderButton.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
+// 2) Переход по ссылке при нажатии
+function goToCallbackForm() {
+    window.location.href = '#callbackForm'
+}
+
+
+
 /* ФОРМА ОБРАТНОГО ЗВОНКА */
 // 1) Работа отправки формы обратного звонка
 // Элементы DOM:
@@ -79,7 +114,7 @@ function submitBackCallForm(event) {
             if (currentRadioButtonValue == 'telegram' || currentRadioButtonValue == 'whatsapp' || currentRadioButtonValue == 'phone') {
                 // элемент <p>, идущий за полем, наполняем текстом про неверный телефон
                 phoneOrEmailInputField.nextElementSibling.textContent = 'The phone entered is invalid';
-            // если значение email, то мы понимаем, что речь идет о почте
+                // если значение email, то мы понимаем, что речь идет о почте
             } else if (currentRadioButtonValue == 'email') {
                 // элемент <p>, идущий за полем, наполняем текстом про неверную почту
                 phoneOrEmailInputField.nextElementSibling.textContent = 'The e-mail address entered is invalid';
@@ -271,3 +306,16 @@ radioButtonsArray.forEach(radioButton => {
     radioButton.addEventListener('click', changePlaceholderAndLaunchValidation);
 });
 nameInputField.addEventListener('input', atLeastOneSymbolValidation);
+
+/* SPLIDE */
+// Активация
+let splide = new Splide('.splide', {
+    type: 'loop',
+    arrows: false,
+    gap: 40,
+    perPage: 3,
+    focus: 0,
+    autoplay: true,
+    interval: 4000,
+});
+splide.mount();

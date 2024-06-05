@@ -8,6 +8,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./styles/foryou.css" />
     <link rel="shortcut icon" href="./src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/splide.min.css" />
 </head>
 
 <body>
@@ -21,6 +22,9 @@
             <a href="/" class="header__industriesLink">Industries</a>
             <a href="/" class="header__howWeWorkLink">How we work</a>
             <a href="/" class="header__techStackLink">Tech Stack</a>
+            <button class="header__freeConsultationButton" onclick="goToCallbackForm()">
+                Free consultation <img class="header__freeConsultationButton__arrow" src="./src/icons/arrow_up_green.svg" />
+            </button>
         </div>
     </header>
     <main>
@@ -28,7 +32,7 @@
             <h1 class="forYou__h1 hiddenFromDown">forYou Beauty & Wellness Apps</h1>
             <p class="forYou__caption hiddenFromDown delay1">Skincare app with 15+ mechanics available for users,
                 combined with AR and AI features.</p>
-            <img class="forYou__img hiddenFromDown delay2" src="./src/images/foryou.png" />
+            <img class="forYou__img hidden" src="./src/images/foryou.png" />
         </section>
         <section class="impact">
             <h3 class="impact__text hiddenFromDown">Impact on clients business</h3>
@@ -220,7 +224,7 @@
                 <p class="team__middleFlutterDeveloper__jobTitle">Middle Flutter Developer</p>
             </div>
         </section>
-        <section class="backCall">
+        <section class="backCall" id="callbackForm">
             <div class="backCall__header hiddenFromDown">
                 <h3 class="backCall__header__h3">Have a project to build? We've got the skills</h3>
                 <p class="backCall__header__text">Book a call and get verification of your idea, and a plan for
@@ -272,30 +276,63 @@
                 </div>
             </form>
         </section>
-        <section class="nextProjects">
-            <h3 class="nextProjects__h3">Next Projects</h3>
-            <div class="nextProjects__slider">
-                <div class="nextProjects__slider__deliveryBot">
-                    <img class="nextProjects__slider__deliveryBot__preview" src="./src/images/deliverybotpreview.png" />
-                    <h4 class="nextProjects__slider__deliveryBot__h4">DeliveryBot</h4>
-                    <p class="nextProjects__slider__deliveryBot__caption">Set of chatbots, CMS and CRM system, which
-                        helped to launch a restaurant delivery service from scratch in record time.</p>
-                </div>
-                <div class="nextProjects__slider__myBedroomGuide">
-                    <img class="nextProjects__slider__myBedroomGuide__preview"
-                        src="./src/images/mybedroomguidepreview.png" />
-                    <h4 class="nextProjects__slider__myBedroomGuide__h4">My Bedroom Guide</h4>
-                    <p class="nextProjects__slider__myBedroomGuide__caption">The mobile app aims to enhance the
-                        customer's experience in managing business, facilitate new and improved communication methods,
-                        and automate internal processes for project delivery.</p>
-                </div>
-                <div class="nextProjects__slider__beinSportBeinConnect">
-                    <img class="nextProjects__slider__beinSportBeinConnect__preview"
-                        src="./src/images/bsbcpreview.png" />
-                    <h4 class="nextProjects__slider__beinSportBeinConnect__h4">Bein Sport & Bein Connect</h4>
-                    <p class="nextProjects__slider__beinSportBeinConnect__caption">A news app and streaming platform,
-                        downloaded over 10 million times, that brought all the BeIN's news, match stats, tournament
-                        updates in one convenient place. Protected by a three-layer anti-piracy security system.</p>
+        <section class="nextProjects hiddenFromDown">
+            <div class="splide" aria-labelledby="carousel-heading">
+                <h3 class="nextProjects__h3">Next Projects</h3>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="nextProjects__slider__deliveryBot">
+                                <img class="nextProjects__slider__deliveryBot__preview"
+                                    src="./src/images/deliverybotpreview.png" />
+                                <h4 class="nextProjects__slider__deliveryBot__h4">DeliveryBot</h4>
+                                <p class="nextProjects__slider__deliveryBot__caption">Set of chatbots, CMS and CRM
+                                    system,
+                                    which
+                                    helped to launch a restaurant delivery service from scratch in record time.</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="nextProjects__slider__myBedroomGuide">
+                                <img class="nextProjects__slider__myBedroomGuide__preview"
+                                    src="./src/images/mybedroomguidepreview.png" />
+                                <h4 class="nextProjects__slider__myBedroomGuide__h4">My Bedroom Guide</h4>
+                                <p class="nextProjects__slider__myBedroomGuide__caption">The mobile app aims to enhance
+                                    the
+                                    customer's experience in managing business, facilitate new and improved
+                                    communication
+                                    methods,
+                                    and automate internal processes for project delivery.</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="nextProjects__slider__beinSportBeinConnect">
+                                <img class="nextProjects__slider__beinSportBeinConnect__preview"
+                                    src="./src/images/bsbcpreview.png" />
+                                <h4 class="nextProjects__slider__beinSportBeinConnect__h4">Bein Sport & Bein Connect
+                                </h4>
+                                <p class="nextProjects__slider__beinSportBeinConnect__caption">A news app and streaming
+                                    platform,
+                                    downloaded over 10 million times, that brought all the BeIN's news, match stats,
+                                    tournament
+                                    updates in one convenient place. Protected by a three-layer anti-piracy security
+                                    system.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="nextProjects__slider__i24news">
+                                <img class="nextProjects__slider__i24news__preview"
+                                    src="./src/images/i24newspreview.png" />
+                                <h4 class="nextProjects__slider__i24news__h4">i24 News
+                                </h4>
+                                <p class="nextProjects__slider__i24news__caption">A multi-format news app with text,
+                                    audio and live-video news feeds. Includes advanced analytics and intensive ad
+                                    monetization, which, however, doesn't ruin user experience.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -337,6 +374,7 @@
             <p class="popUp__text"></p>
         </div>
     </section>
+    <script src="./scripts/splide.min.js"></script>
     <script defer src="./scripts/countUp.js"></script>
     <script defer src="./scripts/foryou.js"></script>
 </body>
