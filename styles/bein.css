@@ -1,0 +1,1413 @@
+/** ОБЩЕЕ **/
+/* Константы */
+:root {
+    /* Цвета */
+    --txt: #051B43;
+    --white: #FFFFFF;
+    --green: #11FACA;
+    --backgroundBlue: #E5ECFC;
+    --violet: #EAE0F4;
+    --grey: #BFC8C9;
+    --blue: #303D8F;
+    --green2: #10C48D;
+    /* h1 */
+    --h1fontfamily: "Proxima Nova", sans-serif;
+    --h1fontsize: 62px;
+    --h1texttransform: uppercase;
+    --h1fontweight: bold;
+    --h1lineheight: 100%;
+    /* h3 */
+    --h3fontfamily: "Proxima Nova", sans-serif;
+    --h3fontsize: 44px;
+    --h3texttransform: none;
+    --h3fontweight: bold;
+    --h3lineheight: 100%;
+    /* h4 */
+    --h4fontfamily: "Proxima Nova", sans-serif;
+    --h4fontsize: 30px;
+    --h4texttransform: none;
+    --h4fontweight: bold;
+    /* text-tegs */
+    --texttegsfontfamily: "Manrope", sans-serif;
+    --texttegsfontsize: 16px;
+    --texttegsfontweight: normal;
+    --texttegslineheight: 100%;
+    --texttegstexttransform: none;
+    /* text 16 */
+    --text16fontfamily: "Manrope", sans-serif;
+    --text16fontsize: 16px;
+    --text16fontweight: 500;
+    --text16lineheight: 150%;
+    --text16texttransform: none;
+    /* text 22 */
+    --text22fontfamily: "Manrope", sans-serif;
+    --text22fontsize: 22px;
+    --text22fontweight: 500;
+    --text22lineheight: 150%;
+    --text22texttransform: none;
+    /* button */
+    --buttonfontfamily: "Manrope", sans-serif;
+    --buttonfontsize: 16px;
+    --buttonfontweight: 500;
+    --buttonlineheight: 150%;
+    --buttontexttransform: uppercase;
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Manrope";
+    font-weight: normal;
+    src: url(/src/fonts/manrope_regular.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 500;
+    src: url(/src/fonts/manrope_medium.ttf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    src: url(/src/fonts/proximanova_bold.otf);
+}
+
+/* Удаление стандартных отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/** АНИМАЦИИ **/
+/* Плавный скроллинг */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Появление снизу */
+.hiddenFromDown {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(25%);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.showFromDown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+}
+
+.delay1 {
+    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
+}
+
+
+.delay1-5 {
+    transition: opacity 0.5s ease-out 150ms, filter 0.5s ease-out 150ms, transform 0.5s ease-out 150ms;
+}
+
+.delay2 {
+    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
+
+.delay2-5 {
+    transition: opacity 0.5s ease-out 250ms, filter 0.5s ease-out 250ms, transform 0.5s ease-out 250ms;
+}
+
+.delay3 {
+    transition: opacity 0.5s ease-out 300ms, filter 0.5s ease-out 300ms, transform 0.5s ease-out 300ms;
+}
+
+.delay3-5 {
+    transition: opacity 0.5s ease-out 350ms, filter 0.5s ease-out 350ms, transform 0.5s ease-out 350ms;
+}
+
+.delay4 {
+    transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
+}
+
+.delay4-5 {
+    transition: opacity 0.5s ease-out 450ms, filter 0.5s ease-out 450ms, transform 0.5s ease-out 450ms;
+}
+
+.delay5 {
+    transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
+}
+
+/* Плавное появление */
+.hidden {
+    opacity: 0;
+    filter: blur(2px);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+}
+
+.appear {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Валидация */
+.disabledButton:hover {
+    background-color: var(--grey);
+}
+
+/* Для тех, у кого выключена анимация */
+@media(prefers-reduced-motion) {
+    .hiddenFromDown {
+        transition: none;
+    }
+}
+
+/* Поворот стрелок на кнопках */
+.rotate {
+    transform: rotate(45deg);
+}
+
+/** HEADER **/
+/* Контейнер хедера */
+header {
+    padding-left: 50px;
+    background-color: var(--txt);
+}
+
+/* Расположение элементов в хедере */
+.headerMenu {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Отступы между элементами в хедере (от всех, кроме последней ссылки) */
+.header__logoLink,
+.header__aboutLink,
+.header__portfolioLink,
+.header__servicesLink,
+.header__industriesLink,
+.header__howWeWorkLink {
+    margin-right: 40px;
+}
+
+/* Стилизация ссылок хедера */
+.header__aboutLink,
+.header__portfolioLink,
+.header__servicesLink,
+.header__industriesLink,
+.header__howWeWorkLink,
+.header__techStackLink {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Стилизация ссылок хедера при наведении на них */
+.header__aboutLink:hover,
+.header__portfolioLink:hover,
+.header__servicesLink:hover,
+.header__industriesLink:hover,
+.header__howWeWorkLink:hover,
+.header__techStackLink:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.header__freeConsultationButton {
+    margin-right: 35px;
+    margin-left: auto;
+    width: 260px;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: var(--buttontexttransform);
+    letter-spacing: 0.01em;
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    transition: font-size 0.3s;
+    cursor: pointer;
+}
+
+.header__freeConsultationButton__arrow {
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+/** FOR YOU SECTION **/
+/* Контейнер и сетка */
+.bein {
+    background: linear-gradient(180deg, #00c6e0 0%, #7210ce 58.42%);
+    padding-left: 50px;
+    padding-right: 50px;
+    display: grid;
+    grid-template-columns: 614px 100px 626px;
+    grid-template-rows: 236px 62px 30px 33px 236px;
+    grid-template-areas:
+        ". . img"
+        "h1 . img"
+        ". . img"
+        "caption . img"
+        ". . img";
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* Заголовок h1 */
+.bein__h1 {
+    grid-area: h1;
+    font-family: var(--h1fontfamily);
+    font-size: var(--h1fontsize);
+    font-weight: var(--h1fontweight);
+    text-transform: var(--h1texttransform);
+    line-height: var(--h1lineheight);
+    color: var(--white);
+}
+
+/* Подпись txt22 */
+.bein__caption {
+    grid-area: caption;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--white);
+}
+
+/* Картинка справа */
+.bein__img {
+    grid-area: img;
+    object-fit: contain;
+}
+
+/** IMPACT SECTION **/
+.impact {
+    padding: 200px 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.impact__text {
+    padding: 11px 62px;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.impact__digits {
+    padding: 0px 82px;
+    display: grid;
+    grid-template-columns: 144px 60px 279px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "numberInstalls . captionNew"
+        "captionInstalls . captionNew";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.impact__digits__number-installs {
+    grid-area: numberInstalls;
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: var(--txt);
+}
+
+.impact__digits__caption-installs {
+    grid-area: captionInstalls;
+    text-align: center;
+}
+
+.impact__digits__caption-new {
+    grid-area: captionNew;
+    justify-self: center;
+    align-self: center;
+}
+
+.impact__digits__caption-installs,
+.impact__digits__caption-new {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+/** CLIENT SECTION **/
+.client {
+    padding: 89px 50px;
+    background-color: var(--violet);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.client__h3 {
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 20px;
+}
+
+.client__description {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    width: 1340px;
+}
+
+/** MISSION SECTION **/
+.mission {
+    padding: 100px 50px 200px 50px;
+    display: grid;
+    grid-template-columns: 660px 20px 660px;
+    grid-template-rows: 126px 44px 20px 164px 126px;
+    grid-template-areas:
+        ". . img"
+        "h3 . img"
+        ". . img"
+        "info . img"
+        ". . img";
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.mission__h3 {
+    grid-area: h3;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.mission__description {
+    grid-area: info;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.mission__preview {
+    grid-area: img;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+/** CHALLENGES SECTION **/
+.challenges {
+    background-color: var(--violet);
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 298px 300px 100px 444px 298px;
+    grid-template-rows: 44px 20px 66px 80px 676px;
+    grid-template-areas:
+        "h3 h3 h3 h3 h3"
+        ". . . . ."
+        "cap cap cap cap cap"
+        ". . . . ."
+        ". img1 . img2 .";
+    justify-content: center;
+    justify-items: center;
+    align-items: stretch;
+    text-align: center;
+}
+
+.challenges__h3 {
+    grid-area: h3;
+    color: var(--txt);
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+}
+
+.challenges__description {
+    grid-area: cap;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    width: 900px;
+}
+
+.challenges__img1 {
+    grid-area: img1;
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    align-self: start;
+}
+
+.challenges__img2 {
+    grid-area: img2;
+    width: auto;
+    height: auto;
+    max-width: 444px;
+}
+
+/** SOLUTION SECTION **/
+.solution {
+    padding: 200px 50px;
+    display: grid;
+    grid-template-columns: 630px 50px 660px;
+    grid-template-rows: 53px 44px 20px 256px 53px;
+    grid-template-areas:
+        ". . imgContainer"
+        "h3 . imgContainer"
+        ". . imgContainer"
+        "description . imgContainer"
+        ". . imgContainer";
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.solution__h3 {
+    grid-area: h3;
+    color: var(--txt);
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+}
+
+.solution__description {
+    grid-area: description;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.solution__imgContainer {
+    grid-area: imgContainer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.solution__imgContainer__img-1,
+.solution__imgContainer__img-2 {
+    margin-right: 15px;
+}
+
+.solution__imgContainer__img-1,
+.solution__imgContainer__img-2,
+.solution__imgContainer__img-3 {
+    width: auto;
+    height: auto;
+    max-width: 208px;
+}
+
+/** RESPONSIBILITY SECTION **/
+.responsibility {
+    padding: 0 50px 200px 50px;
+    display: grid;
+    grid-template-columns: 373px 100px 363px 100px 406px;
+    grid-template-rows: 44px 80px 50px;
+    grid-template-areas:
+        "h3 h3 h3 h3 h3"
+        ". . . . ."
+        "uxui . frontend . backend";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.responsibility__h3 {
+    grid-area: h3;
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.responsibility__uxui {
+    grid-area: uxui;
+}
+
+.responsibility__frontend {
+    grid-area: frontend;
+}
+
+.responsibility__backend {
+    grid-area: backend;
+}
+
+.responsibility__uxui,
+.responsibility__frontend,
+.responsibility__backend {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.responsibility__uxui__text,
+.responsibility__frontend__text,
+.responsibility__backend__text {
+    margin-left: 20px;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+/** KEY FEATURES SECTION **/
+.keyFeatures {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 200px;
+}
+
+.keyFeatures__h3 {
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 80px;
+}
+
+.keyFeatures__grid {
+    display: grid;
+    grid-template-columns: 433px 20px 433px 20px 433px;
+    grid-template-rows: 559px 20px 559px;
+    grid-template-areas:
+        "element1 . element2 . element3"
+        ". . . . ."
+        "element4 . element5 . element6";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.keyFeatures__grid__element1 {
+    grid-area: element1;
+}
+
+.keyFeatures__grid__element2 {
+    grid-area: element2;
+}
+
+.keyFeatures__grid__element3 {
+    grid-area: element3;
+}
+
+.keyFeatures__grid__element4 {
+    grid-area: element4;
+}
+
+.keyFeatures__grid__element5 {
+    grid-area: element5;
+}
+
+.keyFeatures__grid__element6 {
+    grid-area: element6;
+}
+
+.keyFeatures__grid__element1,
+.keyFeatures__grid__element3,
+.keyFeatures__grid__element5 {
+    background-color: var(--violet);
+}
+
+.keyFeatures__grid__element2,
+.keyFeatures__grid__element4,
+.keyFeatures__grid__element6 {
+    background-color: var(--backgroundBlue);
+}
+
+.keyFeatures__grid__element1,
+.keyFeatures__grid__element2,
+.keyFeatures__grid__element3,
+.keyFeatures__grid__element4,
+.keyFeatures__grid__element5,
+.keyFeatures__grid__element6 {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.keyFeatures__grid__element1__caption,
+.keyFeatures__grid__element2__caption,
+.keyFeatures__grid__element3__caption,
+.keyFeatures__grid__element4__caption,
+.keyFeatures__grid__element5__caption,
+.keyFeatures__grid__element6__caption {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    text-align: center;
+    margin: 40px 20px 20px 20px;
+}
+
+.keyFeatures__grid__element1__img,
+.keyFeatures__grid__element2__img,
+.keyFeatures__grid__element3__img,
+.keyFeatures__grid__element4__img,
+.keyFeatures__grid__element5__img,
+.keyFeatures__grid__element6__img {
+    width: 192px;
+    height: 400px;
+}
+
+/** TECHNOLOGY STACK SECTION **/
+.technologyStack {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.technologyStack__h3 {
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 80px;
+}
+
+.technologyStack__tags__row1,
+.technologyStack__tags__row2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.technologyStack__tags__row1 {
+    margin-bottom: 30px;
+}
+
+.technologyStack__tags__tag1,
+.technologyStack__tags__tag2,
+.technologyStack__tags__tag3,
+.technologyStack__tags__tag4,
+.technologyStack__tags__tag5,
+.technologyStack__tags__tag6,
+.technologyStack__tags__tag7,
+.technologyStack__tags__tag8,
+.technologyStack__tags__tag9,
+.technologyStack__tags__tag10,
+.technologyStack__tags__tag11,
+.technologyStack__tags__tag12,
+.technologyStack__tags__tag13,
+.technologyStack__tags__tag14 {
+    border-radius: 5px;
+    padding: 9px 25px;
+    background-color: var(--backgroundBlue);
+    color: var(--txt);
+    font-family: var(--texttegsfontfamily);
+    font-size: var(--texttegsfontsize);
+    font-weight: var(--texttegsfontweight);
+    line-height: var(--texttegslineheight);
+    text-transform: var(--texttegstexttransform);
+}
+
+.technologyStack__tags__tag1,
+.technologyStack__tags__tag2,
+.technologyStack__tags__tag3,
+.technologyStack__tags__tag4,
+.technologyStack__tags__tag5,
+.technologyStack__tags__tag6,
+.technologyStack__tags__tag7,
+.technologyStack__tags__tag9,
+.technologyStack__tags__tag10,
+.technologyStack__tags__tag11,
+.technologyStack__tags__tag12,
+.technologyStack__tags__tag13 {
+    margin-right: 30px;
+}
+
+/** TEAM SECTION **/
+.team {
+    padding: 100px 50px;
+    background-color: var(--violet);
+    display: grid;
+    grid-template-columns: 32px 304px 20px 304px 20px 304px 20px 304px 32px;
+    grid-template-rows: 64px 80px 291px 80px 291px;
+    grid-template-areas: 
+    "h3 h3 h3 h3 h3 h3 h3 h3 h3"
+    ". . . . . . . . ."
+    ". uxui . fullstack . architect . iOS ."
+    ". . . . . . . . ."
+    ". . . android . flutter . . .";
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.team__h3 {
+    grid-area: h3;
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+}
+
+.team__uxuiDesigner {
+    grid-area: uxui;
+}
+
+.team__seniorFullstackDeveloper {
+    grid-area: fullstack;
+}
+
+.team__solutionArchitect {
+    grid-area: architect;
+}
+
+.team__senioriOSDeveloper {
+    grid-area: iOS;
+}
+
+.team__seniorAndroidDeveloper {
+    grid-area: android;
+}
+
+.team__middleFlutterDeveloper {
+    grid-area: flutter;
+}
+
+.team__uxuiDesigner,
+.team__seniorFullstackDeveloper,
+.team__solutionArchitect,
+.team__senioriOSDeveloper,
+.team__seniorAndroidDeveloper,
+.team__middleFlutterDeveloper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.team__uxuiDesigner__portrait,
+.team__seniorFullstackDeveloper__portrait,
+.team__solutionArchitect__portrait,
+.team__senioriOSDeveloper__portrait,
+.team__seniorAndroidDeveloper__portrait,
+.team__middleFlutterDeveloper__portrait {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+
+.team__uxuiDesigner__name,
+.team__seniorFullstackDeveloper__name,
+.team__solutionArchitect__name,
+.team__senioriOSDeveloper__name,
+.team__seniorAndroidDeveloper__name,
+.team__middleFlutterDeveloper__name {
+    font-family: var(--h4fontfamily);
+    font-size: var(--h4fontsize);
+    font-weight: var(--h4fontweight);
+    text-transform: var(--h4texttransform);
+    color: var(--txt);
+}
+
+.team__uxuiDesigner__jobTitle,
+.team__seniorFullstackDeveloper__jobTitle,
+.team__solutionArchitect__jobTitle,
+.team__senioriOSDeveloper__jobTitle,
+.team__seniorAndroidDeveloper__jobTitle,
+.team__middleFlutterDeveloper__jobTitle {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+/** BACKCALL SECTION **/
+.backCall {
+    padding: 200px 220px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.backCall__header {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.backCall__header__h3 {
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 24px;
+}
+
+.backCall__header__text {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+}
+
+.backCall__inputForm {
+    display: grid;
+    grid-template-columns: auto 60px auto;
+    grid-template-rows: auto 0px auto 30px auto;
+    grid-template-areas: 
+    "nameInput . contactInput"
+    ". . ."
+    "nameValidation . contactValidation"
+    ". . ."
+    "communicationChoice . scheduleCall";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.backCall__inputForm__nameInputField {
+    grid-area: nameInput;
+}
+
+.backCall__inputForm__phoneOrEmailInputField {
+    grid-area: contactInput;
+}
+
+.backCall__inputForm__nameValidationInfo {
+    grid-area: nameValidation;
+}
+
+.backCall__inputForm__phoneOrEmailValidationInfo {
+    grid-area: contactValidation;
+}
+
+.backCall__inputForm__nameValidationInfo,
+.backCall__inputForm__phoneOrEmailValidationInfo {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: #dd1414;
+}
+
+.backCall__inputForm__nameInputField,
+.backCall__inputForm__phoneOrEmailInputField {
+    border: 1px solid var(--grey);
+    width: 470px;
+    height: 60px;
+    border-radius: 8px;
+    padding: 18px;
+    opacity: 1;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.backCall__inputForm__nameInputField:focus,
+.backCall__inputForm__phoneOrEmailInputField:focus {
+    border: 1px solid var(--blue);
+    outline: none;
+}
+
+.backCall__inputForm__nameInputField::placeholder,
+.backCall__inputForm__phoneOrEmailInputField::placeholder {
+    opacity: 1;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--grey);
+}
+
+.backCall__inputForm__communicationChoice {
+    grid-area: communicationChoice;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.backCall__inputForm__communicationChoice__caption {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    padding-bottom: 20px;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels {
+    margin-bottom: 21px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--grey);
+    border-radius: 50%;
+    transition: border 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton::before {
+    content: "";
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: inset 1em 1em var(--blue);
+    background-color: var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:hover,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:hover {
+    border: 2px solid var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:checked,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:checked {
+    border: 2px solid var(--blue);
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton:checked::before,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton:checked::before {
+    opacity: 1;
+}
+
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-label {
+    padding-right: 20px;
+}
+
+.backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__email-label,
+.backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label {
+    padding-left: 10px;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+    cursor: pointer;
+}
+
+.backCall__inputForm__scheduleCall {
+    grid-area: scheduleCall;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.backCall__inputForm__scheduleCall__button {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--blue);
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    margin-bottom: 16px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.backCall__inputForm__scheduleCall__button:hover {
+    background-color: var(--green2);
+}
+
+.backCall__inputForm__scheduleCall__caption {
+    font-family: "Manrope", sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--txt);
+}
+
+/** POPUP SECTION **/
+.popUp {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: popupDarkBackground 0.3s;
+}
+
+.showPopUp {
+    display: block;
+}
+
+.popUpContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--backgroundBlue);
+    width: 1000px;
+    height: 400px;
+    animation: popUpContainerAppear 0.3s;
+}
+
+.popUp__closeButton {
+    align-self: flex-end;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    margin-top: 50px;
+    margin-right: 50px;
+    position: absolute;
+    top: 0%;
+}
+
+.popUp__text {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+    color: var(--txt);
+    width: 569px;
+    text-align: center;
+}
+
+/* Затемнение фона при появлении Pop-Up окна */
+@keyframes popupDarkBackground {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    } to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Появление Pop-Up окна */
+@keyframes popUpContainerAppear {
+    from {
+        opacity: 0;
+        filter: blur(2px);
+    } to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/** NEXT PROJECTS SECTION **/
+.nextProjects {
+    padding-bottom: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.nextProjects__h3 {
+    text-align: center;
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+    color: var(--txt);
+    margin-bottom: 100px;
+}
+
+.nextProjects__slider__deliveryBot,
+.nextProjects__slider__myBedroomGuide,
+.nextProjects__slider__forYou,
+.nextProjects__slider__i24news {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.nextProjects__slider__deliveryBot:hover,
+.nextProjects__slider__myBedroomGuide:hover,
+.nextProjects__slider__forYou:hover,
+.nextProjects__slider__i24news:hover {
+    color: var(--blue);
+}
+
+.nextProjects__slider__deliveryBot__preview,
+.nextProjects__slider__myBedroomGuide__preview,
+.nextProjects__slider__forYou__preview,
+.nextProjects__slider__i24news__preview {
+    align-self: center;
+    object-fit: contain;
+    width: 414px;
+    height: 318px;
+    margin-bottom: 20px;
+}
+
+.nextProjects__slider__deliveryBot__h4,
+.nextProjects__slider__myBedroomGuide__h4,
+.nextProjects__slider__forYou__h4,
+.nextProjects__slider__i24news__h4 {
+    font-size: var(--h4fontsize);
+    font-family: var(--h4fontfamily);
+    font-weight: var(--h4fontweight);
+    text-transform: var(--h4texttransform);
+    margin-bottom: 20px;
+}
+
+.nextProjects__slider__deliveryBot__caption,
+.nextProjects__slider__myBedroomGuide__caption,
+.nextProjects__slider__forYou__caption,
+.nextProjects__slider__i24news__caption {
+    font-size: var(--text16fontsize);
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+/** FOOTER **/
+footer {
+    background-color: var(--blue);
+    padding: 60px 67px 60px 50px;
+}
+
+.footerMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footerMenu__linkWithImage {
+    margin-right: 30px;
+}
+
+.footerMenu__aboutlink,
+.footerMenu__portfoliolink,
+.footerMenu__serviceslink,
+.footerMenu__industrieslink,
+.footerMenu__howWeWorklink,
+.footerMenu__techStacklink {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.25s;
+    margin-right: 20px;
+}
+
+.footerMenu__aboutlink:hover,
+.footerMenu__portfoliolink:hover,
+.footerMenu__serviceslink:hover,
+.footerMenu__industrieslink:hover,
+.footerMenu__howWeWorklink:hover,
+.footerMenu__techStacklink:hover {
+    text-decoration: underline;
+    color: var(--green);
+}
+
+.footerInfo {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 308px 50px 305px 52px 256px 52px 300px;
+    grid-template-rows: 33px 20px 42px 54px;
+    grid-template-areas: 
+    "addressHeader . . . . . ."
+    ". . . . . . ."
+    "office1 . office2 . . . ."
+    "office1 . office2 . termsOfUse . websiteDevelopment";
+}
+
+.footerInfo__addressHeader {
+    grid-area: addressHeader;
+    color: var(--white);
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    text-transform: var(--text22texttransform);
+    line-height: var(--text22lineheight);
+}
+
+.footerInfo__addressOfOffice1 {
+    grid-area: office1;
+}
+
+.footerInfo__addressOfOffice2 {
+    grid-area: office2;
+}
+
+.footerInfo__addressOfOffice1,
+.footerInfo__addressOfOffice2,
+.footerInfo__link {
+    color: var(--white);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
+}
+
+.footerInfo__link {
+    grid-area: termsOfUse;
+    text-decoration: none;
+    align-self: end;
+}
+
+.footerInfo__link:hover {
+    text-decoration: underline;
+}
+
+.footerInfo__websiteDeveloper {
+    grid-area: websiteDevelopment;
+    text-decoration: none;
+    align-self: end;
+    color: var(--grey);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
+}

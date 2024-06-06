@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bein Sport & Bein Connect - Space Development</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles/bein.css" />
+    <link rel="shortcut icon" href="./src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/splide.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="headerMenu">
+            <a href="/index.html" class="header__logoLink"><img class="header__logoLink__logo" alt="Space logo"
+                    src="./src/vectors/logo.svg"></a>
+            <a href="/" class="header__aboutLink">About us</a>
+            <a href="/" class="header__portfolioLink">Portfolio</a>
+            <a href="/" class="header__servicesLink">Services</a>
+            <a href="/" class="header__industriesLink">Industries</a>
+            <a href="/" class="header__howWeWorkLink">How we work</a>
+            <a href="/" class="header__techStackLink">Tech Stack</a>
+            <button class="header__freeConsultationButton" onclick="goToCallbackForm()">
+                Free consultation <img class="header__freeConsultationButton__arrow"
+                    src="./src/icons/arrow_up_white.svg" />
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="bein">
+            <h1 class="bein__h1 hiddenFromDown">Bein</h1>
+            <p class="bein__caption hiddenFromDown delay1">A news app and streaming platform for sports fans.</p>
+            <img class="bein__img hidden" src="./src/images/bein.png" />
+        </section>
+        <section class="impact">
+            <h3 class="impact__text hiddenFromDown">Impact on clients business</h3>
+            <div class="impact__digits hiddenFromDown delay1">
+                <span class="impact__digits__number-installs" data-num="10" data-suffix="M+" id="num1">0</span>
+                <p class="impact__digits__caption-installs">installs</p>
+                <p class="impact__digits__caption-new">New revenue stream and user acquisition channel for the client
+                </p>
+            </div>
+        </section>
+        <section class="client">
+            <h3 class="client__h3 hiddenFromDown">Client</h3>
+            <p class="client__description hiddenFromDown delay1">BeIN - one of the world's largest sport channel
+                networks, with an audience of 50+ million paying subscribers. It operates<br>34 channels, is available
+                on
+                5 continents, broadcasts in six languages and has 30+ million social media followers worldwide.</p>
+        </section>
+        <section class="mission">
+            <h3 class="mission__h3 hiddenFromDown">Mission</h3>
+            <p class="mission__description hiddenFromDown delay1">The client was looking for the creation of an
+                up-to-date mobile platform for its viewers. The main goals were to create a new revenue stream, increase
+                customer loyalty and diversify the client's business overall.<br><br>
+                Main requirements for the solution included the highest level of security and support of a wide range of
+                content formats. Precise localisation, with high attention to cultural differences in the UX, was also
+                part of the case.</p>
+            <img class="mission__preview hiddenFromDown delay2" src="./src/images/beinmission.jpg" />
+        </section>
+        <section class="challenges">
+            <h3 class="challenges__h3 hiddenFromDown">Challenges</h3>
+            <p class="challenges__description hiddenFromDown delay1">Development of a state-of-the-art security system
+                that prevents broadcasts piracy.
+                High attention for cultural differences is UX, especially for the Arabic region.</p>
+            <img class="challenges__img1 hiddenFromDown delay2" src="./src/images/beinscrsht1.png" />
+            <img class="challenges__img2 hiddenFromDown delay3" src="./src/images/beinscrsht2.png" />
+        </section>
+        <section class="solution">
+            <h3 class="solution__h3 hiddenFromDown">Solution</h3>
+            <p class="solution__description hiddenFromDown delay1">The solution consists of 2 mobile apps: BeIN Sports
+                and BeIN Connect.<br><br>
+                BeIN Sports is a sports news app. It provides users with news, statistics, matches, tournaments,
+                broadcasts schedule and other features that all the fans need. The app includes wide personalization
+                capabilities: from choosing of favorite teams to algorithmic newsfeed and push-notifications.<br><br>
+                BeIN Connect - streaming platform with sport broadcasts, available on almost any device. It provides
+                users with the opportunity to watch matches live on any device. Built-in advanced 3-layer security
+                system prevents broadcasts from piracy and protects clients' revenue stream.</p>
+            <div class="solution__imgContainer">
+                <img class="solution__imgContainer__img-1 hiddenFromDown delay2" src="./src/images/beingrid4.png" />
+                <img class="solution__imgContainer__img-2 hiddenFromDown delay3" src="./src/images/beingrid5.png" />
+                <img class="solution__imgContainer__img-3 hiddenFromDown delay4" src="./src/images/beingrid6.png" />
+            </div>
+        </section>
+        <section class="responsibility">
+            <h3 class="responsibility__h3 hiddenFromDown">What we were responsible for</h3>
+            <div class="responsibility__uxui hiddenFromDown delay1">
+                <img class="responsibility__uxui__icon" src="./src/icons/uxui_icon.svg" />
+                <p class="responsibility__uxui__text">UI\UX Design</p>
+            </div>
+            <div class="responsibility__frontend hiddenFromDown delay1-5">
+                <img class="responsibility__frontend__icon" src="./src/icons/frontend_icon.svg" />
+                <p class="responsibility__frontend__text">Frontend Development</p>
+            </div>
+            <div class="responsibility__backend hiddenFromDown delay2">
+                <img class="responsibility__backend__icon" src="./src/icons/backend_icon.svg" />
+                <p class="responsibility__backend__text">Backend Development</p>
+            </div>
+        </section>
+        <section class="keyFeatures">
+            <h3 class="keyFeatures__h3 hiddenFromDown">Key Features</h3>
+            <div class="keyFeatures__grid">
+                <div class="keyFeatures__grid__element1 hiddenFromDown delay1">
+                    <span class="keyFeatures__grid__element1__caption">Onboarding with personalization</span>
+                    <img class="keyFeatures__grid__element1__img" src="./src/images/beingrid1.png" />
+                </div>
+                <div class="keyFeatures__grid__element2 hiddenFromDown delay2">
+                    <span class="keyFeatures__grid__element2__caption">Main news feed with personalized content on
+                        different sport types: football, tennis, basketball, autosport, etc</span>
+                    <img class="keyFeatures__grid__element2__img" src="./src/images/beingrid2.png" />
+                </div>
+                <div class="keyFeatures__grid__element3 hiddenFromDown delay3">
+                    <span class="keyFeatures__grid__element3__caption">Language change for 10 regions in Runtime
+                        including RTL</span>
+                    <img class="keyFeatures__grid__element3__img" src="./src/images/beingrid3.png" />
+                </div>
+                <div class="keyFeatures__grid__element4 hiddenFromDown delay1">
+                    <span class="keyFeatures__grid__element4__caption">Broadcasts schedule module for all BeIN Sports
+                        channels</span>
+                    <img class="keyFeatures__grid__element4__img" src="./src/images/beingrid4.png" />
+                </div>
+                <div class="keyFeatures__grid__element5 hiddenFromDown delay2">
+                    <span class="keyFeatures__grid__element5__caption">Sport analytics module with live statistics,
+                        statistics for last 3 days, and statistics on different championships</span>
+                    <img class="keyFeatures__grid__element5__img" src="./src/images/beingrid5.png" />
+                </div>
+                <div class="keyFeatures__grid__element6 hiddenFromDown delay3">
+                    <span class="keyFeatures__grid__element6__caption">Video-news feed and widgets for an important
+                        updates</span>
+                    <img class="keyFeatures__grid__element6__img" src="./src/images/beingrid6.png" />
+                </div>
+            </div>
+        </section>
+        <section class="technologyStack">
+            <h3 class="technologyStack__h3 hiddenFromDown">Technology Stack</h3>
+            <div class="technologyStack__tagsContainer">
+                <div class="technologyStack__tags__row1">
+                    <p class="technologyStack__tags__tag1 hiddenFromDown delay1">Android</p>
+                    <p class="technologyStack__tags__tag2 hiddenFromDown delay1-5">MVVM</p>
+                    <p class="technologyStack__tags__tag3 hiddenFromDown delay2">Exo Player</p>
+                    <p class="technologyStack__tags__tag4 hiddenFromDown delay2-5">Dailymotion Player</p>
+                    <p class="technologyStack__tags__tag5 hiddenFromDown delay3">Chromecast</p>
+                    <p class="technologyStack__tags__tag6 hiddenFromDown delay3-5">Firebase</p>
+                    <p class="technologyStack__tags__tag7 hiddenFromDown delay4">ComScore</p>
+                    <p class="technologyStack__tags__tag8 hiddenFromDown delay4-5">Akamai Analytics</p>
+                </div>
+                <div class="technologyStack__tags__row2">
+                    <p class="technologyStack__tags__tag9 hiddenFromDown delay2">Google Analytics</p>
+                    <p class="technologyStack__tags__tag10 hiddenFromDown delay2-5">Didomi</p>
+                    <p class="technologyStack__tags__tag11 hiddenFromDown delay3">OPTA</p>
+                    <p class="technologyStack__tags__tag12 hiddenFromDown delay3-5">Google Ads</p>
+                    <p class="technologyStack__tags__tag13 hiddenFromDown delay4">OneSignal</p>
+                    <p class="technologyStack__tags__tag14 hiddenFromDown delay4-5">Batch</p>
+                </div>
+            </div>
+        </section>
+        <section class="team">
+            <h3 class="team__h3 hiddenFromDown">Team</h3>
+            <div class="team__uxuiDesigner hiddenFromDown delay1">
+                <img class="team__uxuiDesigner__portrait" src="./src/images/team6.png" />
+                <h4 class="team__uxuiDesigner__name">Anna Kanstantsinava</h4>
+                <p class="team__uxuiDesigner__jobTitle">UI/UX Designer</p>
+            </div>
+            <div class="team__seniorFullstackDeveloper hiddenFromDown delay1-5">
+                <img class="team__seniorFullstackDeveloper__portrait" src="./src/images/team1.png" />
+                <h4 class="team__seniorFullstackDeveloper__name">Alexander Dubovik</h4>
+                <p class="team__seniorFullstackDeveloper__jobTitle">Senior Full-stack Developer</p>
+            </div>
+            <div class="team__solutionArchitect hiddenFromDown delay2">
+                <img class="team__solutionArchitect__portrait" src="./src/images/team9.png" />
+                <h4 class="team__solutionArchitect__name">Kirill Tupikau</h4>
+                <p class="team__solutionArchitect__jobTitle">Solution Architect</p>
+            </div>
+            <div class="team__senioriOSDeveloper hiddenFromDown delay2-5">
+                <img class="team__senioriOSDeveloper__portrait" src="./src/images/team10.png" />
+                <h4 class="team__senioriOSDeveloper__name">Eugene Kleban</h4>
+                <p class="team__senioriOSDeveloper__jobTitle">Senior iOS Developer</p>
+            </div>
+            <div class="team__seniorAndroidDeveloper hiddenFromDown delay1-5">
+                <img class="team__seniorAndroidDeveloper__portrait" src="./src/images/team11.png" />
+                <h4 class="team__seniorAndroidDeveloper__name">Andriy Chopik</h4>
+                <p class="team__seniorAndroidDeveloper__jobTitle">Senior Android Developer</p>
+            </div>
+            <div class="team__middleFlutterDeveloper hiddenFromDown delay2">
+                <img class="team__middleFlutterDeveloper__portrait" src="./src/images/team12.png" />
+                <h4 class="team__middleFlutterDeveloper__name">Kabak Sergey</h4>
+                <p class="team__middleFlutterDeveloper__jobTitle">Middle Flutter Developer</p>
+            </div>
+        </section>
+        <section class="backCall" id="callbackForm">
+            <div class="backCall__header hiddenFromDown">
+                <h3 class="backCall__header__h3">Have a project to build? We've got the skills</h3>
+                <p class="backCall__header__text">Book a call and get verification of your idea, and a plan for
+                    product development</p>
+            </div>
+            <form class="backCall__inputForm hiddenFromDown delay1" method="post" action="/backcall">
+                <input id="nameInputField" name="nameInputField" class="backCall__inputForm__nameInputField"
+                    placeholder="Name" data-valid="false" />
+                <p class="backCall__inputForm__nameValidationInfo"></p>
+                <input id="phoneOrEmailInputField" name="phoneOrEmailInputField"
+                    class="backCall__inputForm__phoneOrEmailInputField" placeholder="Phone" data-valid="false" />
+                <p class="backCall__inputForm__phoneOrEmailValidationInfo"></p>
+                <div class="backCall__inputForm__communicationChoice">
+                    <p class="backCall__inputForm__communicationChoice__caption">Convenient way of communication</p>
+                    <div class="backCall__inputForm__communicationChoice__buttonsAndLabels">
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram">
+                            <input type="radio" id="backCallViaTelegram" name="backCall" value="telegram"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-radioButton"
+                                checked />
+                            <label for="backCallViaTelegram"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__telegram-label">Telegram</label>
+                        </div>
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp">
+                            <input type="radio" id="backCallViaWhatsApp" name="backCall" value="whatsapp"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-radioButton" />
+                            <label for="backCallViaWhatsApp"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__whatsApp-label">WhatsApp</label>
+                        </div>
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__email">
+                            <input type="radio" id="backCallViaEmail" name="backCall" value="email"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__email-radioButton" />
+                            <label for="backCallViaEmail"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__email-label">E-mail</label>
+                        </div>
+                        <div class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone">
+                            <input type="radio" id="backCallViaPhone" name="backCall" value="phone"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone-radioButton" />
+                            <label for="backCallViaPhone"
+                                class="backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label">Phone</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="backCall__inputForm__scheduleCall">
+                    <button type="submit" class="backCall__inputForm__scheduleCall__button disabledButton">Schedule
+                        a discovery
+                        call</button>
+                    <p class="backCall__inputForm__scheduleCall__caption">By clicking «Schedule a discovery call», I
+                        agree with Privacy Policy & Terms of Use.</p>
+                </div>
+            </form>
+        </section>
+        <section class="nextProjects hiddenFromDown">
+            <div class="splide" aria-labelledby="carousel-heading">
+                <h3 class="nextProjects__h3">Next Projects</h3>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="nextProjects__slider__deliveryBot">
+                                <img class="nextProjects__slider__deliveryBot__preview"
+                                    src="./src/images/deliverybotpreview.png" />
+                                <h4 class="nextProjects__slider__deliveryBot__h4">DeliveryBot</h4>
+                                <p class="nextProjects__slider__deliveryBot__caption">Set of chatbots, CMS and CRM
+                                    system,
+                                    which
+                                    helped to launch a restaurant delivery service from scratch in record time.</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="nextProjects__slider__myBedroomGuide">
+                                <img class="nextProjects__slider__myBedroomGuide__preview"
+                                    src="./src/images/mybedroomguidepreview.png" />
+                                <h4 class="nextProjects__slider__myBedroomGuide__h4">My Bedroom Guide</h4>
+                                <p class="nextProjects__slider__myBedroomGuide__caption">The mobile app aims to enhance
+                                    the
+                                    customer's experience in managing business, facilitate new and improved
+                                    communication
+                                    methods,
+                                    and automate internal processes for project delivery.</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <a class="nextProjects__slider__forYou" href="/foryou.html">
+                                <img class="nextProjects__slider__forYou__preview"
+                                    src="./src/images/foryouskincareapppreview.png" />
+                                <h4 class="nextProjects__slider__forYou__h4">forYou Skincare App
+                                </h4>
+                                <p class="nextProjects__slider__forYou__caption">Modular, all-in-one skincare solution,
+                                    trusted by 2M+ users. Combining 15+ skincare mechanics into an intuitive UI, it
+                                    delivers fast and reliable performance even on budget-conscious devices.
+                                </p>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="nextProjects__slider__i24news">
+                                <img class="nextProjects__slider__i24news__preview"
+                                    src="./src/images/i24newspreview.png" />
+                                <h4 class="nextProjects__slider__i24news__h4">i24 News
+                                </h4>
+                                <p class="nextProjects__slider__i24news__caption">A multi-format news app with text,
+                                    audio and live-video news feeds. Includes advanced analytics and intensive ad
+                                    monetization, which, however, doesn't ruin user experience.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footerMenu">
+            <a href="/" class="footerMenu__linkWithImage"><img src="./src/vectors/logo.svg" alt="Space logo"
+                    class="footerMenu__logo" /></a>
+            <a href="/" class="footerMenu__aboutlink">About us</a>
+            <a href="/" class="footerMenu__portfoliolink">Portfolio</a>
+            <a href="/" class="footerMenu__serviceslink">Services</a>
+            <a href="/" class="footerMenu__industrieslink">Industries</a>
+            <a href="/" class="footerMenu__howWeWorklink">How we work</a>
+            <a href="/" class="footerMenu__techStacklink">Tech Stack</a>
+        </div>
+        <div class="footerInfo">
+            <p class="footerInfo__addressHeader">Address</p>
+            <p class="footerInfo__addressOfOffice1">
+                Estonian Office:<br>
+                forYou OÜ<br>
+                Harju maakond, Tallinn, Kesklinna<br>
+                linnaosa, Tornimäe tn 3 // 5 // 7, 10145
+            </p>
+            <p class="footerInfo__addressOfOffice2">
+                UK Office:<br>
+                Appear Digital Ltd.<br>
+                39 Fairfax Road, London, United<br>
+                Kingdom, NW6 4EL
+            </p>
+            <a href="./termsOfUse.html" class="footerInfo__link">Privacy Policy & Terms of Use</a>
+            <a href="https://www.instagram.com/spirydon.a/" class="footerInfo__websiteDeveloper">Website Development
+                Alena Spirydon</a>
+        </div>
+    </footer>
+    <section class="popUp">
+        <div class="popUpContainer">
+            <button class="popUp__closeButton" onclick="closePopUp()"><img class="popUp__closeButton__closeIcon"
+                    alt="close" src="./src/icons/close.svg" /></button>
+            <p class="popUp__text"></p>
+        </div>
+    </section>
+    <script src="./scripts/splide.min.js"></script>
+    <script defer src="./scripts/countUp.js"></script>
+    <script defer src="./scripts/bein.js"></script>
+</body>
+
+</html>
