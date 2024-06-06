@@ -316,6 +316,6 @@ let splide = new Splide('.splide', {
     perPage: 3,
     focus: 0,
     autoplay: true,
-    interval: 4000,
+    interval: 2500,
 });
 splide.mount();
