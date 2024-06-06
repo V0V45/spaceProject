@@ -69,6 +69,10 @@ function goToDeliveryBot() {
     window.location.href = 'deliverybot.html';
 }
 
+function goToContactUsAnchor() {
+    window.location.href = '#contactUsForm';
+}
+
 // Изменения стрелок при наведении
 function changeArrowToStraight(event) {
     event.target.lastElementChild.classList.add('rotate');
