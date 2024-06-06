@@ -480,6 +480,7 @@ header {
     width: auto;
     height: auto;
     max-width: 348px;
+    align-self: start;
 }
 
 .challenges__img2 {
@@ -487,6 +488,7 @@ header {
     width: auto;
     height: auto;
     max-width: 444px;
+    align-self: stretch;
 }
 
 /** SOLUTION SECTION **/
@@ -1354,11 +1356,21 @@ header {
 .nextProjects__slider__myBedroomGuide,
 .nextProjects__slider__beinSportBeinConnect,
 .nextProjects__slider__i24news {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: stretch;
     align-items: stretch;
+}
+
+.nextProjects__slider__deliveryBot:hover,
+.nextProjects__slider__myBedroomGuide:hover,
+.nextProjects__slider__beinSportBeinConnect:hover,
+.nextProjects__slider__i24news:hover {
+    color: var(--blue);
 }
 
 .nextProjects__slider__deliveryBot__preview,

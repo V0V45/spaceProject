@@ -62,7 +62,7 @@ function goToi24News() {
 }
 
 function goToBSBC() {
-    window.location.href = 'beinsportbeinconnect.html';
+    window.location.href = 'bein.html';
 }
 
 function goToDeliveryBot() {
