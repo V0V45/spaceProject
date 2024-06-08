@@ -69,6 +69,10 @@ function goToDeliveryBot() {
     window.location.href = 'deliverybot.html';
 }
 
+function goToMyBedroomGuide() {
+    window.location.href = 'mybedroom.html';
+}
+
 function goToContactUsAnchor() {
     window.location.href = '#contactUsForm';
 }

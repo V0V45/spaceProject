@@ -6,9 +6,11 @@
     --white: #FFFFFF;
     --green: #11FACA;
     --backgroundBlue: #E5ECFC;
+    --backgroundGreen: #E9F5F4;
     --violet: #EAE0F4;
     --grey: #BFC8C9;
     --blue: #303D8F;
+    --blue1: #CCDBFF;
     --green2: #10C48D;
     /* h1 */
     --h1fontfamily: "Proxima Nova", sans-serif;
@@ -136,6 +138,10 @@ html {
     transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
 }
 
+.delay5-5 {
+    transition: opacity 0.5s ease-out 550ms, filter 0.5s ease-out 550ms, transform 0.5s ease-out 550ms;
+}
+
 /* Плавное появление */
 .hidden {
     opacity: 0;
@@ -245,15 +251,15 @@ header {
     transition: transform 0.3s;
 }
 
-/** BEIN SECTION **/
+/** DELIVERYBOT SECTION **/
 /* Контейнер и сетка */
-.bein {
-    background: linear-gradient(180deg, #00c6e0 0%, #7210ce 58.42%);
+.deliveryBot {
+    background: linear-gradient(180deg, #e9f5f4 41.9%, #7a98b3 100%);
     padding-left: 50px;
     padding-right: 50px;
     display: grid;
-    grid-template-columns: 614px 100px 626px;
-    grid-template-rows: 236px 62px 30px 33px 236px;
+    grid-template-columns: 620px 100px 620px;
+    grid-template-rows: 220px 62px 30px 66px 220px;
     grid-template-areas:
         ". . img"
         "h1 . img"
@@ -266,29 +272,29 @@ header {
 }
 
 /* Заголовок h1 */
-.bein__h1 {
+.deliveryBot__h1 {
     grid-area: h1;
     font-family: var(--h1fontfamily);
     font-size: var(--h1fontsize);
     font-weight: var(--h1fontweight);
     text-transform: var(--h1texttransform);
     line-height: var(--h1lineheight);
-    color: var(--white);
+    color: var(--txt);
 }
 
 /* Подпись txt22 */
-.bein__caption {
+.deliveryBot__caption {
     grid-area: caption;
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
     font-weight: var(--text22fontweight);
     line-height: var(--text22lineheight);
     text-transform: var(--text22texttransform);
-    color: var(--white);
+    color: var(--txt);
 }
 
 /* Картинка справа */
-.bein__img {
+.deliveryBot__img {
     grid-area: img;
     object-fit: contain;
 }
@@ -300,11 +306,11 @@ header {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .impact__text {
-    padding: 11px 62px;
+    padding: 0 63px;
     font-family: var(--h3fontfamily);
     font-size: var(--h3fontsize);
     font-weight: var(--h3fontweight);
@@ -314,28 +320,28 @@ header {
 }
 
 .impact__digits {
-    padding: 0px 82px;
+    padding: 0px 65px;
     display: grid;
-    grid-template-columns: 144px 60px 279px;
+    grid-template-columns: 177px 60px 279px;
     grid-template-rows: auto;
     grid-template-areas:
-        "numberInstalls . captionNew"
-        "captionInstalls . captionNew";
+        "numberUsers . captionNew"
+        "captionUsers . captionNew";
     justify-content: center;
     justify-items: stretch;
     align-items: stretch;
 }
 
-.impact__digits__number-installs {
-    grid-area: numberInstalls;
+.impact__digits__number-users {
+    grid-area: numberUsers;
     font-family: "Proxima Nova", sans-serif;
     font-weight: bold;
     font-size: 60px;
     color: var(--txt);
 }
 
-.impact__digits__caption-installs {
-    grid-area: captionInstalls;
+.impact__digits__caption-users {
+    grid-area: captionUsers;
     text-align: center;
 }
 
@@ -345,7 +351,7 @@ header {
     align-self: center;
 }
 
-.impact__digits__caption-installs,
+.impact__digits__caption-users,
 .impact__digits__caption-new {
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
@@ -357,8 +363,8 @@ header {
 
 /** CLIENT SECTION **/
 .client {
-    padding: 89px 50px;
-    background-color: var(--violet);
+    padding: 105px 50px;
+    background-color: var(--backgroundGreen);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -384,14 +390,13 @@ header {
     line-height: var(--text22lineheight);
     text-transform: var(--text22texttransform);
     color: var(--txt);
-    width: 1340px;
 }
 
 /** MISSION SECTION **/
 .mission {
     padding: 100px 50px 200px 50px;
     display: grid;
-    grid-template-columns: 660px 20px 660px;
+    grid-template-columns: 630px 50px 660px;
     grid-template-rows: 126px 44px 20px 164px 126px;
     grid-template-areas:
         ". . img"
@@ -430,21 +435,20 @@ header {
     object-fit: cover;
 }
 
-
 /** CHALLENGES SECTION **/
 .challenges {
-    background-color: var(--violet);
+    background-color: var(--backgroundGreen);
     padding-top: 100px;
     display: grid;
-    grid-template-columns: 298px 300px 100px 444px 298px;
-    grid-template-rows: 44px 20px 66px 80px 676px;
+    grid-template-columns: 849px 100px 489px;
+    grid-template-rows: 44px 20px 66px 80px 587px;
     grid-template-areas:
-        "h3 h3 h3 h3 h3"
-        ". . . . ."
-        "cap cap cap cap cap"
-        ". . . . ."
-        ". img1 . img2 .";
-    justify-content: center;
+        "h3 h3 h3"
+        ". . ."
+        "cap cap cap"
+        ". . ."
+        "img1 . img2";
+    justify-content: space-between;
     justify-items: center;
     align-items: stretch;
     text-align: center;
@@ -468,36 +472,36 @@ header {
     line-height: var(--text22lineheight);
     text-transform: var(--text22texttransform);
     color: var(--txt);
-    width: 900px;
 }
 
 .challenges__img1 {
     grid-area: img1;
+    padding-left: 8px;
+    padding-right: 8px;
     width: auto;
     height: auto;
-    max-width: 300px;
-    align-self: start;
+    max-width: 833px;
+    align-self: center;
 }
 
 .challenges__img2 {
     grid-area: img2;
     width: auto;
     height: auto;
-    max-width: 444px;
+    max-width: 489px;
+    align-self: center;
 }
 
 /** SOLUTION SECTION **/
 .solution {
-    padding: 200px 50px;
+    padding: 200px 50px 159px 50px;
     display: grid;
     grid-template-columns: 630px 50px 660px;
-    grid-template-rows: 53px 44px 20px 256px 53px;
+    grid-template-rows: 44px 20px 396px;
     grid-template-areas:
-        ". . imgContainer"
-        "h3 . imgContainer"
-        ". . imgContainer"
-        "description . imgContainer"
-        ". . imgContainer";
+        "h3 . img"
+        ". . img"
+        "description . img";
     justify-content: space-between;
     justify-items: stretch;
     align-items: center;
@@ -523,38 +527,26 @@ header {
     color: var(--txt);
 }
 
-.solution__imgContainer {
-    grid-area: imgContainer;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.solution__imgContainer__img-1,
-.solution__imgContainer__img-2 {
-    margin-right: 15px;
-}
-
-.solution__imgContainer__img-1,
-.solution__imgContainer__img-2,
-.solution__imgContainer__img-3 {
+.solution__img {
+    grid-area: img;
     width: auto;
     height: auto;
-    max-width: 208px;
+    max-width: 617px;
+    justify-self: center;
 }
 
 /** RESPONSIBILITY SECTION **/
 .responsibility {
     padding: 0 50px 200px 50px;
     display: grid;
-    grid-template-columns: 373px 100px 363px 100px 406px;
-    grid-template-rows: 44px 80px 50px;
+    grid-template-columns: 230px 373px 100px 406px 230px;
+    grid-template-rows: 44px 80px 50px 60px 50px;
     grid-template-areas:
         "h3 h3 h3 h3 h3"
         ". . . . ."
-        "uxui . frontend . backend";
+        ". chatbot . backend ."
+        ". . . . ."
+        ". frontend . integration .";
     justify-content: center;
     justify-items: stretch;
     align-items: center;
@@ -571,21 +563,26 @@ header {
     color: var(--txt);
 }
 
-.responsibility__uxui {
-    grid-area: uxui;
-}
-
-.responsibility__frontend {
-    grid-area: frontend;
+.responsibility__chatbot {
+    grid-area: chatbot;
 }
 
 .responsibility__backend {
     grid-area: backend;
 }
 
-.responsibility__uxui,
+.responsibility__frontend {
+    grid-area: frontend;
+}
+
+.responsibility__integration {
+    grid-area: integration;
+}
+
+.responsibility__chatbot,
+.responsibility__backend,
 .responsibility__frontend,
-.responsibility__backend {
+.responsibility__integration {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -593,9 +590,10 @@ header {
     align-items: center;
 }
 
-.responsibility__uxui__text,
+.responsibility__chatbot__text,
+.responsibility__backend__text,
 .responsibility__frontend__text,
-.responsibility__backend__text {
+.responsibility__integration__text {
     margin-left: 20px;
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
@@ -663,7 +661,7 @@ header {
 .keyFeatures__grid__element1,
 .keyFeatures__grid__element3,
 .keyFeatures__grid__element5 {
-    background-color: var(--violet);
+    background-color: var(--backgroundGreen);
 }
 
 .keyFeatures__grid__element2,
@@ -684,6 +682,8 @@ header {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 .keyFeatures__grid__element1__caption,
@@ -699,24 +699,29 @@ header {
     line-height: var(--text16lineheight);
     text-transform: var(--text16texttransform);
     text-align: center;
-    margin: 40px 20px 20px 20px;
+    margin: 0 20px 20px 20px;
+}
+
+.keyFeatures__grid__element2__img,
+.keyFeatures__grid__element3__img,
+.keyFeatures__grid__element4__img {
+    width: 200px;
+    height: 410px;
 }
 
 .keyFeatures__grid__element1__img,
-.keyFeatures__grid__element2__img,
-.keyFeatures__grid__element3__img,
-.keyFeatures__grid__element4__img,
 .keyFeatures__grid__element5__img,
 .keyFeatures__grid__element6__img {
-    width: 192px;
-    height: 400px;
+    width: 400px;
+    height: 230px;
+    margin-top: auto;
 }
 
 /** TECHNOLOGY STACK SECTION **/
 .technologyStack {
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 300px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -758,10 +763,7 @@ header {
 .technologyStack__tags__tag8,
 .technologyStack__tags__tag9,
 .technologyStack__tags__tag10,
-.technologyStack__tags__tag11,
-.technologyStack__tags__tag12,
-.technologyStack__tags__tag13,
-.technologyStack__tags__tag14 {
+.technologyStack__tags__tag11 {
     border-radius: 5px;
     padding: 9px 25px;
     background-color: var(--backgroundBlue);
@@ -780,27 +782,42 @@ header {
 .technologyStack__tags__tag5,
 .technologyStack__tags__tag6,
 .technologyStack__tags__tag7,
-.technologyStack__tags__tag9,
-.technologyStack__tags__tag10,
-.technologyStack__tags__tag11,
-.technologyStack__tags__tag12,
-.technologyStack__tags__tag13 {
+.technologyStack__tags__tag8,
+.technologyStack__tags__tag9 {
     margin-right: 30px;
 }
 
 /** TEAM SECTION **/
 .team {
     padding: 100px 50px;
-    background-color: var(--violet);
+    background-color: var(--backgroundBlue);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.team__row1 {
+    margin-bottom: 80px;
     display: grid;
-    grid-template-columns: 32px 304px 20px 304px 20px 304px 20px 304px 32px;
-    grid-template-rows: 64px 80px 291px 80px 291px;
+    grid-template-columns: 20px 304px 20px 328px 20px 304px 20px 304px 20px;
+    grid-template-rows: 64px 80px 291px;
     grid-template-areas: 
     "h3 h3 h3 h3 h3 h3 h3 h3 h3"
     ". . . . . . . . ."
-    ". uxui . fullstack . architect . iOS ."
-    ". . . . . . . . ."
-    ". . . android . flutter . . .";
+    ". fullstack . backend . iOS . android .";
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.team__row2 {
+    display: grid;
+    grid-template-columns: 194px 304px 20px 304px 20px 304px 194px;
+    grid-template-rows: 291px;
+    grid-template-areas: 
+    ". qa . analyst . flutter .";
     justify-content: center;
     justify-items: center;
     align-items: center;
@@ -817,12 +834,12 @@ header {
     color: var(--txt);
 }
 
-.team__uxuiDesigner {
-    grid-area: uxui;
-}
-
 .team__seniorFullstackDeveloper {
     grid-area: fullstack;
+}
+
+.team__backend {
+    grid-area: backend;
 }
 
 .team__solutionArchitect {
@@ -837,15 +854,25 @@ header {
     grid-area: android;
 }
 
+.team__qaEngineer {
+    grid-area: qa;
+}
+
+.team__leadProductManager {
+    grid-area: analyst;
+}
+
 .team__middleFlutterDeveloper {
     grid-area: flutter;
 }
 
-.team__uxuiDesigner,
 .team__seniorFullstackDeveloper,
+.team__backend,
 .team__solutionArchitect,
 .team__senioriOSDeveloper,
 .team__seniorAndroidDeveloper,
+.team__qaEngineer,
+.team__leadProductManager,
 .team__middleFlutterDeveloper {
     display: flex;
     flex-direction: column;
@@ -855,23 +882,28 @@ header {
     text-align: center;
 }
 
-.team__uxuiDesigner__portrait,
 .team__seniorFullstackDeveloper__portrait,
+.team__backend__portrait,
 .team__solutionArchitect__portrait,
 .team__senioriOSDeveloper__portrait,
 .team__seniorAndroidDeveloper__portrait,
+.team__qaEngineer__portrait,
+.team__leadProductManager__portrait,
 .team__middleFlutterDeveloper__portrait {
     width: auto;
     height: auto;
     max-width: 200px;
+    max-height: 200px;
     margin-bottom: 30px;
 }
 
-.team__uxuiDesigner__name,
 .team__seniorFullstackDeveloper__name,
+.team__backend__name,
 .team__solutionArchitect__name,
 .team__senioriOSDeveloper__name,
 .team__seniorAndroidDeveloper__name,
+.team__qaEngineer__name,
+.team__leadProductManager__name,
 .team__middleFlutterDeveloper__name {
     font-family: var(--h4fontfamily);
     font-size: var(--h4fontsize);
@@ -880,11 +912,13 @@ header {
     color: var(--txt);
 }
 
-.team__uxuiDesigner__jobTitle,
 .team__seniorFullstackDeveloper__jobTitle,
+.team__backend__jobTitle,
 .team__solutionArchitect__jobTitle,
 .team__senioriOSDeveloper__jobTitle,
 .team__seniorAndroidDeveloper__jobTitle,
+.team__qaEngineer__jobTitle,
+.team__leadProductManager__jobTitle,
 .team__middleFlutterDeveloper__jobTitle {
     color: var(--txt);
     font-family: var(--text16fontfamily);
@@ -1252,10 +1286,10 @@ header {
     margin-bottom: 100px;
 }
 
-.nextProjects__slider__deliveryBot,
+.nextProjects__slider__i24news,
 .nextProjects__slider__myBedroomGuide,
 .nextProjects__slider__forYou,
-.nextProjects__slider__i24news {
+.nextProjects__slider__beinSportBeinConnect {
     text-decoration: none;
     color: black;
     transition: color 0.3s;
@@ -1266,17 +1300,17 @@ header {
     align-items: stretch;
 }
 
-.nextProjects__slider__deliveryBot:hover,
+.nextProjects__slider__i24news:hover,
 .nextProjects__slider__myBedroomGuide:hover,
 .nextProjects__slider__forYou:hover,
-.nextProjects__slider__i24news:hover {
+.nextProjects__slider__beinSportBeinConnect:hover {
     color: var(--blue);
 }
 
-.nextProjects__slider__deliveryBot__preview,
+.nextProjects__slider__i24news__preview,
 .nextProjects__slider__myBedroomGuide__preview,
 .nextProjects__slider__forYou__preview,
-.nextProjects__slider__i24news__preview {
+.nextProjects__slider__beinSportBeinConnect__preview {
     align-self: center;
     object-fit: contain;
     width: 414px;
@@ -1284,10 +1318,10 @@ header {
     margin-bottom: 20px;
 }
 
-.nextProjects__slider__deliveryBot__h4,
+.nextProjects__slider__i24news__h4,
 .nextProjects__slider__myBedroomGuide__h4,
 .nextProjects__slider__forYou__h4,
-.nextProjects__slider__i24news__h4 {
+.nextProjects__slider__beinSportBeinConnect__h4 {
     font-size: var(--h4fontsize);
     font-family: var(--h4fontfamily);
     font-weight: var(--h4fontweight);
@@ -1295,10 +1329,10 @@ header {
     margin-bottom: 20px;
 }
 
-.nextProjects__slider__deliveryBot__caption,
+.nextProjects__slider__i24news__caption,
 .nextProjects__slider__myBedroomGuide__caption,
 .nextProjects__slider__forYou__caption,
-.nextProjects__slider__i24news__caption {
+.nextProjects__slider__beinSportBeinConnect__caption {
     font-size: var(--text16fontsize);
     font-family: var(--text16fontfamily);
     font-weight: var(--text16fontweight);

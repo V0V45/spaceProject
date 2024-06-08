@@ -10,6 +10,7 @@
     --grey: #BFC8C9;
     --blue: #303D8F;
     --green2: #10C48D;
+    --backgroundYellow: #FFFAED;
     /* h1 */
     --h1fontfamily: "Proxima Nova", sans-serif;
     --h1fontsize: 62px;
@@ -245,15 +246,15 @@ header {
     transition: transform 0.3s;
 }
 
-/** BEIN SECTION **/
+/** MY BEDROOM GUIDE SECTION **/
 /* Контейнер и сетка */
-.bein {
-    background: linear-gradient(180deg, #00c6e0 0%, #7210ce 58.42%);
+.myBedroomGuide {
+    background: linear-gradient(180deg, #ffe9b3 21.42%, #d5a736 100%);
     padding-left: 50px;
     padding-right: 50px;
     display: grid;
-    grid-template-columns: 614px 100px 626px;
-    grid-template-rows: 236px 62px 30px 33px 236px;
+    grid-template-columns: 645px 100px 595px;
+    grid-template-rows: 220px 62px 30px 66px 220px;
     grid-template-areas:
         ". . img"
         "h1 . img"
@@ -266,31 +267,30 @@ header {
 }
 
 /* Заголовок h1 */
-.bein__h1 {
+.myBedroomGuide__h1 {
     grid-area: h1;
     font-family: var(--h1fontfamily);
     font-size: var(--h1fontsize);
     font-weight: var(--h1fontweight);
     text-transform: var(--h1texttransform);
     line-height: var(--h1lineheight);
-    color: var(--white);
+    color: var(--txt);
 }
 
 /* Подпись txt22 */
-.bein__caption {
+.myBedroomGuide__caption {
     grid-area: caption;
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
     font-weight: var(--text22fontweight);
     line-height: var(--text22lineheight);
     text-transform: var(--text22texttransform);
-    color: var(--white);
+    color: var(--txt);
 }
 
 /* Картинка справа */
-.bein__img {
+.myBedroomGuide__img {
     grid-area: img;
-    object-fit: contain;
 }
 
 /** IMPACT SECTION **/
@@ -313,40 +313,37 @@ header {
     color: var(--txt);
 }
 
-.impact__digits {
-    padding: 0px 82px;
+.impact__facts {
     display: grid;
-    grid-template-columns: 144px 60px 279px;
+    grid-template-columns: 305px 40px 305px;
     grid-template-rows: auto;
     grid-template-areas:
-        "numberInstalls . captionNew"
-        "captionInstalls . captionNew";
+        "fact1 . fact2";
     justify-content: center;
     justify-items: stretch;
     align-items: stretch;
 }
 
-.impact__digits__number-installs {
-    grid-area: numberInstalls;
-    font-family: "Proxima Nova", sans-serif;
-    font-weight: bold;
-    font-size: 60px;
+.impact__facts-1 {
+    grid-area: fact1;
+}
+
+.impact__facts-2 {
+    grid-area: fact2;
+}
+
+.impact__facts-1,
+.impact__facts-2 {
+    font-family: var(--text22fontfamily);
+    font-weight: var(--text22fontweight);
+    font-size: var(--text22fontsize);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
     color: var(--txt);
 }
 
-.impact__digits__caption-installs {
-    grid-area: captionInstalls;
-    text-align: center;
-}
-
-.impact__digits__caption-new {
-    grid-area: captionNew;
-    justify-self: center;
-    align-self: center;
-}
-
-.impact__digits__caption-installs,
-.impact__digits__caption-new {
+.impact__digits__caption-downloads,
+.impact__digits__caption-activeUsers {
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
     font-weight: var(--text22fontweight);
@@ -358,7 +355,7 @@ header {
 /** CLIENT SECTION **/
 .client {
     padding: 89px 50px;
-    background-color: var(--violet);
+    background-color: var(--backgroundYellow);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -378,20 +375,20 @@ header {
 }
 
 .client__description {
+    width: 1340px;
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
     font-weight: var(--text22fontweight);
     line-height: var(--text22lineheight);
     text-transform: var(--text22texttransform);
     color: var(--txt);
-    width: 1340px;
 }
 
 /** MISSION SECTION **/
 .mission {
     padding: 100px 50px 200px 50px;
     display: grid;
-    grid-template-columns: 660px 20px 660px;
+    grid-template-columns: 630px 50px 660px;
     grid-template-rows: 126px 44px 20px 164px 126px;
     grid-template-areas:
         ". . img"
@@ -433,20 +430,22 @@ header {
 
 /** CHALLENGES SECTION **/
 .challenges {
-    background-color: var(--violet);
+    background-color: var(--backgroundYellow);
     padding-top: 100px;
+    padding-left: 296px;
+    padding-right: 296px;
     display: grid;
-    grid-template-columns: 298px 300px 100px 444px 298px;
+    grid-template-columns: 308px 100px 440px;
     grid-template-rows: 44px 20px 66px 80px 676px;
     grid-template-areas:
-        "h3 h3 h3 h3 h3"
-        ". . . . ."
-        "cap cap cap cap cap"
-        ". . . . ."
-        ". img1 . img2 .";
+        "h3 h3 h3"
+        ". . ."
+        "cap cap cap"
+        ". . ."
+        "img1 . img2";
     justify-content: center;
     justify-items: center;
-    align-items: stretch;
+    align-items: center;
     text-align: center;
 }
 
@@ -468,14 +467,13 @@ header {
     line-height: var(--text22lineheight);
     text-transform: var(--text22texttransform);
     color: var(--txt);
-    width: 900px;
 }
 
 .challenges__img1 {
     grid-area: img1;
     width: auto;
     height: auto;
-    max-width: 300px;
+    max-width: 308px;
     align-self: start;
 }
 
@@ -483,15 +481,16 @@ header {
     grid-area: img2;
     width: auto;
     height: auto;
-    max-width: 444px;
+    max-width: 440px;
+    align-self: stretch;
 }
 
 /** SOLUTION SECTION **/
 .solution {
-    padding: 200px 50px;
+    padding: 161px 50px 200px 50px;
     display: grid;
-    grid-template-columns: 630px 50px 660px;
-    grid-template-rows: 53px 44px 20px 256px 53px;
+    grid-template-columns: 630px 50px 654px;
+    grid-template-rows: 50px 44px 20px 256px 50px;
     grid-template-areas:
         ". . imgContainer"
         "h3 . imgContainer"
@@ -547,14 +546,17 @@ header {
 
 /** RESPONSIBILITY SECTION **/
 .responsibility {
-    padding: 0 50px 200px 50px;
+    margin-bottom: 200px;
+    padding: 0px 280px 0px 280px;
     display: grid;
-    grid-template-columns: 373px 100px 363px 100px 406px;
-    grid-template-rows: 44px 80px 50px;
+    grid-template-columns: 373px 100px 406px;
+    grid-template-rows: 44px 80px 50px 60px 50px;
     grid-template-areas:
-        "h3 h3 h3 h3 h3"
-        ". . . . ."
-        "uxui . frontend . backend";
+        "h3 h3 h3"
+        ". . ."
+        "uxui . backend"
+        ". . ."
+        "frontend . integration";
     justify-content: center;
     justify-items: stretch;
     align-items: center;
@@ -575,17 +577,22 @@ header {
     grid-area: uxui;
 }
 
-.responsibility__frontend {
-    grid-area: frontend;
-}
-
 .responsibility__backend {
     grid-area: backend;
 }
 
+.responsibility__frontend {
+    grid-area: frontend;
+}
+
+.responsibility__integration {
+    grid-area: integration;
+}
+
 .responsibility__uxui,
 .responsibility__frontend,
-.responsibility__backend {
+.responsibility__backend,
+.responsibility__integration {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -595,7 +602,8 @@ header {
 
 .responsibility__uxui__text,
 .responsibility__frontend__text,
-.responsibility__backend__text {
+.responsibility__backend__text,
+.responsibility__integration__text {
     margin-left: 20px;
     font-family: var(--text22fontfamily);
     font-size: var(--text22fontsize);
@@ -661,15 +669,12 @@ header {
 }
 
 .keyFeatures__grid__element1,
-.keyFeatures__grid__element3,
-.keyFeatures__grid__element5 {
-    background-color: var(--violet);
-}
-
 .keyFeatures__grid__element2,
+.keyFeatures__grid__element3,
 .keyFeatures__grid__element4,
+.keyFeatures__grid__element5,
 .keyFeatures__grid__element6 {
-    background-color: var(--backgroundBlue);
+    background-color: var(--backgroundYellow);
 }
 
 .keyFeatures__grid__element1,
@@ -706,17 +711,21 @@ header {
 .keyFeatures__grid__element2__img,
 .keyFeatures__grid__element3__img,
 .keyFeatures__grid__element4__img,
-.keyFeatures__grid__element5__img,
 .keyFeatures__grid__element6__img {
-    width: 192px;
-    height: 400px;
+    width: 200px;
+    height: 410px;
+}
+
+.keyFeatures__grid__element5__img {
+    width: 393px;
+    height: 410px;
 }
 
 /** TECHNOLOGY STACK SECTION **/
 .technologyStack {
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 200px;
+    margin-bottom: 136px;
+    padding-left: 103px;
+    padding-right: 103px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -761,10 +770,11 @@ header {
 .technologyStack__tags__tag11,
 .technologyStack__tags__tag12,
 .technologyStack__tags__tag13,
-.technologyStack__tags__tag14 {
+.technologyStack__tags__tag14,
+.technologyStack__tags__tag15 {
     border-radius: 5px;
     padding: 9px 25px;
-    background-color: var(--backgroundBlue);
+    background-color: var(--backgroundYellow);
     color: var(--txt);
     font-family: var(--texttegsfontfamily);
     font-size: var(--texttegsfontsize);
@@ -780,27 +790,46 @@ header {
 .technologyStack__tags__tag5,
 .technologyStack__tags__tag6,
 .technologyStack__tags__tag7,
-.technologyStack__tags__tag9,
+.technologyStack__tags__tag8,
 .technologyStack__tags__tag10,
 .technologyStack__tags__tag11,
 .technologyStack__tags__tag12,
-.technologyStack__tags__tag13 {
+.technologyStack__tags__tag13,
+.technologyStack__tags__tag14 {
     margin-right: 30px;
 }
 
 /** TEAM SECTION **/
 .team {
     padding: 100px 50px;
-    background-color: var(--violet);
+    background-color: var(--backgroundYellow);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.team__row1 {
+    margin-bottom: 80px;
     display: grid;
     grid-template-columns: 32px 304px 20px 304px 20px 304px 20px 304px 32px;
-    grid-template-rows: 64px 80px 291px 80px 291px;
+    grid-template-rows: 64px 80px 291px;
     grid-template-areas: 
     "h3 h3 h3 h3 h3 h3 h3 h3 h3"
     ". . . . . . . . ."
-    ". uxui . fullstack . architect . iOS ."
-    ". . . . . . . . ."
-    ". . . android . flutter . . .";
+    ". fullstack . qa . content . uxui .";
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.team__row2 {
+    display: grid;
+    grid-template-columns: 20px 304px 20px 304px 20px 328px 20px 304px 20px;
+    grid-template-rows: 291px;
+    grid-template-areas: 
+    ". illustrator . architect . backend . flutter .";
     justify-content: center;
     justify-items: center;
     align-items: center;
@@ -817,35 +846,45 @@ header {
     color: var(--txt);
 }
 
+.team__seniorFullstackDeveloper {
+    grid-area: fullstack;
+}
+
+.team__qaEngineer {
+    grid-area: qa;
+}
+
+.team__contentManager {
+    grid-area: content;
+}
+
 .team__uxuiDesigner {
     grid-area: uxui;
 }
 
-.team__seniorFullstackDeveloper {
-    grid-area: fullstack;
+.team__illustratorDesigner {
+    grid-area: illustrator;
 }
 
 .team__solutionArchitect {
     grid-area: architect;
 }
 
-.team__senioriOSDeveloper {
-    grid-area: iOS;
-}
-
-.team__seniorAndroidDeveloper {
-    grid-area: android;
+.team__backend {
+    grid-area: backend;
 }
 
 .team__middleFlutterDeveloper {
     grid-area: flutter;
 }
 
-.team__uxuiDesigner,
 .team__seniorFullstackDeveloper,
+.team__qaEngineer,
+.team__contentManager,
+.team__uxuiDesigner,
+.team__illustratorDesigner,
 .team__solutionArchitect,
-.team__senioriOSDeveloper,
-.team__seniorAndroidDeveloper,
+.team__backend,
 .team__middleFlutterDeveloper {
     display: flex;
     flex-direction: column;
@@ -855,11 +894,13 @@ header {
     text-align: center;
 }
 
-.team__uxuiDesigner__portrait,
 .team__seniorFullstackDeveloper__portrait,
+.team__qaEngineer__portrait,
+.team__contentManager__portrait,
+.team__uxuiDesigner__portrait,
+.team__illustratorDesigner__portrait,
 .team__solutionArchitect__portrait,
-.team__senioriOSDeveloper__portrait,
-.team__seniorAndroidDeveloper__portrait,
+.team__backend__portrait,
 .team__middleFlutterDeveloper__portrait {
     width: auto;
     height: auto;
@@ -867,11 +908,13 @@ header {
     margin-bottom: 30px;
 }
 
-.team__uxuiDesigner__name,
 .team__seniorFullstackDeveloper__name,
+.team__qaEngineer__name,
+.team__contentManager__name,
+.team__uxuiDesigner__name,
+.team__illustratorDesigner__name,
 .team__solutionArchitect__name,
-.team__senioriOSDeveloper__name,
-.team__seniorAndroidDeveloper__name,
+.team__backend__name,
 .team__middleFlutterDeveloper__name {
     font-family: var(--h4fontfamily);
     font-size: var(--h4fontsize);
@@ -880,11 +923,13 @@ header {
     color: var(--txt);
 }
 
-.team__uxuiDesigner__jobTitle,
 .team__seniorFullstackDeveloper__jobTitle,
+.team__qaEngineer__jobTitle,
+.team__contentManager__jobTitle,
+.team__uxuiDesigner__jobTitle,
+.team__illustratorDesigner__jobTitle,
 .team__solutionArchitect__jobTitle,
-.team__senioriOSDeveloper__jobTitle,
-.team__seniorAndroidDeveloper__jobTitle,
+.team__backend__jobTitle,
 .team__middleFlutterDeveloper__jobTitle {
     color: var(--txt);
     font-family: var(--text16fontfamily);
@@ -1253,8 +1298,8 @@ header {
 }
 
 .nextProjects__slider__deliveryBot,
-.nextProjects__slider__myBedroomGuide,
 .nextProjects__slider__forYou,
+.nextProjects__slider__beinSportBeinConnect,
 .nextProjects__slider__i24news {
     text-decoration: none;
     color: black;
@@ -1267,15 +1312,15 @@ header {
 }
 
 .nextProjects__slider__deliveryBot:hover,
-.nextProjects__slider__myBedroomGuide:hover,
 .nextProjects__slider__forYou:hover,
+.nextProjects__slider__beinSportBeinConnect:hover,
 .nextProjects__slider__i24news:hover {
     color: var(--blue);
 }
 
 .nextProjects__slider__deliveryBot__preview,
-.nextProjects__slider__myBedroomGuide__preview,
 .nextProjects__slider__forYou__preview,
+.nextProjects__slider__beinSportBeinConnect__preview,
 .nextProjects__slider__i24news__preview {
     align-self: center;
     object-fit: contain;
@@ -1285,8 +1330,8 @@ header {
 }
 
 .nextProjects__slider__deliveryBot__h4,
-.nextProjects__slider__myBedroomGuide__h4,
 .nextProjects__slider__forYou__h4,
+.nextProjects__slider__beinSportBeinConnect__h4,
 .nextProjects__slider__i24news__h4 {
     font-size: var(--h4fontsize);
     font-family: var(--h4fontfamily);
@@ -1296,8 +1341,8 @@ header {
 }
 
 .nextProjects__slider__deliveryBot__caption,
-.nextProjects__slider__myBedroomGuide__caption,
 .nextProjects__slider__forYou__caption,
+.nextProjects__slider__beinSportBeinConnect__caption,
 .nextProjects__slider__i24news__caption {
     font-size: var(--text16fontsize);
     font-family: var(--text16fontfamily);
