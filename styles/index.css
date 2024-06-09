@@ -503,6 +503,7 @@ header {
     font-weight: var(--text16fontweight);
     line-height: var(--text16lineheight);
     text-transform: var(--text16texttransform);
+    color: var(--txt);
 }
 
 .aboutUs__infoRight__portraits-2 {

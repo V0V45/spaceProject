@@ -46,7 +46,7 @@ const freeConsultationButton = document.getElementsByClassName('contactUs__form_
 // Функции
 // Переходы по ссылкам
 function goToPortfolio() {
-    window.location.href = 'portfolio.html';
+    window.location.href = '#portfolio';
 }
 
 function goToAboutUs() {

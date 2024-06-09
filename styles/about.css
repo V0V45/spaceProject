@@ -1,0 +1,341 @@
+/** ОБЩЕЕ **/
+/* Константы */
+:root {
+    /* Цвета */
+    --txt: #051B43;
+    --white: #FFFFFF;
+    --green: #11FACA;
+    --backgroundBlue: #E5ECFC;
+    /* h1 */
+    --h1fontfamily: "Proxima Nova", sans-serif;
+    --h1fontsize: 62px;
+    --h1texttransform: uppercase;
+    --h1fontweight: bold;
+    --h1lineheight: 100%;
+    /* h3 */
+    --h3fontfamily: "Proxima Nova", sans-serif;
+    --h3fontsize: 44px;
+    --h3texttransform: none;
+    --h3fontweight: bold;
+    --h3lineheight: 100%;
+    /* button */
+    --buttonfontfamily: "Manrope", sans-serif;
+    --buttonfontsize: 16px;
+    --buttonfontweight: 500;
+    --buttonlineheight: 150%;
+    --buttontexttransform: uppercase;
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Manrope";
+    font-weight: 500;
+    src: url(/src/fonts/manrope_medium.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: bold;
+    src: url(/src/fonts/manrope_bold.ttf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    src: url(/src/fonts/proximanova_bold.otf);
+}
+
+/* Удаление всех первоначальных отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Плавный скроллинг */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Поворот стрелок на кнопках */
+.rotate {
+    transform: rotate(45deg);
+}
+
+/* Появление снизу */
+.hiddenFromDown {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(25%);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.showFromDown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+}
+
+.delay1 {
+    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
+}
+
+.delay1-5 {
+    transition: opacity 0.5s ease-out 150ms, filter 0.5s ease-out 150ms, transform 0.5s ease-out 150ms;
+}
+
+.delay2 {
+    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
+
+.delay2-5 {
+    transition: opacity 0.5s ease-out 250ms, filter 0.5s ease-out 250ms, transform 0.5s ease-out 250ms;
+}
+
+/* Для тех, у кого выключена анимация */
+@media(prefers-reduced-motion) {
+    .hiddenFromDown {
+        transition: none;
+    }
+}
+
+/* ПОСТОЯННЫЕ СТИЛИ */
+h1 {
+    font-family: var(--h1fontfamily);
+    font-size: var(--h1fontsize);
+    font-weight: var(--h1fontweight);
+    line-height: var(--h1lineheight);
+    text-transform: var(--h1texttransform);
+}
+
+h3 {
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    line-height: var(--h3lineheight);
+    text-transform: var(--h3texttransform);
+}
+
+/** HEADER SECTION **/
+/* Контейнер хедера */
+header {
+    padding-left: 50px;
+    background-color: var(--txt);
+}
+
+/* Расположение элементов в хедере */
+.headerMenu {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Отступы между элементами в хедере (от всех, кроме последней ссылки) */
+.header__logoLink,
+.header__aboutLink,
+.header__portfolioLink,
+.header__servicesLink,
+.header__industriesLink,
+.header__howWeWorkLink {
+    margin-right: 40px;
+}
+
+/* Стилизация ссылок хедера */
+.header__aboutLink,
+.header__portfolioLink,
+.header__servicesLink,
+.header__industriesLink,
+.header__howWeWorkLink,
+.header__techStackLink {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Стилизация ссылок хедера при наведении на них */
+.header__aboutLink:hover,
+.header__portfolioLink:hover,
+.header__servicesLink:hover,
+.header__industriesLink:hover,
+.header__howWeWorkLink:hover,
+.header__techStackLink:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.header__freeConsultationButton {
+    margin-right: 35px;
+    margin-left: auto;
+    width: 260px;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    font-weight: bold;
+    text-transform: var(--buttontexttransform);
+    letter-spacing: 0.01em;
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    transition: font-size 0.3s;
+    cursor: pointer;
+}
+
+.header__freeConsultationButton__arrow {
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+/** TEAM PHOTO SECTION **/
+.teamPhoto {
+    padding-top: 504px;
+    padding-left: 293px;
+    padding-right: 292px;
+    background-image: linear-gradient(180deg, rgba(5, 27, 67, 0) 0%, rgba(5, 27, 67, 0) 64.4%, rgba(5, 27, 67, 0.6) 73.2%, rgba(5, 27, 67, 0.8) 83.42%),
+        url(/src/images/teamphoto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.teamPhoto__h1 {
+    color: var(--white);
+    text-align: center;
+    margin: auto;
+}
+
+/** DESCRIPTION SECTION **/
+.description {
+    padding: 80px 163px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.description__p1,
+.description__p2 {
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    line-height: 150%;
+    color: var(--txt);
+    width: 1114px;
+}
+
+.description__p1 {
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.description__p2 {
+    font-weight: bold;
+}
+
+/** SKILLS SECTION **/
+.skills {
+    background-color: var(--backgroundBlue);
+    padding: 100px 50px;
+    display: grid;
+    grid-template-columns: 660px 20px 660px;
+    grid-template-rows: 44px 30px 156px 30px 156px 30px;
+    grid-template-areas:
+        "img . h3"
+        "img . ."
+        "img . list1"
+        "img . ."
+        "img . list2"
+        "img . .";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.skils__img {
+    grid-area: img;
+    border-radius: 10px;
+}
+
+.skills__h3 {
+    grid-area: h3;
+    color: var(--txt);
+}
+
+.skills__list-blue {
+    grid-area: list1;
+    margin-bottom: 30px;
+}
+
+.skills__list-green {
+    grid-area: list2;
+}
+
+.skills__list-blue,
+.skills__list-green {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.skills__list-blue__item1,
+.skills__list-blue__item2,
+.skills__list-blue__item3,
+.skills__list-blue__item4,
+.skills__list-green__item1,
+.skills__list-green__item2,
+.skills__list-green__item3,
+.skills__list-green__item4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.skills__list-blue__item1,
+.skills__list-blue__item2,
+.skills__list-blue__item3,
+.skills__list-green__item1,
+.skills__list-green__item2,
+.skills__list-green__item3 {
+    margin-bottom: 20px;
+}
+
+.skills__list__item1__marker-blue,
+.skills__list__item2__marker-blue,
+.skills__list__item3__marker-blue,
+.skills__list__item4__marker-blue,
+.skills__list__item1__marker-green,
+.skills__list__item2__marker-green,
+.skills__list__item3__marker-green,
+.skills__list__item4__marker-green {
+    margin-right: 20px;
+}
+
+.skills__list__item1__text,
+.skills__list__item2__text,
+.skills__list__item3__text,
+.skills__list__item4__text,
+.skills__list__item1__text,
+.skills__list__item2__text,
+.skills__list__item3__text,
+.skills__list__item4__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--txt);
+}
