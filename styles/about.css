@@ -198,9 +198,7 @@ header {
 
 /** TEAM PHOTO SECTION **/
 .teamPhoto {
-    padding-top: 504px;
-    padding-left: 293px;
-    padding-right: 292px;
+    padding: 504px 292px 32px 293px;
     background-image: linear-gradient(180deg, rgba(5, 27, 67, 0) 0%, rgba(5, 27, 67, 0) 64.4%, rgba(5, 27, 67, 0.6) 73.2%, rgba(5, 27, 67, 0.8) 83.42%),
         url(/src/images/teamphoto.jpg);
     background-size: cover;
