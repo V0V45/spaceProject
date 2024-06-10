@@ -24,6 +24,12 @@
     --buttonfontweight: 500;
     --buttonlineheight: 150%;
     --buttontexttransform: uppercase;
+    /* text16 */
+    --text16fontfamily: "Manrope", sans-serif;
+    --text16fontsize: 16px;
+    --text16fontweight: 500;
+    --text16lineheight: 150%;
+    --text16texttransform: none;
 }
 
 /* Подключение шрифтов */
@@ -337,3 +343,52 @@ header {
     line-height: 150%;
     color: var(--txt);
 }
+
+/** HOW WE WORK SECTION **/
+.howWeWork {
+    padding: 200px 51px;
+    display: grid;
+    grid-template-columns: 323px 10px 323px 20px 661px;
+    grid-template-rows: 44px 20px 96px 20px 250px;
+    grid-template-areas:
+        "h3 h3 h3 . imgRight"
+        ". . . . imgRight"
+        "text text text . imgRight"
+        ". . . . imgRight"
+        "imgLeft . imgCenter . imgRight";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.howWeWork__h3 {
+    grid-area: h3;
+    color: var(--txt);
+}
+
+.howWeWork__txt16 {
+    grid-area: text;
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+    color: var(--txt);
+}
+
+.howWeWork__imgLeft {
+    grid-area: imgLeft;
+    border-radius: 10px 0 0 10px;
+}
+
+.howWeWork__imgCenter {
+    grid-area: imgCenter;
+    border-radius: 0 10px 10px 0;
+}
+
+.howWeWork__imgRight {
+    grid-area: imgRight;
+    border-radius: 10px;
+}
+
+/** CORE VALUES SECTION **/
