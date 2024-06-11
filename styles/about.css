@@ -6,24 +6,44 @@
     --white: #FFFFFF;
     --green: #11FACA;
     --backgroundBlue: #E5ECFC;
+    --contourBlue: #6579FC;
+    --grey: #BFC8C9;
+    --blue: #303D8F;
     /* h1 */
     --h1fontfamily: "Proxima Nova", sans-serif;
     --h1fontsize: 62px;
     --h1texttransform: uppercase;
     --h1fontweight: bold;
     --h1lineheight: 100%;
+    /* h2 */
+    --h2fontfamily: "Proxima Nova", sans-serif;
+    --h2fontsize: 60px;
+    --h2texttransform: none;
+    --h2fontweight: normal;
+    --h2lineheight: 100%;
     /* h3 */
     --h3fontfamily: "Proxima Nova", sans-serif;
     --h3fontsize: 44px;
     --h3texttransform: none;
     --h3fontweight: bold;
     --h3lineheight: 100%;
+    /* h4 */
+    --h4fontfamily: "Proxima Nova", sans-serif;
+    --h4fontsize: 30px;
+    --h4texttransform: none;
+    --h4fontweight: bold;
     /* button */
     --buttonfontfamily: "Manrope", sans-serif;
     --buttonfontsize: 16px;
     --buttonfontweight: 500;
     --buttonlineheight: 150%;
     --buttontexttransform: uppercase;
+    /* text22 */
+    --text22fontfamily: "Manrope", sans-serif;
+    --text22fontsize: 22px;
+    --text22fontweight: 500;
+    --text22lineheight: 150%;
+    --text22texttransform: none;
     /* text16 */
     --text16fontfamily: "Manrope", sans-serif;
     --text16fontsize: 16px;
@@ -46,9 +66,21 @@
 }
 
 @font-face {
+    font-family: "Manrope";
+    font-weight: 800;
+    src: url(/src/fonts/manrope_extrabold.ttf);
+}
+
+@font-face {
     font-family: "Proxima Nova";
     font-weight: bold;
     src: url(/src/fonts/proximanova_bold.otf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: normal;
+    src: url(/src/fonts/proximanova_regular.ttf);
 }
 
 /* Удаление всех первоначальных отступов */
@@ -114,12 +146,27 @@ h1 {
     text-transform: var(--h1texttransform);
 }
 
+h2 {
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    line-height: var(--h2lineheight);
+    text-transform: var(--h2texttransform);
+}
+
 h3 {
     font-family: var(--h3fontfamily);
     font-size: var(--h3fontsize);
     font-weight: var(--h3fontweight);
     line-height: var(--h3lineheight);
     text-transform: var(--h3texttransform);
+}
+
+h4 {
+    font-family: var(--h4fontfamily);
+    font-size: var(--h4fontsize);
+    font-weight: var(--h4fontweight);
+    text-transform: var(--h4texttransform);
 }
 
 /** HEADER SECTION **/
@@ -290,7 +337,6 @@ header {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
     align-items: flex-start;
 }
 
@@ -392,3 +438,421 @@ header {
 }
 
 /** CORE VALUES SECTION **/
+.coreValues {
+    padding: 100px 50px;
+    background: linear-gradient(143deg, #303d8f 0%, #303d8f 61%, #8a90bb 100%);
+    display: grid;
+    grid-template-columns: 433px 20px 433px 20px 433px;
+    grid-template-rows: 60px 80px 320px;
+    grid-template-areas:
+        "h3 h3 h3 h3 h3"
+        ". . . . ."
+        "cell1 . cell2 . cell3";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.coreValues__h3 {
+    grid-area: h3;
+    color: var(--green);
+}
+
+.coreValues__tableCell-1 {
+    grid-area: cell1;
+}
+
+.coreValues__tableCell-2 {
+    grid-area: cell2;
+}
+
+.coreValues__tableCell-3 {
+    grid-area: cell3;
+}
+
+.coreValues__tableCell-1,
+.coreValues__tableCell-2,
+.coreValues__tableCell-3 {
+    border-radius: 10px;
+    border: 1px solid var(--contourBlue);
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.coreValues__tableCell-1__h4,
+.coreValues__tableCell-2__h4,
+.coreValues__tableCell-3__h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.coreValues__tableCell-1__text,
+.coreValues__tableCell-2__text,
+.coreValues__tableCell-3__text {
+    color: var(--white);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+/** OUR TEAM SECTION **/
+.ourTeam {
+    padding: 200px 50px;
+    display: grid;
+    grid-template-columns: 315px 10px 315px 20px 657px;
+    grid-template-rows: 44px 20px 96px 20px 294px;
+    grid-template-areas:
+        "imgLeft . imgCenter . h3"
+        "imgLeft . imgCenter . ."
+        "imgLeft . imgCenter . text"
+        "imgLeft . imgCenter . ."
+        "imgLeft . imgCenter . imgRight";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.ourTeam__imgLeft {
+    grid-area: imgLeft;
+    border-radius: 10px 0 0 10px;
+}
+
+.ourTeam__imgCenter {
+    grid-area: imgCenter;
+    border-radius: 0 10px 10px 0;
+}
+
+.ourTeam__h3 {
+    grid-area: h3;
+    color: var(--txt);
+}
+
+.ourTeam__text {
+    grid-area: text;
+    padding-right: 5px;
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+.ourTeam__imgRight {
+    border-radius: 10px;
+    grid-area: imgRight;
+}
+
+/** ADVANTAGES SECTION **/
+.advantages {
+    padding: 0px 107px 200px 107px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.advantages__professionalsNumber,
+.advantages__experience,
+.advantages__internalProjects {
+    text-align: center;
+    width: 368px;
+    color: var(--txt);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.advantages__professionalsNumber,
+.advantages__experience {
+    margin-right: 60px;
+}
+
+.advantages__professionalsNumber__number,
+.advantages__experience__number,
+.advantages__internalProjects__number {
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.advantages__professionalsNumber__caption,
+.advantages__experience__caption,
+.advantages__internalProjects__caption {
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+}
+
+/** OUR STORY SECTION **/
+.story {
+    padding: 80px 50px;
+    background-color: var(--backgroundBlue);
+    display: grid;
+    grid-template-columns: 660px 20px 660px;
+    grid-template-rows: 96px 30px 230px 20px 230px;
+    grid-template-areas:
+        "h2 . caption"
+        ". . ."
+        "card2020 . card2021"
+        ". . ."
+        "card2022 . card2023";
+    justify-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.story__h2 {
+    grid-area: h2;
+    color: var(--txt);
+}
+
+.story__text {
+    grid-area: caption;
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+.story__container2020 {
+    grid-area: card2020;
+}
+
+.story__container2021 {
+    grid-area: card2021;
+}
+
+.story__container2022 {
+    grid-area: card2022;
+}
+
+.story__container2023 {
+    grid-area: card2023;
+}
+
+.story__container2020,
+.story__container2021,
+.story__container2022,
+.story__container2023 {
+    box-shadow: 0 4px 20px 0 #e7e8ec;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.story__container2020__year,
+.story__container2021__year,
+.story__container2022__year,
+.story__container2023__year {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 150%;
+    color: var(--backgroundBlue);
+    margin-right: 40px;
+}
+
+.story__container2020__text,
+.story__container2021__text,
+.story__container2022__text,
+.story__container2023__text {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+/** MANAGEMENT SECTION **/
+.management {
+    padding: 200px 212px 100px 212px;
+    display: grid;
+    grid-template-columns: 304px 52px 304px 52px 304px;
+    grid-template-rows: 44px 80px 291px;
+    grid-template-areas: 
+    "header header header header header"
+    ". . . . ."
+    "cto . ceo . cbdo";
+    justify-content: center;
+    justify-items: center;
+    align-items: stretch;
+}
+
+.management__h3 {
+    grid-area: header;
+    color: var(--txt);
+}
+
+.management__cto {
+    grid-area: cto;
+}
+
+.management__ceo {
+    grid-area: ceo;
+}
+
+.management__cbdo {
+    grid-area: cbdo;
+}
+
+.management__cto,
+.management__ceo,
+.management__cbdo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.management__cto__portrait,
+.management__ceo__portrait,
+.management__cbdo__portrait {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+
+.management__cto__name,
+.management__ceo__name,
+.management__cbdo__name {
+    color: var(--txt);
+}
+
+.management__cto__jobTitle,
+.management__ceo__jobTitle,
+.management__cbdo__jobTitle {
+    color: var(--txt);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+/** FOOTER **/
+footer {
+    background-color: var(--blue);
+    padding: 60px 67px 60px 50px;
+}
+
+.footerMenu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footerMenu__linkWithImage {
+    margin-right: 30px;
+}
+
+.footerMenu__aboutlink,
+.footerMenu__portfoliolink,
+.footerMenu__serviceslink,
+.footerMenu__industrieslink,
+.footerMenu__howWeWorklink,
+.footerMenu__techStacklink {
+    font-family: var(--text16fontfamily);
+    font-weight: var(--text16fontweight);
+    font-size: var(--text16fontsize);
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.25s;
+    margin-right: 20px;
+}
+
+.footerMenu__aboutlink:hover,
+.footerMenu__portfoliolink:hover,
+.footerMenu__serviceslink:hover,
+.footerMenu__industrieslink:hover,
+.footerMenu__howWeWorklink:hover,
+.footerMenu__techStacklink:hover {
+    text-decoration: underline;
+    color: var(--green);
+}
+
+.footerInfo {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 308px 50px 305px 52px 256px 52px 300px;
+    grid-template-rows: 33px 20px 42px 54px;
+    grid-template-areas: 
+    "addressHeader . . . . . ."
+    ". . . . . . ."
+    "office1 . office2 . . . ."
+    "office1 . office2 . termsOfUse . websiteDevelopment";
+}
+
+.footerInfo__addressHeader {
+    grid-area: addressHeader;
+    color: var(--white);
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    font-weight: var(--text22fontweight);
+    text-transform: var(--text22texttransform);
+    line-height: var(--text22lineheight);
+}
+
+.footerInfo__addressOfOffice1 {
+    grid-area: office1;
+}
+
+.footerInfo__addressOfOffice2 {
+    grid-area: office2;
+}
+
+.footerInfo__addressOfOffice1,
+.footerInfo__addressOfOffice2,
+.footerInfo__link {
+    color: var(--white);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
+}
+
+.footerInfo__link {
+    grid-area: termsOfUse;
+    text-decoration: none;
+    align-self: end;
+}
+
+.footerInfo__link:hover {
+    text-decoration: underline;
+}
+
+.footerInfo__websiteDeveloper {
+    grid-area: websiteDevelopment;
+    text-decoration: none;
+    align-self: end;
+    color: var(--grey);
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    text-transform: var(--text16texttransform);
+    line-height: var(--text16lineheight);
+}
