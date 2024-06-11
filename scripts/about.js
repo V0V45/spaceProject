@@ -48,3 +48,14 @@ const number3 = document.getElementById('num3');
 observerDigits.observe(number1);
 observerDigits.observe(number2);
 observerDigits.observe(number3);
+
+/* АКТИВАЦИЯ HIDDEN FROM DOWN */
+const observerFromDown = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showFromDown');
+        }
+    })
+});
+const hiddenFromDownElements = document.querySelectorAll('.hiddenFromDown'); // все элементы с классом hiddenFromDown в HTML записываем в массив
+hiddenFromDownElements.forEach((element) => observerFromDown.observe(element)); // для каждого из них запускаем наблюдение
