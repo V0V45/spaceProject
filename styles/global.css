@@ -1,0 +1,268 @@
+/* Константы */
+:root {
+    /* Цвета */
+    --txt: #051B43;
+    --grey: #BFC8C9;
+    --blue: #303D8F;
+    --green2: #10C48D;
+    --white: #FFFFFF;
+    --green: #11FACA;
+    --backgroundBlue: #E5ECFC;
+    --backgroundGreen: #E9F5F4;
+    --contourBlue: #6579FC;
+    --green1: #D1EBEB;
+    --blue1: #CCDBFF;
+
+    /* Шрифты */
+    /* h1 */
+    --h1fontfamily: "Proxima Nova", sans-serif;
+    --h1fontsize: 62px;
+    --h1texttransform: uppercase;
+    --h1fontweight: bold;
+    --h1lineheight: 100%;
+    /* h2 */
+    --h2fontfamily: "Proxima Nova", sans-serif;
+    --h2fontsize: 60px;
+    --h2texttransform: none;
+    --h2fontweight: normal;
+    --h2lineheight: 100%;
+    /* h3 */
+    --h3fontfamily: "Proxima Nova", sans-serif;
+    --h3fontsize: 44px;
+    --h3texttransform: none;
+    --h3fontweight: bold;
+    /* h4 */
+    --h4fontfamily: "Proxima Nova", sans-serif;
+    --h4fontsize: 30px;
+    --h4texttransform: none;
+    --h4fontweight: bold;
+    /* text22 */
+    --text22fontfamily: "Manrope", sans-serif;
+    --text22fontsize: 22px;
+    --text22fontweight: 500;
+    --text22lineheight: 150%;
+    --text22texttransform: none;
+    /* text16 */
+    --text16fontfamily: "Manrope", sans-serif;
+    --text16fontsize: 16px;
+    --text16fontweight: 500;
+    --text16lineheight: 150%;
+    --text16texttransform: none;
+    /* text-tegs */
+    --texttegsfontfamily: "Manrope", sans-serif;
+    --texttegsfontsize: 16px;
+    --texttegsfontweight: normal;
+    --texttegslineheight: 100%;
+    --texttegstexttransform: none;
+    /* text14 */
+    --text14fontfamily: "Manrope", sans-serif;
+    --text14fontsize: 14px;
+    --text14fontweight: normal;
+    --text14lineheight: 150%;
+    --text14texttransform: none;
+    /* button */
+    --buttonfontfamily: "Manrope", sans-serif;
+    --buttonfontsize: 16px;
+    --buttonfontweight: bold;
+    --buttonletterspacing: 0.01em;
+    --buttontexttransform: uppercase;
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Manrope";
+    font-weight: 500;
+    src: url(/src/fonts/manrope_medium.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: normal;
+    src: url(/src/fonts/manrope_regular.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: bold;
+    src: url(/src/fonts/manrope_bold.ttf);
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-weight: 600;
+    src: url(/src/fonts/manrope_semibold.ttf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: bold;
+    src: url(/src/fonts/proximanova_bold.otf);
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    font-weight: normal;
+    src: url(/src/fonts/proximanova_regular.ttf);
+}
+
+/* Удаление всех первоначальных отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Анимации */
+/* Плавный скроллинг */
+html {
+    scroll-behavior: smooth;
+}
+
+/* появление сверху вниз */
+.hiddenFromDown {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(25%);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.showFromDown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0%);
+}
+
+.delay1 {
+    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
+}
+
+.delay1-5 {
+    transition: opacity 0.5s ease-out 150ms, filter 0.5s ease-out 150ms, transform 0.5s ease-out 150ms;
+}
+
+.delay2 {
+    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
+}
+
+.delay2-5 {
+    transition: opacity 0.5s ease-out 250ms, filter 0.5s ease-out 250ms, transform 0.5s ease-out 250ms;
+}
+
+.delay3 {
+    transition: opacity 0.5s ease-out 300ms, filter 0.5s ease-out 300ms, transform 0.5s ease-out 300ms;
+}
+
+.delay3-5 {
+    transition: opacity 0.5s ease-out 350ms, filter 0.5s ease-out 350ms, transform 0.5s ease-out 350ms;
+}
+
+.delay4 {
+    transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
+}
+
+.delay4-5 {
+    transition: opacity 0.5s ease-out 450ms, filter 0.5s ease-out 450ms, transform 0.5s ease-out 450ms;
+}
+
+.delay5 {
+    transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
+}
+
+.delay5-5 {
+    transition: opacity 0.5s ease-out 550ms, filter 0.5s ease-out 550ms, transform 0.5s ease-out 550ms;
+}
+
+.delay6 {
+    transition: opacity 0.5s ease-out 600ms, filter 0.5s ease-out 600ms, transform 0.5s ease-out 600ms;
+}
+
+.delay7 {
+    transition: opacity 0.5s ease-out 700ms, filter 0.5s ease-out 700ms, transform 0.5s ease-out 700ms;
+}
+
+.delay8 {
+    transition: opacity 0.5s ease-out 800ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
+}
+
+/* Активация поворота стрелок на кнопках */
+.rotate {
+    transform: rotate(45deg);
+}
+
+/* Для тех, у кого выключена анимация */
+@media(prefers-reduced-motion) {
+    .hiddenFromDown {
+        transition: none;
+    }
+}
+
+/* Элементы */
+h1 {
+    font-family: var(--h1fontfamily);
+    font-size: var(--h1fontsize);
+    font-weight: var(--h1fontweight);
+    line-height: var(--h1lineheight);
+    text-transform: var(--h1texttransform);
+}
+
+h2 {
+    font-family: var(--h2fontfamily);
+    font-size: var(--h2fontsize);
+    font-weight: var(--h2fontweight);
+    text-transform: var(--h2texttransform);
+    line-height: var(--h2lineheight);
+}
+
+h3 {
+    font-family: var(--h3fontfamily);
+    font-size: var(--h3fontsize);
+    font-weight: var(--h3fontweight);
+    text-transform: var(--h3texttransform);
+}
+
+h4 {
+    font-family: var(--h4fontfamily);
+    font-size: var(--h4fontsize);
+    font-weight: var(--h4fontweight);
+    text-transform: var(--h4texttransform);
+}
+
+.text22 {
+    font-family: var(--text22fontfamily);
+    font-weight: var(--text22fontweight);
+    font-size: var(--text22fontsize);
+    line-height: var(--text22lineheight);
+    text-transform: var(--text22texttransform);
+}
+
+.text16 {
+    font-family: var(--text16fontfamily);
+    font-size: var(--text16fontsize);
+    font-weight: var(--text16fontweight);
+    line-height: var(--text16lineheight);
+    text-transform: var(--text16texttransform);
+}
+
+.textTags {
+    font-family: var(--texttegsfontfamily);
+    font-size: var(--texttegsfontsize);
+    font-weight: var(--texttegsfontweight);
+    line-height: var(--texttegslineheight);
+    text-transform: var(--texttegstexttransform);
+}
+
+.text14 {
+    font-family: var(--text14fontfamily);
+    font-size: var(--text14fontsize);
+    font-weight: var(--text14fontweight);
+    line-height: var(--text14lineheight);
+    text-transform: var(--text14texttransform);
+}
+
+.textButton {
+    font-family: var(--buttonfontfamily);
+    font-size: var(--buttonfontsize);
+    letter-spacing: var(--buttonletterspacing);
+    font-weight: var(--buttonfontweight);
+    text-transform: var(--buttontexttransform);
+}

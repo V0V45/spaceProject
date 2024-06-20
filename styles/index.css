@@ -1,167 +1,4 @@
-/* Константы */
-:root {
-    /* Цвета */
-    --txt: #051B43;
-    --grey: #BFC8C9;
-    --blue: #303D8F;
-    --green2: #10C48D;
-    --white: #FFFFFF;
-    --green: #11FACA;
-    --backgroundBlue: #E5ECFC;
-    --backgroundGreen: #E9F5F4;
-    --contourBlue: #6579FC;
-    --green1: #D1EBEB;
-    --blue1: #CCDBFF;
-
-    /* Шрифты */
-    /* h1 */
-    --h1fontfamily: "Proxima Nova", sans-serif;
-    --h1fontsize: 62px;
-    --h1texttransform: uppercase;
-    --h1fontweight: bold;
-    /* h2 */
-    --h2fontfamily: "Proxima Nova", sans-serif;
-    --h2fontsize: 60px;
-    --h2texttransform: none;
-    --h2fontweight: normal;
-    /* h3 */
-    --h3fontfamily: "Proxima Nova", sans-serif;
-    --h3fontsize: 44px;
-    --h3texttransform: none;
-    --h3fontweight: bold;
-    /* h4 */
-    --h4fontfamily: "Proxima Nova", sans-serif;
-    --h4fontsize: 30px;
-    --h4texttransform: none;
-    --h4fontweight: bold;
-    /* text22 */
-    --text22fontfamily: "Manrope", sans-serif;
-    --text22fontsize: 22px;
-    --text22fontweight: 500;
-    --text22lineheight: 150%;
-    --text22texttransform: none;
-    /* text16 */
-    --text16fontfamily: "Manrope", sans-serif;
-    --text16fontsize: 16px;
-    --text16fontweight: 500;
-    --text16lineheight: 150%;
-    --text16texttransform: none;
-    /* text-tegs */
-    --texttegsfontfamily: "Manrope", sans-serif;
-    --texttegsfontsize: 16px;
-    --texttegsfontweight: normal;
-    --texttegslineheight: 100%;
-    --texttegstexttransform: none;
-    /* text14 */
-    --text14fontfamily: "Manrope", sans-serif;
-    --text14fontsize: 14px;
-    --text14fontweight: normal;
-    --text14lineheight: 150%;
-    --text14texttransform: none;
-    /* button */
-    --buttonfontfamily: "Manrope", sans-serif;
-    --buttonfontsize: 16px;
-    --buttonfontweight: 500;
-    --buttonlineheight: 150%;
-    --buttontexttransform: uppercase;
-}
-
-/* Подключение шрифтов */
-@font-face {
-    font-family: "Manrope";
-    font-weight: 500;
-    src: url(/src/fonts/manrope_medium.ttf);
-}
-
-@font-face {
-    font-family: "Manrope";
-    font-weight: normal;
-    src: url(/src/fonts/manrope_regular.ttf);
-}
-
-@font-face {
-    font-family: "Manrope";
-    font-weight: bold;
-    src: url(/src/fonts/manrope_bold.ttf);
-}
-
-@font-face {
-    font-family: "Manrope";
-    font-weight: 600;
-    src: url(/src/fonts/manrope_semibold.ttf);
-}
-
-@font-face {
-    font-family: "Proxima Nova";
-    font-weight: bold;
-    src: url(/src/fonts/proximanova_bold.otf);
-}
-
-@font-face {
-    font-family: "Proxima Nova";
-    font-weight: normal;
-    src: url(/src/fonts/proximanova_regular.ttf);
-}
-
-/* Удаление всех первоначальных отступов */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Анимации */
-/* Плавный скроллинг */
-html {
-    scroll-behavior: smooth;
-}
-
-/* появление сверху вниз */
-.hiddenFromDown {
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateY(25%);
-    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.showFromDown {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0%);
-}
-
-.delay1 {
-    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
-}
-
-.delay2 {
-    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
-}
-
-.delay3 {
-    transition: opacity 0.5s ease-out 300ms, filter 0.5s ease-out 300ms, transform 0.5s ease-out 300ms;
-}
-
-.delay4 {
-    transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
-}
-
-.delay5 {
-    transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
-}
-
-.delay6 {
-    transition: opacity 0.5s ease-out 600ms, filter 0.5s ease-out 600ms, transform 0.5s ease-out 600ms;
-}
-
-.delay7 {
-    transition: opacity 0.5s ease-out 700ms, filter 0.5s ease-out 700ms, transform 0.5s ease-out 700ms;
-}
-
-.delay8 {
-    transition: opacity 0.5s ease-out 800ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
-}
-
+/* Коррекции анимации */
 /* для правильной работы карточек */
 .ourPortfolio__card1.hiddenFromDown,
 .ourPortfolio__card2.hiddenFromDown,
@@ -177,6 +14,7 @@ html {
     transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out, background-color 0.3s ease-out;
 }
 
+/* Дополнительные анимации */
 /* появление картинок в слайдере */
 .imageAppearFromDown {
     animation: slideFromDown 0.5s;
@@ -226,18 +64,6 @@ html {
 .ourPortfolio__allProjectsButton__ArrowIcon,
 .whatWeOffer__discussButton__ArrowIcon {
     transition: transform 0.3s;
-}
-
-/* Активация поворота стрелок на кнопках */
-.rotate {
-    transform: rotate(45deg);
-}
-
-/* Для тех, у кого выключена анимация */
-@media(prefers-reduced-motion) {
-    .hiddenFromDown {
-        transition: none;
-    }
 }
 
 /* Header включает в себя всю верхнюю часть: меню, тэглайн и статистику */
@@ -293,15 +119,6 @@ header {
     align-self: start;
     padding-top: 96px;
     width: 700px;
-}
-
-.tagline__text1,
-.tagline__text2 {
-    font-family: var(--h1fontfamily);
-    font-size: var(--h1fontsize);
-    font-weight: var(--h1fontweight);
-    text-transform: var(--h1texttransform);
-    line-height: 100%;
 }
 
 .tagline__text1 {
@@ -398,10 +215,6 @@ header {
 }
 
 .aboutUs__text__h2 {
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    text-transform: var(--h2texttransform);
-    font-weight: var(--h2fontweight);
     color: var(--txt);
     text-align: center;
     padding-bottom: 20px;
@@ -498,11 +311,6 @@ header {
 }
 
 .aboutUs__infoRight__text {
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -548,20 +356,11 @@ header {
 
 .ourPortfolio__header__h2 {
     grid-area: h2;
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    text-transform: var(--h2texttransform);
     color: var(--txt);
 }
 
 .ourPortfolio__header__text {
     grid-area: txt22;
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    text-transform: var(--text22texttransform);
-    line-height: var(--text22lineheight);
     color: var(--txt);
 }
 
@@ -629,11 +428,6 @@ header {
     padding: 9px 25px 9px 25px;
     border-radius: 5px;
     color: var(--txt);
-    font-family: var(--texttegsfontfamily);
-    font-size: var(--texttegsfontsize);
-    font-weight: var(--texttegsfontweight);
-    line-height: var(--texttegslineheight);
-    text-transform: var(--texttegstexttransform);
     transition: background-color 0.3s;
 }
 
@@ -665,10 +459,6 @@ header {
 .ourPortfolio__card4__header,
 .ourPortfolio__card5__header {
     grid-area: header;
-    font-family: var(--h3fontfamily);
-    font-weight: var(--h3fontweight);
-    font-size: var(--h3fontsize);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
 }
 
@@ -683,11 +473,6 @@ header {
     justify-content: flex-start;
     align-items: center;
     color: var(--txt);
-    font-family: var(--texttegsfontfamily);
-    font-size: var(--texttegsfontsize);
-    font-weight: var(--texttegsfontweight);
-    line-height: var(--texttegslineheight);
-    text-transform: var(--texttegstexttransform);
     padding-bottom: 50px;
 }
 
@@ -729,11 +514,6 @@ header {
 .ourPortfolio__card4__description__text,
 .ourPortfolio__card5__description__text {
     color: var(--txt);
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
 }
 
 .ourPortfolio__card1__viewButton,
@@ -746,12 +526,7 @@ header {
     justify-self: start;
     border: none;
     background: transparent;
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: uppercase;
     color: var(--blue);
-    letter-spacing: 0.01em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -786,12 +561,7 @@ header {
     padding-bottom: 12px;
     border-radius: 10px;
     background-color: var(--blue);
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: uppercase;
     color: var(--white);
-    letter-spacing: 0.01em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -821,22 +591,13 @@ header {
 
 .whatWeOffer__header__h2 {
     grid-area: h2;
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    text-transform: var(--h2texttransform);
     color: var(--txt);
 }
 
 .whatWeOffer__header__text {
     grid-area: txt22;
     padding-bottom: 80px;
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
-    line-height: var(--text22lineheight);
 }
 
 .whatWeOffer__card1 {
@@ -908,10 +669,6 @@ header {
 .whatWeOffer__card6__text__h4,
 .whatWeOffer__card7__text__h4,
 .whatWeOffer__card8__text__h4 {
-    font-family: var(--h4fontfamily);
-    font-size: var(--h4fontsize);
-    text-transform: var(--h4texttransform);
-    font-weight: var(--h4fontweight);
     color: var(--txt);
     padding-bottom: 10px;
 }
@@ -924,11 +681,6 @@ header {
 .whatWeOffer__card6__text__p,
 .whatWeOffer__card7__text__p,
 .whatWeOffer__card8__text__p {
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -943,12 +695,7 @@ header {
     padding-bottom: 12px;
     border-radius: 10px;
     background-color: var(--blue);
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: uppercase;
     color: var(--white);
-    letter-spacing: 0.01em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -977,22 +724,13 @@ header {
 
 .expertise__header__h2 {
     grid-area: h2;
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    text-transform: var(--h2texttransform);
     color: var(--txt);
 }
 
 .expertise__header__text {
     grid-area: txt22;
     padding-bottom: 80px;
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
-    line-height: var(--text22lineheight);
 }
 
 .expertise__slider {
@@ -1057,11 +795,6 @@ header {
 .expertise__slider__spoiler3__description,
 .expertise__slider__spoiler4__description {
     margin-top: 29px;
-    font-family: var(--text16fontfamily);
-    font-weight: var(--text16fontweight);
-    font-size: var(--text16fontsize);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -1119,20 +852,11 @@ header {
 }
 
 .backCall__header__h2 {
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    text-transform: var(--h2texttransform);
     color: var(--txt);
     padding-bottom: 24px;
 }
 
 .backCall__header__text {
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
 }
 
@@ -1169,11 +893,6 @@ header {
 
 .backCall__inputForm__nameValidationInfo,
 .backCall__inputForm__phoneOrEmailValidationInfo {
-    font-family: var(--text16fontfamily);
-    font-weight: var(--text16fontweight);
-    font-size: var(--text16fontsize);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: #dd1414;
 }
 
@@ -1187,11 +906,6 @@ header {
     background-color: var(--white);
     padding: 18px;
     opacity: 1;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -1222,11 +936,6 @@ header {
 
 .backCall__inputForm__communicationChoice__caption {
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     padding-bottom: 20px;
 }
 
@@ -1316,11 +1025,6 @@ header {
 .backCall__inputForm__communicationChoice__buttonsAndLabels__email-label,
 .backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label {
     padding-left: 10px;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
     cursor: pointer;
 }
@@ -1338,12 +1042,7 @@ header {
     border: none;
     border-radius: 10px;
     background-color: var(--blue);
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: uppercase;
     color: var(--white);
-    letter-spacing: 0.01em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1362,7 +1061,7 @@ header {
 
 .backCall__inputForm__scheduleCall__caption {
     font-family: "Manrope", sans-serif;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 12px;
     line-height: 150%;
     color: var(--txt);
@@ -1411,11 +1110,6 @@ header {
 }
 
 .popUp__text {
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
     width: 569px;
     text-align: center;
@@ -1432,10 +1126,6 @@ header {
     padding-top: 100px;
     margin-left: 50px;
     padding-bottom: 50px;
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    text-transform: var(--h2texttransform);
     color: var(--green);
 }
 
@@ -1462,10 +1152,6 @@ header {
 .howWeWork__table__row1__cell2__header,
 .howWeWork__table__row2__cell1__header,
 .howWeWork__table__row2__cell2__header {
-    font-family: var(--h4fontfamily);
-    font-size: var(--h4fontsize);
-    font-weight: var(--h4fontweight);
-    text-transform: var(--h4texttransform);
     color: var(--white);
     padding-bottom: 20px;
 }
@@ -1495,11 +1181,6 @@ header {
 .howWeWork__table__row2__cell2__list__item2,
 .howWeWork__table__row2__cell2__list__item3 {
     padding-left: 10px;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--white);
 }
 
@@ -1546,10 +1227,6 @@ header {
 
 .technologies__header {
     color: var(--txt);
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    text-transform: var(--h2texttransform);
     margin-bottom: 80px;
 }
 
@@ -1766,11 +1443,6 @@ header {
 .technologies__list__design__text,
 .technologies__list__marketing__text {
     color: var(--txt);
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
 }
 
 .technologies__list__mobile__logos__flutter,
@@ -1836,10 +1508,6 @@ header {
     text-align: center;
     width: 885px;
     color: var(--txt);
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    text-transform: var(--h2texttransform);
 }
 
 .contactUs__contacts {
@@ -1853,20 +1521,11 @@ header {
 
 .contactUs__contacts__caption {
     color: var(--txt);
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     padding-bottom: 70px;
 }
 
 .contactUs__contacts__h4 {
     color: var(--txt);
-    font-family: var(--h4fontfamily);
-    font-size: var(--h4fontsize);
-    font-weight: var(--h4fontweight);
-    text-transform: var(--h4texttransform);
     padding-bottom: 20px;
 }
 
@@ -1898,11 +1557,6 @@ header {
 .contactUs__contacts__email__address,
 .contactUs__contacts__linkedIn__address {
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 .contactUs__contacts__ceo {
@@ -1948,10 +1602,6 @@ header {
 .contactUs__contacts__cto__name {
     grid-area: nameAndSurname;
     color: var(--txt);
-    font-family: var(--h4fontfamily);
-    font-size: var(--h4fontsize);
-    font-weight: var(--h4fontweight);
-    text-transform: var(--h4texttransform);
 }
 
 .contactUs__contacts__ceo__title,
@@ -2074,11 +1724,6 @@ header {
 .contactUs__form__phoneLabel__optional {
     margin-left: 10px;
     color: var(--grey);
-    font-family: var(--texttegsfontfamily);
-    font-size: var(--texttegsfontsize);
-    font-weight: var(--texttegsfontweight);
-    line-height: var(--texttegslineheight);
-    text-transform: var(--texttegstexttransform);
 }
 
 
@@ -2090,11 +1735,6 @@ header {
     border: 1px solid var(--grey);
     border-radius: 10px;
     background-color: var(--white);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
     padding: 18px;
 }
@@ -2156,11 +1796,6 @@ header {
 
 .contactUs__form__eMailValidation,
 .contactUs__form__firstNameValidation {
-    font-family: var(--text16fontfamily);
-    font-weight: var(--text16fontweight);
-    font-size: var(--text16fontsize);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: #dd1414;
 }
 
@@ -2211,11 +1846,6 @@ footer {
 .footerInfo__addressHeader {
     grid-area: addressHeader;
     color: var(--white);
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    text-transform: var(--text22texttransform);
-    line-height: var(--text22lineheight);
 }
 
 .footerInfo__addressOfOffice1 {
@@ -2230,11 +1860,6 @@ footer {
 .footerInfo__addressOfOffice2,
 .footerInfo__link {
     color: var(--white);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    text-transform: var(--text16texttransform);
-    line-height: var(--text16lineheight);
 }
 
 .footerInfo__link {
@@ -2252,11 +1877,6 @@ footer {
     text-decoration: none;
     align-self: end;
     color: var(--grey);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    text-transform: var(--text16texttransform);
-    line-height: var(--text16lineheight);
 }
 
 /* Валидация */

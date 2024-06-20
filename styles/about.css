@@ -1,190 +1,3 @@
-/** ОБЩЕЕ **/
-/* Константы */
-:root {
-    /* Цвета */
-    --txt: #051B43;
-    --white: #FFFFFF;
-    --green: #11FACA;
-    --backgroundBlue: #E5ECFC;
-    --contourBlue: #6579FC;
-    --grey: #BFC8C9;
-    --blue: #303D8F;
-    /* h1 */
-    --h1fontfamily: "Proxima Nova", sans-serif;
-    --h1fontsize: 62px;
-    --h1texttransform: uppercase;
-    --h1fontweight: bold;
-    --h1lineheight: 100%;
-    /* h2 */
-    --h2fontfamily: "Proxima Nova", sans-serif;
-    --h2fontsize: 60px;
-    --h2texttransform: none;
-    --h2fontweight: normal;
-    --h2lineheight: 100%;
-    /* h3 */
-    --h3fontfamily: "Proxima Nova", sans-serif;
-    --h3fontsize: 44px;
-    --h3texttransform: none;
-    --h3fontweight: bold;
-    --h3lineheight: 100%;
-    /* h4 */
-    --h4fontfamily: "Proxima Nova", sans-serif;
-    --h4fontsize: 30px;
-    --h4texttransform: none;
-    --h4fontweight: bold;
-    /* button */
-    --buttonfontfamily: "Manrope", sans-serif;
-    --buttonfontsize: 16px;
-    --buttonfontweight: 500;
-    --buttonlineheight: 150%;
-    --buttontexttransform: uppercase;
-    /* text22 */
-    --text22fontfamily: "Manrope", sans-serif;
-    --text22fontsize: 22px;
-    --text22fontweight: 500;
-    --text22lineheight: 150%;
-    --text22texttransform: none;
-    /* text16 */
-    --text16fontfamily: "Manrope", sans-serif;
-    --text16fontsize: 16px;
-    --text16fontweight: 500;
-    --text16lineheight: 150%;
-    --text16texttransform: none;
-}
-
-/* Подключение шрифтов */
-@font-face {
-    font-family: "Manrope";
-    font-weight: 500;
-    src: url(/src/fonts/manrope_medium.ttf);
-}
-
-@font-face {
-    font-family: "Manrope";
-    font-weight: bold;
-    src: url(/src/fonts/manrope_bold.ttf);
-}
-
-@font-face {
-    font-family: "Manrope";
-    font-weight: 800;
-    src: url(/src/fonts/manrope_extrabold.ttf);
-}
-
-@font-face {
-    font-family: "Proxima Nova";
-    font-weight: bold;
-    src: url(/src/fonts/proximanova_bold.otf);
-}
-
-@font-face {
-    font-family: "Proxima Nova";
-    font-weight: normal;
-    src: url(/src/fonts/proximanova_regular.ttf);
-}
-
-/* Удаление всех первоначальных отступов */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Плавный скроллинг */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Поворот стрелок на кнопках */
-.rotate {
-    transform: rotate(45deg);
-}
-
-/* Появление снизу */
-.hiddenFromDown {
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateY(25%);
-    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.showFromDown {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0%);
-}
-
-.delay1 {
-    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
-}
-
-.delay1-5 {
-    transition: opacity 0.5s ease-out 150ms, filter 0.5s ease-out 150ms, transform 0.5s ease-out 150ms;
-}
-
-.delay2 {
-    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
-}
-
-.delay2-5 {
-    transition: opacity 0.5s ease-out 250ms, filter 0.5s ease-out 250ms, transform 0.5s ease-out 250ms;
-}
-
-.delay3 {
-    transition: opacity 0.5s ease-out 300ms, filter 0.5s ease-out 300ms, transform 0.5s ease-out 300ms;
-}
-
-.delay3-5 {
-    transition: opacity 0.5s ease-out 350ms, filter 0.5s ease-out 350ms, transform 0.5s ease-out 350ms;
-}
-
-.delay4 {
-    transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
-}
-
-.delay4-5 {
-    transition: opacity 0.5s ease-out 450ms, filter 0.5s ease-out 450ms, transform 0.5s ease-out 450ms;
-}
-
-/* Для тех, у кого выключена анимация */
-@media(prefers-reduced-motion) {
-    .hiddenFromDown {
-        transition: none;
-    }
-}
-
-/* ПОСТОЯННЫЕ СТИЛИ */
-h1 {
-    font-family: var(--h1fontfamily);
-    font-size: var(--h1fontsize);
-    font-weight: var(--h1fontweight);
-    line-height: var(--h1lineheight);
-    text-transform: var(--h1texttransform);
-}
-
-h2 {
-    font-family: var(--h2fontfamily);
-    font-size: var(--h2fontsize);
-    font-weight: var(--h2fontweight);
-    line-height: var(--h2lineheight);
-    text-transform: var(--h2texttransform);
-}
-
-h3 {
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
-}
-
-h4 {
-    font-family: var(--h4fontfamily);
-    font-size: var(--h4fontsize);
-    font-weight: var(--h4fontweight);
-    text-transform: var(--h4texttransform);
-}
-
 /** HEADER SECTION **/
 /* Контейнер хедера */
 header {
@@ -248,11 +61,6 @@ header {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: var(--buttontexttransform);
-    letter-spacing: 0.01em;
     border: none;
     background-color: transparent;
     color: var(--white);
@@ -294,9 +102,9 @@ header {
 .description__p1,
 .description__p2 {
     text-align: center;
-    font-family: "Manrope", sans-serif;
-    font-size: 22px;
-    line-height: 150%;
+    font-family: var(--text22fontfamily);
+    font-size: var(--text22fontsize);
+    line-height: var(--text22lineheight);
     color: var(--txt);
     width: 1114px;
 }
@@ -394,15 +202,7 @@ header {
 .skills__list__item1__text,
 .skills__list__item2__text,
 .skills__list__item3__text,
-.skills__list__item4__text,
-.skills__list__item1__text,
-.skills__list__item2__text,
-.skills__list__item3__text,
 .skills__list__item4__text {
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
     color: var(--txt);
 }
 
@@ -430,11 +230,6 @@ header {
 
 .howWeWork__txt16 {
     grid-area: text;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -510,11 +305,6 @@ header {
 .coreValues__tableCell-2__text,
 .coreValues__tableCell-3__text {
     color: var(--white);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 /** OUR TEAM SECTION **/
@@ -553,11 +343,6 @@ header {
     grid-area: text;
     padding-right: 5px;
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 .ourTeam__imgRight {
@@ -601,16 +386,6 @@ header {
     font-size: 60px;
 }
 
-.advantages__professionalsNumber__caption,
-.advantages__experience__caption,
-.advantages__internalProjects__caption {
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
-}
-
 /** OUR STORY SECTION **/
 .story {
     padding: 80px 50px;
@@ -637,11 +412,6 @@ header {
 .story__text {
     grid-area: caption;
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 .story__container2020 {
@@ -692,11 +462,6 @@ header {
 .story__container2022__text,
 .story__container2023__text {
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 /** MANAGEMENT SECTION **/
@@ -767,11 +532,6 @@ header {
 .management__ceo__jobTitle,
 .management__cbdo__jobTitle {
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 /** FOOTER **/
@@ -832,11 +592,6 @@ footer {
 .footerInfo__addressHeader {
     grid-area: addressHeader;
     color: var(--white);
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    text-transform: var(--text22texttransform);
-    line-height: var(--text22lineheight);
 }
 
 .footerInfo__addressOfOffice1 {
@@ -851,11 +606,6 @@ footer {
 .footerInfo__addressOfOffice2,
 .footerInfo__link {
     color: var(--white);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    text-transform: var(--text16texttransform);
-    line-height: var(--text16lineheight);
 }
 
 .footerInfo__link {
@@ -873,9 +623,4 @@ footer {
     text-decoration: none;
     align-self: end;
     color: var(--grey);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    text-transform: var(--text16texttransform);
-    line-height: var(--text16lineheight);
 }
