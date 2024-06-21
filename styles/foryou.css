@@ -78,11 +78,6 @@ header {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: var(--buttontexttransform);
-    letter-spacing: 0.01em;
     border: none;
     background-color: transparent;
     color: var(--white);
