@@ -1,142 +1,3 @@
-/** ОБЩЕЕ **/
-/* Константы */
-:root {
-    /* Цвета */
-    --txt: #051B43;
-    --white: #FFFFFF;
-    --green: #11FACA;
-    --backgroundBlue: #E5ECFC;
-    --violet: #EAE0F4;
-    --grey: #BFC8C9;
-    --blue: #303D8F;
-    --blue1: #CCDBFF;
-    --green2: #10C48D;
-    /* h1 */
-    --h1fontfamily: "Proxima Nova", sans-serif;
-    --h1fontsize: 62px;
-    --h1texttransform: uppercase;
-    --h1fontweight: bold;
-    --h1lineheight: 100%;
-    /* h3 */
-    --h3fontfamily: "Proxima Nova", sans-serif;
-    --h3fontsize: 44px;
-    --h3texttransform: none;
-    --h3fontweight: bold;
-    --h3lineheight: 100%;
-    /* h4 */
-    --h4fontfamily: "Proxima Nova", sans-serif;
-    --h4fontsize: 30px;
-    --h4texttransform: none;
-    --h4fontweight: bold;
-    /* text-tegs */
-    --texttegsfontfamily: "Manrope", sans-serif;
-    --texttegsfontsize: 16px;
-    --texttegsfontweight: normal;
-    --texttegslineheight: 100%;
-    --texttegstexttransform: none;
-    /* text 16 */
-    --text16fontfamily: "Manrope", sans-serif;
-    --text16fontsize: 16px;
-    --text16fontweight: 500;
-    --text16lineheight: 150%;
-    --text16texttransform: none;
-    /* text 22 */
-    --text22fontfamily: "Manrope", sans-serif;
-    --text22fontsize: 22px;
-    --text22fontweight: 500;
-    --text22lineheight: 150%;
-    --text22texttransform: none;
-    /* button */
-    --buttonfontfamily: "Manrope", sans-serif;
-    --buttonfontsize: 16px;
-    --buttonfontweight: 500;
-    --buttonlineheight: 150%;
-    --buttontexttransform: uppercase;
-}
-
-/* Подключение шрифтов */
-@font-face {
-    font-family: "Manrope";
-    font-weight: normal;
-    src: url(/src/fonts/manrope_regular.ttf);
-}
-
-@font-face {
-    font-family: "Manrope";
-    font-weight: 500;
-    src: url(/src/fonts/manrope_medium.ttf);
-}
-
-@font-face {
-    font-family: "Proxima Nova";
-    font-weight: bold;
-    src: url(/src/fonts/proximanova_bold.otf);
-}
-
-/* Удаление стандартных отступов */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/** АНИМАЦИИ **/
-/* Плавный скроллинг */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Появление снизу */
-.hiddenFromDown {
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateY(25%);
-    transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.showFromDown {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0%);
-}
-
-.delay1 {
-    transition: opacity 0.5s ease-out 100ms, filter 0.5s ease-out 100ms, transform 0.5s ease-out 100ms;
-}
-
-
-.delay1-5 {
-    transition: opacity 0.5s ease-out 150ms, filter 0.5s ease-out 150ms, transform 0.5s ease-out 150ms;
-}
-
-.delay2 {
-    transition: opacity 0.5s ease-out 200ms, filter 0.5s ease-out 200ms, transform 0.5s ease-out 200ms;
-}
-
-.delay2-5 {
-    transition: opacity 0.5s ease-out 250ms, filter 0.5s ease-out 250ms, transform 0.5s ease-out 250ms;
-}
-
-.delay3 {
-    transition: opacity 0.5s ease-out 300ms, filter 0.5s ease-out 300ms, transform 0.5s ease-out 300ms;
-}
-
-.delay3-5 {
-    transition: opacity 0.5s ease-out 350ms, filter 0.5s ease-out 350ms, transform 0.5s ease-out 350ms;
-}
-
-.delay4 {
-    transition: opacity 0.5s ease-out 400ms, filter 0.5s ease-out 400ms, transform 0.5s ease-out 400ms;
-}
-
-.delay4-5 {
-    transition: opacity 0.5s ease-out 450ms, filter 0.5s ease-out 450ms, transform 0.5s ease-out 450ms;
-}
-
-.delay5 {
-    transition: opacity 0.5s ease-out 500ms, filter 0.5s ease-out 500ms, transform 0.5s ease-out 500ms;
-}
-
 /* Плавное появление */
 .hidden {
     opacity: 0;
@@ -152,18 +13,6 @@ html {
 /* Валидация */
 .disabledButton:hover {
     background-color: var(--grey);
-}
-
-/* Для тех, у кого выключена анимация */
-@media(prefers-reduced-motion) {
-    .hiddenFromDown {
-        transition: none;
-    }
-}
-
-/* Поворот стрелок на кнопках */
-.rotate {
-    transform: rotate(45deg);
 }
 
 /** HEADER **/
@@ -229,11 +78,6 @@ header {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: var(--buttontexttransform);
-    letter-spacing: 0.01em;
     border: none;
     background-color: transparent;
     color: var(--white);
@@ -269,22 +113,12 @@ header {
 /* Заголовок h1 */
 .i24__h1 {
     grid-area: h1;
-    font-family: var(--h1fontfamily);
-    font-size: var(--h1fontsize);
-    font-weight: var(--h1fontweight);
-    text-transform: var(--h1texttransform);
-    line-height: var(--h1lineheight);
     color: var(--txt);
 }
 
 /* Подпись txt22 */
 .i24__caption {
     grid-area: caption;
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
 }
 
@@ -306,11 +140,6 @@ header {
 
 .impact__text {
     padding: 0 62px;
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
 }
 
@@ -348,11 +177,6 @@ header {
 
 .impact__digits__caption-installs,
 .impact__digits__caption-new {
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
 }
 
@@ -369,21 +193,11 @@ header {
 }
 
 .client__h3 {
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
     margin-bottom: 20px;
 }
 
 .client__description {
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
     width: 1340px;
 }
@@ -407,21 +221,11 @@ header {
 
 .mission__h3 {
     grid-area: h3;
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
 }
 
 .mission__description {
     grid-area: info;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -453,20 +257,10 @@ header {
 .challenges__h3 {
     grid-area: h3;
     color: var(--txt);
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
 }
 
 .challenges__description {
     grid-area: cap;
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
     width: 900px;
 }
@@ -506,20 +300,10 @@ header {
 .solution__h3 {
     grid-area: h3;
     color: var(--txt);
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
 }
 
 .solution__description {
     grid-area: description;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -563,11 +347,6 @@ header {
 .responsibility__h3 {
     grid-area: h3;
     text-align: center;
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
 }
 
@@ -597,11 +376,6 @@ header {
 .responsibility__backend__text,
 .responsibility__integration__text {
     margin-left: 20px;
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
 }
 
@@ -614,11 +388,6 @@ header {
 
 .keyFeatures__h3 {
     text-align: center;
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
     margin-bottom: 80px;
 }
@@ -693,11 +462,6 @@ header {
 .keyFeatures__grid__element5__caption,
 .keyFeatures__grid__element6__caption {
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     text-align: center;
     margin: 40px 20px 20px 20px;
 }
@@ -726,11 +490,6 @@ header {
 
 .technologyStack__h3 {
     text-align: center;
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
     margin-bottom: 80px;
 }
@@ -764,11 +523,6 @@ header {
     padding: 9px 25px;
     background-color: var(--backgroundBlue);
     color: var(--txt);
-    font-family: var(--texttegsfontfamily);
-    font-size: var(--texttegsfontsize);
-    font-weight: var(--texttegsfontweight);
-    line-height: var(--texttegslineheight);
-    text-transform: var(--texttegstexttransform);
 }
 
 .technologyStack__tags__tag1,
@@ -823,11 +577,6 @@ header {
 .team__h3 {
     grid-area: h3;
     text-align: center;
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
 }
 
@@ -895,10 +644,6 @@ header {
 .team__seniorAndroidDeveloper,
 .team__middleFlutterDeveloper1__name,
 .team__middleFlutterDeveloper2__name {
-    font-family: var(--h4fontfamily);
-    font-size: var(--h4fontsize);
-    font-weight: var(--h4fontweight);
-    text-transform: var(--h4texttransform);
     color: var(--txt);
 }
 
@@ -910,11 +655,6 @@ header {
 .team__middleFlutterDeveloper1__jobTitle,
 .team__middleFlutterDeveloper2__jobTitle {
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 /** BACKCALL SECTION **/
@@ -936,20 +676,11 @@ header {
 }
 
 .backCall__header__h3 {
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
     margin-bottom: 24px;
 }
 
 .backCall__header__text {
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
 }
 
@@ -986,11 +717,6 @@ header {
 
 .backCall__inputForm__nameValidationInfo,
 .backCall__inputForm__phoneOrEmailValidationInfo {
-    font-family: var(--text16fontfamily);
-    font-weight: var(--text16fontweight);
-    font-size: var(--text16fontsize);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: #dd1414;
 }
 
@@ -1002,11 +728,6 @@ header {
     border-radius: 8px;
     padding: 18px;
     opacity: 1;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
 }
 
@@ -1037,11 +758,6 @@ header {
 
 .backCall__inputForm__communicationChoice__caption {
     color: var(--txt);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     padding-bottom: 20px;
 }
 
@@ -1131,11 +847,6 @@ header {
 .backCall__inputForm__communicationChoice__buttonsAndLabels__email-label,
 .backCall__inputForm__communicationChoice__buttonsAndLabels__phone-label {
     padding-left: 10px;
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
     color: var(--txt);
     cursor: pointer;
 }
@@ -1153,12 +864,7 @@ header {
     border: none;
     border-radius: 10px;
     background-color: var(--blue);
-    font-family: var(--buttonfontfamily);
-    font-size: var(--buttonfontsize);
-    font-weight: bold;
-    text-transform: uppercase;
     color: var(--white);
-    letter-spacing: 0.01em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1227,11 +933,6 @@ header {
 }
 
 .popUp__text {
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    line-height: var(--text22lineheight);
-    text-transform: var(--text22texttransform);
     color: var(--txt);
     width: 569px;
     text-align: center;
@@ -1266,11 +967,6 @@ header {
 
 .nextProjects__h3 {
     text-align: center;
-    font-family: var(--h3fontfamily);
-    font-size: var(--h3fontsize);
-    font-weight: var(--h3fontweight);
-    line-height: var(--h3lineheight);
-    text-transform: var(--h3texttransform);
     color: var(--txt);
     margin-bottom: 100px;
 }
@@ -1311,22 +1007,7 @@ header {
 .nextProjects__slider__myBedroomGuide__h4,
 .nextProjects__slider__forYou__h4,
 .nextProjects__slider__beinSportBeinConnect__h4 {
-    font-size: var(--h4fontsize);
-    font-family: var(--h4fontfamily);
-    font-weight: var(--h4fontweight);
-    text-transform: var(--h4texttransform);
     margin-bottom: 20px;
-}
-
-.nextProjects__slider__deliveryBot__caption,
-.nextProjects__slider__myBedroomGuide__caption,
-.nextProjects__slider__forYou__caption,
-.nextProjects__slider__beinSportBeinConnect__caption {
-    font-size: var(--text16fontsize);
-    font-family: var(--text16fontfamily);
-    font-weight: var(--text16fontweight);
-    line-height: var(--text16lineheight);
-    text-transform: var(--text16texttransform);
 }
 
 /** FOOTER **/
@@ -1387,11 +1068,6 @@ footer {
 .footerInfo__addressHeader {
     grid-area: addressHeader;
     color: var(--white);
-    font-family: var(--text22fontfamily);
-    font-size: var(--text22fontsize);
-    font-weight: var(--text22fontweight);
-    text-transform: var(--text22texttransform);
-    line-height: var(--text22lineheight);
 }
 
 .footerInfo__addressOfOffice1 {
@@ -1406,11 +1082,6 @@ footer {
 .footerInfo__addressOfOffice2,
 .footerInfo__link {
     color: var(--white);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    text-transform: var(--text16texttransform);
-    line-height: var(--text16lineheight);
 }
 
 .footerInfo__link {
@@ -1428,9 +1099,4 @@ footer {
     text-decoration: none;
     align-self: end;
     color: var(--grey);
-    font-family: var(--text16fontfamily);
-    font-size: var(--text16fontsize);
-    font-weight: var(--text16fontweight);
-    text-transform: var(--text16texttransform);
-    line-height: var(--text16lineheight);
 }
