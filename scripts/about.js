@@ -16,7 +16,7 @@ freeConsultationHeaderButton.addEventListener('mouseenter', changeArrowToStraigh
 freeConsultationHeaderButton.addEventListener('mouseleave', changeArrowToUpAndChangeFont);
 // 2) Переход по ссылке при нажатии
 function goToCallbackForm() {
-    window.location.href = '/index.html#contactUsForm';
+    window.location.href = '/#contactUsForm';
 }
 
 /* АКТИВАЦИЯ COUNT UP */

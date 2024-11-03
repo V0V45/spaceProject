@@ -50,27 +50,27 @@ function goToPortfolio() {
 }
 
 function goToAboutUs() {
-    window.location.href = 'about.html';
+    window.location.href = '/about';
 }
 
 function goToSkinCareApp() {
-    window.location.href = 'foryou.html';
+    window.location.href = '/for-you-skincare-app';
 }
 
 function goToi24News() {
-    window.location.href = 'i24newsapp.html';
+    window.location.href = '/i24-news';
 }
 
 function goToBSBC() {
-    window.location.href = 'bein.html';
+    window.location.href = '/bein';
 }
 
 function goToDeliveryBot() {
-    window.location.href = 'deliverybot.html';
+    window.location.href = '/delivery-bot';
 }
 
 function goToMyBedroomGuide() {
-    window.location.href = 'mybedroom.html';
+    window.location.href = '/my-bedroom-guide';
 }
 
 function goToContactUsAnchor() {
@@ -218,10 +218,10 @@ function submitBackCallForm(event) {
         // форма отправляется на /backcall и передает JSON-объект с тремя ключами:
         // { "nameInputField": "...", "phoneOrEmailInputField": "...", "backCall": "..." }
         // Код для связи с backend:
-        // sendFormToServer(formDataToBePosted, '/backcall'); // передаем поля формы на сервер
-        // Код для front-end отладки:
-        popUpSection.classList.add('showPopUp');
-        popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+        sendFormToServer(formDataToBePosted, '/backcall'); // передаем поля формы на сервер
+        // // Код для front-end отладки:
+        // popUpSection.classList.add('showPopUp');
+        // popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
     }
 }
 
@@ -252,17 +252,17 @@ function submitContactUsForm(event) {
         // форма отправляется на /contact и передает JSON-объект с тремя ключами:
         // { "firstName": "...", "companyName": "...", "eMail": "...", "phone": "...", "message": "..." }
         // Код для связи с backend:
-        // sendFormToServer(formDataToBePosted, '/contact'); // передаем поля формы на сервер
-        // Код для front-end отладки:
-        popUpSection.classList.add('showPopUp');
-        popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
+        sendFormToServer(formDataToBePosted, '/contact'); // передаем поля формы на сервер
+        // // Код для front-end отладки:
+        // popUpSection.classList.add('showPopUp');
+        // popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
     }
 }
 
 // Отправка формы на сервер
 async function sendFormToServer(formDataToBePosted, formURL) {
     // выводим в консоль то, что отправляем на сервер
-    console.log(JSON.stringify(formDataToBePosted));
+    // console.log(JSON.stringify(formDataToBePosted));
     // обращаемся к backcall через POST и передаем туда JSON из заполненных в форме данных
     let response = await fetch(formURL, {
         method: 'POST',

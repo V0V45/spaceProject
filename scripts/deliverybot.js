@@ -125,7 +125,7 @@ function submitBackCallForm(event) {
         // форма отправляется на /backcall и передает JSON-объект с тремя ключами:
         // { "nameInputField": "...", "phoneOrEmailInputField": "...", "backCall": "..." }
         // Код для связи с backend:
-        // sendFormToServer(formDataToBePosted, '/backcall'); // передаем поля формы на сервер
+        sendFormToServer(formDataToBePosted, '/backcall'); // передаем поля формы на сервер
         // Код для front-end отладки:
         popUpSection.classList.add('showPopUp');
         popUpText.textContent = 'Thank you, your request has been sent, our specialists will contact you within 24 hours.';
@@ -134,7 +134,7 @@ function submitBackCallForm(event) {
 // 2) Отправка формы на сервер
 async function sendFormToServer(formDataToBePosted, formURL) {
     // выводим в консоль то, что отправляем на сервер
-    console.log(JSON.stringify(formDataToBePosted));
+    // console.log(JSON.stringify(formDataToBePosted));
     // обращаемся к backcall через POST и передаем туда JSON из заполненных в форме данных
     let response = await fetch(formURL, {
         method: 'POST',
